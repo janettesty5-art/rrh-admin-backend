@@ -1,0 +1,1649 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Road Rock Holdings</title>
+    <!-- Font Awesome 6 (Free) CDN for professional icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c9a84c;
+        --gold-light: #e8c96d;
+        --gold-dark: #9a7a30;
+        --black: #0a0a0a;
+        --black-2: #111111;
+        --black-3: #181818;
+        --black-4: #222222;
+        --white: #ffffff;
+        --w80: rgba(255, 255, 255, 0.8);
+        --w60: rgba(255, 255, 255, 0.55);
+        --w10: rgba(255, 255, 255, 0.07);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--black);
+        color: var(--white);
+        font-family: "Barlow", sans-serif;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--black);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--gold);
+        border-radius: 3px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+            /* NAV */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+      }
+      .nav-wrap {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      /* FIXED LOGO STYLES - Responsive across all devices */
+      .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .logo img {
+        height: 90px;
+        width: auto;
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+      /* For very small screens, slightly reduce logo size */
+      @media (max-width: 480px) {
+        .logo img {
+          height: 90px;
+        }
+      }
+      .logo-words .brand {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #fff;
+        display: block;
+        line-height: 1.1;
+      }
+      .logo-words .brand em {
+        color: var(--gold);
+        font-style: normal;
+      }
+      .logo-words .tag {
+        font-size: 8.5px;
+        letter-spacing: 3px;
+        color: var(--gold);
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0;
+      }
+      .nav-links a {
+        padding: 8px 13px;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--w80);
+        transition: color 0.2s;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--gold);
+      }
+      .nav-cta {
+        margin-left: 12px;
+        padding: 11px 24px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: inline-block;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px rgba(201, 168, 76, 0.35);
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s;
+      }
+      .mob-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--black-2);
+        z-index: 999;
+        padding: 28px 24px;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .mob-menu.open {
+        display: flex;
+      }
+      .mob-menu a {
+        display: block;
+        padding: 16px 0;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        color: var(--w80);
+      }
+      .mob-menu a:hover {
+        color: var(--gold);
+      }
+      .mob-cta {
+        margin-top: 24px;
+        padding: 16px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black) !important;
+        text-align: center;
+      }
+      /* Tablet responsive adjustments */
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap {
+          padding: 0 16px;
+        }
+      }
+
+      /* PAGE HERO */
+      .page-hero {
+        padding: 140px 32px 80px;
+        background: var(--black-2);
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1423659078033-5e6b1c2d9be3?w=1600&q=80")
+          center/cover;
+        opacity: 0.3;
+      }
+      .page-hero-ov {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+    110deg,
+    rgba(10, 10, 10, 0.75) 38%,
+    rgba(10, 10, 10, 0.45) 70%,
+    rgba(10, 10, 10, 0.25) 100%
+  );
+      }
+      .page-hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .page-hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1320px;
+        margin: 0 auto;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--w60);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .breadcrumb a {
+        color: var(--gold);
+        font-weight: 600;
+      }
+      .breadcrumb span {
+        color: rgba(201, 168, 76, 0.4);
+      }
+      .page-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(42px, 6vw, 80px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 0.97;
+        margin-bottom: 16px;
+      }
+      .page-title span {
+        color: var(--gold);
+      }
+      .page-subtitle {
+        font-size: 16px;
+        color: var(--w60);
+        max-width: 500px;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      /* CONTACT MAIN */
+      .contact-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black);
+      }
+      .container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: clamp(40px, 6vw, 80px);
+        align-items: start;
+      }
+      /* LEFT INFO */
+      .sec-eyebrow {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sec-eyebrow::before {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .sec-h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(28px, 4vw, 46px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      .sec-h2 span {
+        color: var(--gold);
+      }
+      .body-p {
+        font-size: 15px;
+        color: var(--w60);
+        line-height: 1.8;
+        margin-bottom: 28px;
+        font-weight: 300;
+      }
+      .contact-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .c-card {
+        display: flex;
+        gap: 18px;
+        padding: 22px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        align-items: flex-start;
+      }
+      .c-icon {
+        width: 46px;
+        height: 46px;
+        background: rgba(201, 168, 76, 0.07);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .c-icon i {
+        font-size: 20px;
+        color: var(--gold);
+      }
+      .c-label {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .c-value {
+        font-size: 14px;
+        color: var(--w80);
+        font-weight: 400;
+        line-height: 1.6;
+      }
+      .c-value a {
+        color: var(--w80);
+        transition: color 0.2s;
+      }
+      .c-value a:hover {
+        color: var(--gold);
+      }
+      .social-links {
+        margin-top: 32px;
+      }
+      .social-links h4 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+      .soc-row {
+        display: flex;
+        gap: 10px;
+      }
+      .soc {
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(201, 168, 76, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .soc:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+      }
+      .soc i {
+        font-size: 17px;
+        color: var(--w60);
+        transition: color 0.3s;
+      }
+      .soc:hover i {
+        color: var(--black);
+      }
+      /* RIGHT FORM */
+      .contact-form-wrap {
+        background: var(--black-3);
+        padding: 44px 40px;
+      }
+      .form-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 24px;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .form-title span {
+        color: var(--gold);
+      }
+      .form-sub {
+        font-size: 13px;
+        color: var(--w60);
+        margin-bottom: 32px;
+        font-weight: 300;
+      }
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .form-group label {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        background: var(--black-4);
+        border: 1px solid rgba(201, 168, 76, 0.15);
+        padding: 13px 16px;
+        font-size: 14px;
+        color: var(--white);
+        font-family: "Barlow", sans-serif;
+        outline: none;
+        transition: border-color 0.3s;
+        -webkit-appearance: none;
+        resize: vertical;
+      }
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.25);
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        border-color: var(--gold);
+      }
+      .form-group textarea {
+        min-height: 130px;
+      }
+      .form-group select option {
+        background: var(--black-4);
+        color: var(--white);
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin-top: 8px;
+      }
+      .submit-btn:hover {
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        transform: translateY(-2px);
+        box-shadow: 0 10px 32px rgba(201, 168, 76, 0.4);
+      }
+      .form-note {
+        font-size: 12px;
+        color: var(--w60);
+        text-align: center;
+        margin-top: 14px;
+        font-weight: 300;
+      }
+      .success-msg {
+        display: none;
+        background: rgba(201, 168, 76, 0.1);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        padding: 18px 24px;
+        margin-top: 16px;
+        text-align: center;
+      }
+      .success-msg.show {
+        display: block;
+      }
+      .success-msg p {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--gold);
+      }
+      /* MAP */
+      .map-sec {
+        padding: clamp(60px, 8vw, 100px) 0;
+        background: var(--black-2);
+      }
+      .map-wrap {
+        background: var(--black-3);
+        border: 1px solid rgba(201, 168, 76, 0.12);
+        overflow: hidden;
+        position: relative;
+      }
+      .map-placeholder {
+        height: 380px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 16px;
+        background: linear-gradient(135deg, var(--black-3), var(--black-4));
+      }
+      .map-placeholder svg {
+        width: 56px;
+        height: 56px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1;
+        opacity: 0.6;
+      }
+      .map-placeholder p {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--w60);
+      }
+      .map-placeholder a {
+        font-size: 12px;
+        color: var(--gold);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+        padding-bottom: 2px;
+      }
+      /* QUICK CONTACT BAR - Using FA icons instead of emojis */
+      .quick-bar {
+        background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+        padding: clamp(32px, 4vw, 48px) 0;
+      }
+      .quick-bar-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+      }
+      .qb-item {
+        background: rgba(0, 0, 0, 0.15);
+        padding: 28px 24px;
+        text-align: center;
+        transition: background 0.3s;
+      }
+      .qb-item:hover {
+        background: rgba(0, 0, 0, 0.25);
+      }
+      .qb-icon {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: var(--black);
+      }
+      .qb-icon i {
+        font-size: 32px;
+        color: #0a0a0a;
+        opacity: 0.8;
+      }
+      .qb-label {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 6px;
+      }
+      .qb-val {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        color: var(--black);
+      }
+      .qb-val a {
+        color: var(--black);
+        transition: opacity 0.2s;
+      }
+      .qb-val a:hover {
+        opacity: 0.7;
+      }
+      /* FOOTER */
+      footer {
+        background: var(--black-2);
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+        padding: clamp(50px, 6vw, 80px) 0 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: clamp(24px, 4vw, 56px);
+        margin-bottom: 44px;
+      }
+      .footer-brand p {
+        font-size: 13px;
+        color: var(--w60);
+        line-height: 1.7;
+        margin: 16px 0 18px;
+        font-weight: 300;
+      }
+      .footer-col h4 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-col ul li a {
+        font-size: 13px;
+        color: var(--w60);
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--gold);
+      }
+      .fci {
+        display: flex;
+        gap: 11px;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: var(--w60);
+      }
+      .fci i {
+        width: 16px;
+        font-size: 14px;
+        color: var(--gold);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 18px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer-bottom p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .footer-bottom span {
+        color: var(--gold);
+      }
+      .wa-fab {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 999;
+        width: 56px;
+        height: 56px;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        transition: transform 0.3s;
+      }
+      .wa-fab:hover {
+        transform: scale(1.1);
+      }
+      .wa-fab i {
+        font-size: 32px;
+        color: #fff;
+      }
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .quick-bar-inner {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap,
+        .container,
+        .page-hero {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .contact-form-wrap {
+          padding: 28px 20px;
+        }
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .quick-bar-inner {
+          padding: 0 16px;
+        }
+      }
+
+
+
+            /* HERO ANIMATIONS - Fade In Up with Stagger Effect */
+      .hero-content .hero-eyebrow,
+      .hero-content .hero-h1,
+      .hero-content .hero-sub,
+      .hero-content .hero-btns,
+      .hero-content .hero-stats {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+
+      .hero-content .hero-eyebrow {
+        animation-delay: 0.1s;
+      }
+      .hero-content .hero-h1 {
+        animation-delay: 0.2s;
+      }
+      .hero-content .hero-sub {
+        animation-delay: 0.4s;
+      }
+      .hero-content .hero-btns {
+        animation-delay: 0.6s;
+      }
+      .hero-content .hero-stats {
+        animation-delay: 0.8s;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* DESKTOP ONLY - Hover Effects */
+      @media (min-width: 769px) {
+        /* Hero background zoom on hover */
+        .hero-bg-img {
+          transition: transform 8s ease-in-out;
+        }
+        .hero:hover .hero-bg-img {
+          transform: scale(1.05);
+        }
+
+        /* Service cards hover */
+        .svc-card {
+          transition: all 0.4s ease;
+        }
+        .svc-card:hover {
+          transform: translateY(-8px);
+          background: rgba(201, 168, 76, 0.08);
+        }
+
+        /* Section cards hover */
+        .srv-block, .sector-card, .why-card, .market-card, .comp-card,
+        .model-card, .invest-card, .val-block, .team-card {
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .srv-block:hover, .sector-card:hover, .why-card:hover, 
+        .market-card:hover, .comp-card:hover, .model-card:hover, 
+        .invest-card:hover, .val-block:hover, .team-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Timeline items hover */
+        .tl-item {
+          transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+        .tl-item:hover {
+          transform: translateX(8px);
+        }
+
+        /* Contact cards hover */
+        .c-card {
+          transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+        .c-card:hover {
+          transform: translateX(8px);
+          background: rgba(201, 168, 76, 0.03);
+        }
+
+        /* Quick bar items hover */
+        .qb-item {
+          transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .qb-item:hover {
+          transform: translateY(-5px);
+          background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Stats boxes hover */
+        .stat-box {
+          transition: transform 0.3s ease;
+        }
+        .stat-box:hover {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* MOBILE ONLY - Scroll-triggered animations (NO hover) */
+      @media (max-width: 768px) {
+        /* Elements start hidden */
+        .svc-card, .srv-block, .sector-card, .why-card, .why-item,
+        .market-card, .comp-card, .val-block, .team-card, 
+        .c-card, .qb-item, .tl-item, .stat-box, .ch-card,
+        .model-card, .invest-card, .kp, .bs, .vm-card,
+        .phil-item, .leader-card, .cap-list li, .tl-item {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), 
+                      transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        /* When element becomes visible via scroll */
+        .svc-card.visible, .srv-block.visible, .sector-card.visible, 
+        .why-card.visible, .why-item.visible, .market-card.visible, 
+        .comp-card.visible, .val-block.visible, .team-card.visible, 
+        .c-card.visible, .qb-item.visible, .tl-item.visible, 
+        .stat-box.visible, .ch-card.visible, .model-card.visible, 
+        .invest-card.visible, .kp.visible, .bs.visible, .vm-card.visible, 
+        .phil-item.visible, .leader-card.visible, .cap-list li.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Stagger delays for smooth cascading effect */
+        .svc-card:nth-child(1) { transition-delay: 0s; }
+        .svc-card:nth-child(2) { transition-delay: 0.05s; }
+        .svc-card:nth-child(3) { transition-delay: 0.1s; }
+        .svc-card:nth-child(4) { transition-delay: 0.15s; }
+        .svc-card:nth-child(5) { transition-delay: 0.2s; }
+        
+        .stat-box:nth-child(1) { transition-delay: 0s; }
+        .stat-box:nth-child(2) { transition-delay: 0.05s; }
+        .stat-box:nth-child(3) { transition-delay: 0.1s; }
+        .stat-box:nth-child(4) { transition-delay: 0.15s; }
+        .stat-box:nth-child(5) { transition-delay: 0.2s; }
+
+        .srv-block:nth-child(1) { transition-delay: 0s; }
+        .srv-block:nth-child(2) { transition-delay: 0.05s; }
+        .srv-block:nth-child(3) { transition-delay: 0.1s; }
+        .srv-block:nth-child(4) { transition-delay: 0.15s; }
+        .srv-block:nth-child(5) { transition-delay: 0.2s; }
+
+        /* Hero background zoom on scroll (not hover) */
+        .hero-bg-img {
+          transition: transform 0.8s ease-out;
+        }
+        .hero-bg-img.zoom {
+          transform: scale(1.05);
+        }
+
+        /* Disable all hover effects on mobile */
+        .hero:hover .hero-bg-img {
+          transform: none;
+        }
+        .svc-card:hover, .srv-block:hover, .sector-card:hover, 
+        .why-card:hover, .market-card:hover, .comp-card:hover,
+        .val-block:hover, .team-card:hover, .c-card:hover,
+        .qb-item:hover, .stat-box:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+
+      /* Universal Animations (Work on both desktop & mobile) */
+      
+      /* Floating animation for scroll indicator */
+      .hero-scroll {
+        animation: float 2s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(8px);
+        }
+      }
+
+      /* Glow effect on buttons on load */
+      .hero-btns .btn-gold {
+        animation: subtleGlow 1.5s ease-in-out 0.6s both;
+      }
+      @keyframes subtleGlow {
+        0%, 100% {
+          box-shadow: 0 0 0 rgba(201, 168, 76, 0);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+        }
+      }
+
+      /* Page Hero Sections (About, Contact, Profile) */
+      .page-hero .breadcrumb,
+      .page-hero .page-title,
+      .page-hero .page-subtitle,
+      .page-hero .print-btn {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+      .page-hero .breadcrumb {
+        animation-delay: 0.1s;
+      }
+      .page-hero .page-title {
+        animation-delay: 0.2s;
+      }
+      .page-hero .page-subtitle {
+        animation-delay: 0.35s;
+      }
+      .page-hero .print-btn {
+        animation-delay: 0.5s;
+      }
+
+      /* Investor Presentation Slide Cover */
+      .slide-cover .cover-tag,
+      .slide-cover .cover-h1,
+      .slide-cover .cover-sub,
+      .slide-cover .cover-meta {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s ease forwards;
+      }
+      .slide-cover .cover-tag {
+        animation-delay: 0.1s;
+      }
+      .slide-cover .cover-h1 {
+        animation-delay: 0.2s;
+      }
+      .slide-cover .cover-sub {
+        animation-delay: 0.35s;
+      }
+      .slide-cover .cover-meta {
+        animation-delay: 0.5s;
+      }
+
+
+      /* ── MOBILE FOOTER LAYOUT FIX ── 
+   Paste this inside your <style> tag on all pages
+   Quick Links + Our Services = side by side
+   Brand (top) → Quick Links | Services → Contact (bottom)
+*/
+
+@media (max-width: 768px) {
+  .footer-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+  }
+
+  /* Brand: full width, top */
+  .footer-grid .footer-brand {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  /* Quick Links: left half */
+  .footer-grid .footer-col:nth-child(2) {
+    width: calc(50% - 12px) !important;
+    order: 2 !important;
+  }
+
+  /* Our Services: right half — side by side with Quick Links */
+  .footer-grid .footer-col:nth-child(3) {
+    width: calc(50% - 12px) !important;
+    order: 3 !important;
+  }
+
+  /* Contact Us: full width, bottom */
+  .footer-grid .footer-col:nth-child(4) {
+    width: 100% !important;
+    order: 4 !important;
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+    padding-top: 20px;
+  }
+}
+
+/* Extra small screens — all stack */
+@media (max-width: 380px) {
+  .footer-grid .footer-col:nth-child(2),
+  .footer-grid .footer-col:nth-child(3) {
+    width: 100% !important;
+  }
+}
+
+.page-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.page-hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+}
+@media (min-width: 769px) {
+  .page-hero-video video {
+    transition: transform 8s ease-in-out;
+  }
+  .page-hero:hover .page-hero-video video {
+    transform: scale(1.05);
+  }
+}
+    </style>
+  </head>
+  <body>
+        <nav id="navbar">
+      <div class="nav-wrap">
+        <a href="index.html" class="logo">
+          <img src="/img/RRH-LOGO.png" alt="Road Rock Holdings Logo" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="/project.html">Profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Get A Quote</a>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mob-menu" id="mobMenu">
+      <a href="index.html">Home</a><a href="about.html">About Us</a
+      ><a href="services.html">Services</a
+      ><a href="contact.html">Contact</a>
+      <a href="/project.html">Profile</a>
+      <a href="contact.html" class="mob-cta">Get A Quote →</a>
+    </div>
+
+    <!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-video">
+    <video autoplay muted loop playsinline
+      poster="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80">
+      <source src="/video/RRH-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-ov"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a><span>/</span><span>Contact</span>
+        </div>
+        <h1 class="page-title">Contact <span>Road Rock</span><br />Holdings</h1>
+        <p class="page-subtitle">
+          Ready to start your next project? Get in touch with our team for a
+          free consultation and project quote.
+        </p>
+      </div>
+</div>
+
+    <!-- QUICK BAR - Replaced emojis with Font Awesome icons -->
+    <div class="quick-bar">
+      <div class="quick-bar-inner">
+        <div class="qb-item">
+          <div class="qb-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="qb-label">Call Us Directly</div>
+          <div class="qb-val">
+            <a href="tel:+2348082363104">+234 808 236 3104</a><br /><a
+              href="tel:+2349018053469"
+              >+234 901 805 3469</a
+            >
+          </div>
+        </div>
+        <div class="qb-item">
+          <div class="qb-icon"><i class="fas fa-envelope"></i></div>
+          <div class="qb-label">Email Us</div>
+          <div class="qb-val">
+            <a href="mailto:info@roadrockholdings.com"
+              >info@roadrockholdings.com</a
+            >
+          </div>
+        </div>
+        <div class="qb-item">
+          <div class="qb-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="qb-label">Headquarters</div>
+          <div class="qb-val">Lagos, Nigeria</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT MAIN -->
+    <section class="contact-sec">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- LEFT -->
+          <div>
+            <div class="sec-eyebrow">Get In Touch</div>
+            <h2 class="sec-h2">
+              Let's Build Something <span>Extraordinary</span>
+            </h2>
+            <p class="body-p">
+              Whether you're planning a major infrastructure project, real
+              estate development, solar energy installation, IT solution, or a
+              stunning interior transformation — our team of experts is ready to
+              listen, advise, and deliver.
+            </p>
+            <div class="contact-cards">
+              <div class="c-card">
+                <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+                <div>
+                  <div class="c-label">Phone Numbers</div>
+                  <div class="c-value">
+                    <a href="tel:+2348082363104">+234 808 236 3104</a><br /><a
+                      href="tel:+2349018053469"
+                      >+234 901 805 3469</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="c-card">
+                <div class="c-icon"><i class="fas fa-envelope"></i></div>
+                <div>
+                  <div class="c-label">Email Address</div>
+                  <div class="c-value">
+                    <a href="mailto:info@roadrockholdings.com"
+                      >info@roadrockholdings.com</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="c-card">
+                <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <div>
+                  <div class="c-label">Headquarters</div>
+                  <div class="c-value">Lagos, Nigeria</div>
+                </div>
+              </div>
+              <div class="c-card">
+                <div class="c-icon"><i class="far fa-clock"></i></div>
+                <div>
+                  <div class="c-label">Business Hours</div>
+                  <div class="c-value">
+                    Monday – Friday: 8:00 AM – 6:00 PM<br />Saturday: 9:00 AM –
+                    2:00 PM
+                  </div>
+                </div>
+              </div>
+              <div class="c-card">
+                <div class="c-icon"><i class="fab fa-whatsapp"></i></div>
+                <div>
+                  <div class="c-label">WhatsApp</div>
+                  <div class="c-value">
+                    <a href="https://wa.me/2348082363104" target="_blank"
+                      >Chat on WhatsApp → +234 808 236 3104</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="social-links">
+              <h4>Follow Us</h4>
+              <div class="soc-row">
+                <a href="#" class="soc" aria-label="Facebook"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="soc" aria-label="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="soc" aria-label="LinkedIn"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="soc" aria-label="YouTube"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: FORM -->
+          <div class="contact-form-wrap">
+            <div class="form-title">Send Us A <span>Message</span></div>
+            <div class="form-sub">
+              Fill in the form below and our team will respond within 24 hours.
+            </div>
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fname">First Name *</label>
+                  <input type="text" id="fname" placeholder="John" required />
+                </div>
+                <div class="form-group">
+                  <label for="lname">Last Name *</label>
+                  <input type="text" id="lname" placeholder="Doe" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="john@company.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    placeholder="+234 xxx xxx xxxx"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="company">Company / Organization</label>
+                <input
+                  type="text"
+                  id="company"
+                  placeholder="Your company name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="service">Service of Interest *</label>
+                <select id="service" required>
+                  <option value="" disabled selected>
+                    Select a service...
+                  </option>
+                  <option>Road &amp; Civil Construction</option>
+                  <option>Real Estate Development</option>
+                  <option>Solar &amp; Renewable Energy</option>
+                  <option>Information Technology (IT)</option>
+                  <option>Interiors &amp; Exteriors</option>
+                  <option>General Inquiry</option>
+                  <option>Partnership / Investment</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="budget">Estimated Project Budget</label>
+                <select id="budget">
+                  <option value="" disabled selected>
+                    Select budget range...
+                  </option>
+                  <option>Under ₦5 Million</option>
+                  <option>₦5M – ₦20 Million</option>
+                  <option>₦20M – ₦50 Million</option>
+                  <option>₦50M – ₦200 Million</option>
+                  <option>₦200M and above</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Project Details / Message *</label>
+                <textarea
+                  id="message"
+                  placeholder="Tell us about your project, timeline, location, and any specific requirements..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message →</button>
+              <p class="form-note">
+                Your information is private and will never be shared with third
+                parties.
+              </p>
+              <div class="success-msg" id="successMsg">
+                <p>
+                  ✅ Message sent successfully! We'll be in touch within 24
+                  hours.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="map-sec">
+      <div class="container">
+        <div class="sec-eyebrow" style="margin-bottom: 12px">Our Location</div>
+        <h2 class="sec-h2" style="margin-bottom: 32px">
+          Find Us in <span>Lagos, Nigeria</span>
+        </h2>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.46326205653!2d3.1191034!3d6.5480357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1700000000000"
+            width="100%"
+            height="400"
+            style="
+              border: none;
+              filter: invert(90%) hue-rotate(180deg) saturate(0.3);
+            "
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo"
+              ><img src="/img/RRH-LOGO.png" alt=""></a
+            >
+            <p>
+              A multi-industry conglomerate delivering excellence in
+              Construction, Renewable Energy, Technology, Real Estate and Smart
+              Living Solutions across Africa.
+            </p>
+            <div class="soc-row" style="margin-top: 0">
+              <a href="#" class="soc"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="soc"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="soc"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/project.html">Company Profile</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+           <ul>
+              <li><a href="services.html#construction">Road Construction</a></li>
+              <li><a href="services.html#real-estate">Real Estate</a></li>
+              <li><a href="services.html#solar">Solar Energy</a></li>
+              <li><a href="services.html#technology">IT Solutions</a></li>
+              <li><a href="services.html#interiors">Interiors & Exteriors</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="fci">
+              <i class="fas fa-map-marker-alt"></i><span>Lagos, Nigeria</span>
+            </div>
+            <div class="fci">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <a
+                  href="tel:+2348082363104"
+                  style="color: var(--w60); display: block"
+                  >+234 808 236 3104</a
+                ><a
+                  href="tel:+2349018053469"
+                  style="color: var(--w60); display: block"
+                  >+234 901 805 3469</a
+                >
+              </div>
+            </div>
+            <div class="fci">
+              <i class="fas fa-envelope"></i
+              ><a
+                href="mailto:info@roadrockholdings.com"
+                style="color: var(--w60)"
+                >info@roadrockholdings.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
+          </p>
+          <p>Lagos, Nigeria</p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/2348082363104"
+      class="wa-fab"
+      target="_blank"
+      rel="noopener"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+
+    <script>
+      const hamburger = document.getElementById("hamburger"),
+        mobMenu = document.getElementById("mobMenu");
+      hamburger.addEventListener("click", () => {
+        mobMenu.classList.toggle("open");
+        const s = hamburger.querySelectorAll("span");
+        if (mobMenu.classList.contains("open")) {
+          s[0].style.transform = "rotate(45deg) translate(5px,5px)";
+          s[1].style.opacity = "0";
+          s[2].style.transform = "rotate(-45deg) translate(5px,-5px)";
+        } else {
+          s.forEach((x) => {
+            x.style.transform = "";
+            x.style.opacity = "";
+          });
+        }
+      });
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const btn = this.querySelector(".submit-btn");
+          btn.textContent = "Sending...";
+          btn.style.opacity = ".7";
+          setTimeout(() => {
+            btn.textContent = "Send Message →";
+            btn.style.opacity = "1";
+            document.getElementById("successMsg").classList.add("show");
+            this.reset();
+            setTimeout(
+              () =>
+                document.getElementById("successMsg").classList.remove("show"),
+              5000,
+            );
+          }, 1500);
+        });
+    </script>
+
+    <script>
+            // Mobile scroll animations - triggers animations when elements come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ensure hero animations trigger even on slow connections
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        const elements = heroContent.querySelectorAll('.hero-eyebrow, .hero-h1, .hero-sub, .hero-btns, .hero-stats');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight; // Force reflow
+          el.style.animation = null;
+        });
+      }
+      
+      // For page hero sections
+      const pageHero = document.querySelector('.page-hero-inner');
+      if (pageHero) {
+        const elements = pageHero.querySelectorAll('.breadcrumb, .page-title, .page-subtitle, .print-btn');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight;
+          el.style.animation = null;
+        });
+      }
+
+      // Check if mobile device
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        // Select all elements that should animate on scroll
+        const animateElements = document.querySelectorAll(
+          '.svc-card, .srv-block, .sector-card, .why-card, .why-item, ' +
+          '.market-card, .comp-card, .val-block, .team-card, ' +
+          '.c-card, .qb-item, .tl-item, .stat-box, .ch-card, ' +
+          '.model-card, .invest-card, .kp, .bs, .vm-card, ' +
+          '.phil-item, .leader-card, .cap-list li'
+        );
+        
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          // Element becomes visible when it's 100px from bottom of viewport
+          return rect.top <= windowHeight - 80 && rect.bottom >= 80;
+        }
+        
+        // Function to add visible class to elements in viewport
+        function checkVisibility() {
+          animateElements.forEach(el => {
+            if (isInViewport(el) && !el.classList.contains('visible')) {
+              // Small delay for smoother appearance
+              setTimeout(() => {
+                el.classList.add('visible');
+              }, 50);
+            }
+          });
+        }
+        
+        // Check on scroll with throttling for performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            requestAnimationFrame(function() {
+              checkVisibility();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+        
+        window.addEventListener('resize', function() {
+          checkVisibility();
+        });
+        
+        // Initial check after a short delay
+        setTimeout(checkVisibility, 200);
+        
+        // Background zoom on scroll for mobile hero
+        const heroBg = document.querySelector('.hero-bg-img');
+        if (heroBg) {
+          let zoomTriggered = false;
+          function checkHeroZoom() {
+            const heroSection = document.querySelector('.hero');
+            if (heroSection && !zoomTriggered) {
+              const rect = heroSection.getBoundingClientRect();
+              if (rect.top <= 150 && rect.bottom >= 150) {
+                heroBg.classList.add('zoom');
+                zoomTriggered = true;
+              }
+            }
+          }
+          window.addEventListener('scroll', checkHeroZoom);
+          checkHeroZoom();
+        }
+      }
+      
+      // Stats counter animation (works on both desktop and mobile)
+      function animateCount(el) {
+        const target = parseInt(el.getAttribute('data-target'));
+        const suffix = el.textContent.includes('+') ? '+' : '';
+        let current = 0;
+        const step = target / 50; // Smooth counting
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = Math.floor(current) + suffix;
+        }, 30);
+      }
+      
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              countObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      
+      document.querySelectorAll('[data-target]').forEach((el) => {
+        countObserver.observe(el);
+      });
+    });
+    </script>
+     <script src="js/ai.js"></script>
+     <script src="js/content-loader.js"></script>
+  </body>
+</html>

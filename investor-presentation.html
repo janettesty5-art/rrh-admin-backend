@@ -1,0 +1,2267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Investor Presentation | Road Rock Holdings</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 (free) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      :root {
+        --gold: #c9a84c;
+        --gold-light: #e8c96d;
+        --gold-dark: #9a7a30;
+        --black: #0a0a0a;
+        --black-2: #111111;
+        --black-3: #181818;
+        --black-4: #222222;
+        --white: #ffffff;
+        --w80: rgba(255, 255, 255, 0.8);
+        --w60: rgba(255, 255, 255, 0.55);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--black);
+        color: var(--white);
+        font-family: "Barlow", sans-serif;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--black);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--gold);
+        border-radius: 3px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+            /* NAV */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+      }
+      .nav-wrap {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      /* FIXED LOGO STYLES - Responsive across all devices */
+      .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .logo img {
+        height: 90px;
+        width: auto;
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+      /* For very small screens, slightly reduce logo size */
+      @media (max-width: 480px) {
+        .logo img {
+          height: 90px;
+        }
+      }
+      .logo-words .brand {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #fff;
+        display: block;
+        line-height: 1.1;
+      }
+      .logo-words .brand em {
+        color: var(--gold);
+        font-style: normal;
+      }
+      .logo-words .tag {
+        font-size: 8.5px;
+        letter-spacing: 3px;
+        color: var(--gold);
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0;
+      }
+      .nav-links a {
+        padding: 8px 13px;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--w80);
+        transition: color 0.2s;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--gold);
+      }
+      .nav-cta {
+        margin-left: 12px;
+        padding: 11px 24px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: inline-block;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px rgba(201, 168, 76, 0.35);
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s;
+      }
+      .mob-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--black-2);
+        z-index: 999;
+        padding: 28px 24px;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .mob-menu.open {
+        display: flex;
+      }
+      .mob-menu a {
+        display: block;
+        padding: 16px 0;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        color: var(--w80);
+      }
+      .mob-menu a:hover {
+        color: var(--gold);
+      }
+      .mob-cta {
+        margin-top: 24px;
+        padding: 16px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black) !important;
+        text-align: center;
+      }
+      /* Tablet responsive adjustments */
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap {
+          padding: 0 16px;
+        }
+      }
+
+      /* DECK SLIDE-STYLE SECTIONS */
+      .slide {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .slide-inner {
+        width: 100%;
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 100px 32px 80px;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* SLIDE 1: COVER */
+      .slide-cover {
+        background: var(--black);
+        padding-top: 70px;
+      }
+      .slide-cover .bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80")
+          center/cover;
+        opacity: 0.18;
+      }
+      .slide-cover .grid-lines {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.05) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .slide-cover .ov {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.98) 50%,
+          rgba(10, 10, 10, 0.7)
+        );
+      }
+      .cover-tag {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .cover-tag::before {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .cover-h1 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(48px, 8vw, 110px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 0.92;
+        margin-bottom: 20px;
+      }
+      .cover-h1 .gold {
+        color: var(--gold);
+      }
+      .cover-sub {
+        font-size: clamp(14px, 1.6vw, 18px);
+        color: var(--w60);
+        max-width: 560px;
+        line-height: 1.7;
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
+      .slide-num {
+        position: absolute;
+        right: 32px;
+        bottom: 40px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(201, 168, 76, 0.3);
+      }
+      .cover-meta {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        padding-top: 32px;
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+      }
+      .meta-item .ml {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .meta-item .mv {
+        font-size: 14px;
+        color: var(--w80);
+        font-weight: 400;
+      }
+
+      /* SLIDE 2: EXECUTIVE SUMMARY */
+      .slide-summary {
+        background: var(--black-2);
+      }
+      .slide-bg-accent {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 40%;
+        background: linear-gradient(
+          135deg,
+          rgba(201, 168, 76, 0.05),
+          rgba(201, 168, 76, 0.02)
+        );
+        border-left: 1px solid rgba(201, 168, 76, 0.08);
+      }
+      .summary-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 5vw, 80px);
+        align-items: center;
+      }
+      .sec-eyebrow {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sec-eyebrow::before {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .slide-h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(32px, 4.5vw, 58px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1;
+        margin-bottom: 22px;
+      }
+      .slide-h2 span {
+        color: var(--gold);
+      }
+      .body-p {
+        font-size: 15px;
+        color: var(--w60);
+        line-height: 1.8;
+        margin-bottom: 14px;
+        font-weight: 300;
+      }
+      .key-points {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .kp {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 16px;
+        background: rgba(201, 168, 76, 0.04);
+        border-left: 3px solid var(--gold);
+      }
+      .kp-icon {
+        font-size: 22px;
+        flex-shrink: 0;
+        color: var(--gold);
+        width: 32px;
+      }
+      .kp-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+      .kp-text {
+        font-size: 13px;
+        color: var(--w60);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+      .big-stat-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+      }
+      .bs {
+        background: var(--black-3);
+        padding: 28px 24px;
+        text-align: center;
+      }
+      .bs-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(36px, 4vw, 52px);
+        font-weight: 900;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .bs-lbl {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--w60);
+        font-weight: 600;
+      }
+
+      /* SLIDE 3: MARKET OPP */
+      .slide-market {
+        background: var(--black);
+      }
+      .market-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3px;
+        margin-top: 48px;
+      }
+      .market-card {
+        background: var(--black-3);
+        padding: 32px 24px;
+        position: relative;
+        overflow: hidden;
+        border-top: 3px solid var(--gold);
+      }
+      .market-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+      .market-size {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(28px, 3vw, 42px);
+        font-weight: 900;
+        color: var(--white);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .market-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 10px;
+      }
+      .market-text {
+        font-size: 13px;
+        color: var(--w60);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+      .market-growth {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+        padding: 5px 12px;
+        background: rgba(201, 168, 76, 0.08);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      .market-growth i {
+        font-size: 12px;
+      }
+
+      /* SLIDE 4: BUSINESS MODEL */
+      .slide-model {
+        background: var(--black-2);
+      }
+      .model-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        margin-top: 48px;
+      }
+      .model-card {
+        background: var(--black-3);
+        padding: 28px 22px;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.3s;
+      }
+      .model-card:hover {
+        border-bottom-color: var(--gold);
+      }
+      .model-icon {
+        font-size: 30px;
+        margin-bottom: 14px;
+        color: var(--gold);
+      }
+      .model-name {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: var(--gold);
+      }
+      .model-stream {
+        font-size: 13px;
+        color: var(--w60);
+        line-height: 1.6;
+        font-weight: 300;
+      }
+      .revenue-bar {
+        margin-top: 12px;
+        height: 4px;
+        background: rgba(201, 168, 76, 0.15);
+        border-radius: 2px;
+      }
+      .revenue-fill {
+        height: 100%;
+        background: linear-gradient(90deg, var(--gold), var(--gold-dark));
+        border-radius: 2px;
+        transition: width 1s ease;
+      }
+
+      /* SLIDE 5: COMPETITIVE ADV */
+      .slide-competitive {
+        background: var(--black);
+      }
+      .comp-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+        margin-top: 48px;
+      }
+      .comp-card {
+        background: var(--black-3);
+        padding: 32px;
+        display: flex;
+        gap: 20px;
+      }
+      .comp-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(201, 168, 76, 0.07);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        font-size: 20px;
+        color: var(--gold);
+      }
+      .comp-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .comp-text {
+        font-size: 13.5px;
+        color: var(--w60);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      /* SLIDE 6: INVESTMENT */
+      .slide-invest {
+        background: var(--black-2);
+      }
+      .invest-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 5vw, 80px);
+        align-items: start;
+        margin-top: 48px;
+      }
+      .invest-card {
+        background: var(--black-3);
+        padding: 36px;
+        margin-bottom: 20px;
+        border-left: 4px solid var(--gold);
+      }
+      .invest-card h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+      .invest-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .invest-list li {
+        font-size: 14px;
+        color: var(--w60);
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-weight: 300;
+        line-height: 1.6;
+      }
+      .invest-list li::before {
+        content: "▸";
+        color: var(--gold);
+        flex-shrink: 0;
+      }
+      .financial-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .financial-table th {
+        background: var(--black-4);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      }
+      .financial-table td {
+        padding: 13px 16px;
+        font-size: 13.5px;
+        color: var(--w80);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .financial-table tr:hover td {
+        background: rgba(201, 168, 76, 0.03);
+      }
+
+      /* SLIDE 7: CONTACT/CTA */
+      .slide-cta {
+        background: var(--black);
+        min-height: 70vh;
+      }
+      .cta-bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80")
+          center/cover;
+        opacity: 0.1;
+      }
+      .cta-ov {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(10, 10, 10, 0.97),
+          rgba(10, 10, 10, 0.9)
+        );
+      }
+      .cta-content {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 100px 32px 80px;
+      }
+      .cta-h1 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(36px, 6vw, 80px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1;
+        margin-bottom: 20px;
+      }
+      .cta-h1 span {
+        color: var(--gold);
+      }
+      .cta-sub {
+        font-size: 16px;
+        color: var(--w60);
+        max-width: 500px;
+        margin: 0 auto 40px;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .cta-btns {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 48px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 36px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 32px rgba(201, 168, 76, 0.4);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid rgba(201, 168, 76, 0.4);
+      }
+      .btn-outline:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+      .cta-contacts {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .cc-item .cl {
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 4px;
+        font-weight: 700;
+      }
+      .cc-item .cv {
+        font-size: 15px;
+        color: var(--w80);
+        font-weight: 400;
+      }
+      .cc-item .cv a {
+        color: var(--w80);
+        transition: color 0.2s;
+      }
+      .cc-item .cv a:hover {
+        color: var(--gold);
+      }
+
+      /* PROGRESS NAV */
+      .deck-progress {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        background: rgba(10, 10, 10, 0.8);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.08);
+        padding: 0 32px;
+        overflow-x: auto;
+      }
+      .deck-nav {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        max-width: 1320px;
+        margin: 0 auto;
+        white-space: nowrap;
+      }
+      .deck-nav a {
+        display: block;
+        padding: 12px 16px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        transition: color 0.2s;
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
+      }
+      .deck-nav a:hover {
+        color: var(--gold);
+      }
+      .deck-nav a.active {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--black-2);
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+        padding: 40px 0;
+      }
+      .footer-bottom {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer-bottom p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .footer-bottom span {
+        color: var(--gold);
+      }
+      .wa-fab {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 999;
+        width: 56px;
+        height: 56px;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        transition: transform 0.3s;
+      }
+      .wa-fab:hover {
+        transform: scale(1.1);
+      }
+      .wa-fab i {
+        font-size: 32px;
+        color: #fff;
+      }
+
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .summary-grid,
+        .invest-grid,
+        .comp-grid {
+          grid-template-columns: 1fr;
+        }
+        .market-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .deck-progress {
+          display: none;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap {
+          padding: 0 16px;
+        }
+        .slide-inner {
+          padding: 90px 16px 60px;
+        }
+        .market-grid,
+        .big-stat-block {
+          grid-template-columns: 1fr;
+        }
+        .cta-contacts {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+        .comp-grid {
+          grid-template-columns: 1fr;
+        }
+        .model-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+
+
+            /* HERO ANIMATIONS - Fade In Up with Stagger Effect */
+      .hero-content .hero-eyebrow,
+      .hero-content .hero-h1,
+      .hero-content .hero-sub,
+      .hero-content .hero-btns,
+      .hero-content .hero-stats {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+
+      .hero-content .hero-eyebrow {
+        animation-delay: 0.1s;
+      }
+      .hero-content .hero-h1 {
+        animation-delay: 0.2s;
+      }
+      .hero-content .hero-sub {
+        animation-delay: 0.4s;
+      }
+      .hero-content .hero-btns {
+        animation-delay: 0.6s;
+      }
+      .hero-content .hero-stats {
+        animation-delay: 0.8s;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* DESKTOP ONLY - Hover Effects */
+      @media (min-width: 769px) {
+        /* Hero background zoom on hover */
+        .hero-bg-img {
+          transition: transform 8s ease-in-out;
+        }
+        .hero:hover .hero-bg-img {
+          transform: scale(1.05);
+        }
+
+        /* Service cards hover */
+        .svc-card {
+          transition: all 0.4s ease;
+        }
+        .svc-card:hover {
+          transform: translateY(-8px);
+          background: rgba(201, 168, 76, 0.08);
+        }
+
+        /* Section cards hover */
+        .srv-block, .sector-card, .why-card, .market-card, .comp-card,
+        .model-card, .invest-card, .val-block, .team-card {
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .srv-block:hover, .sector-card:hover, .why-card:hover, 
+        .market-card:hover, .comp-card:hover, .model-card:hover, 
+        .invest-card:hover, .val-block:hover, .team-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Timeline items hover */
+        .tl-item {
+          transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+        .tl-item:hover {
+          transform: translateX(8px);
+        }
+
+        /* Contact cards hover */
+        .c-card {
+          transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+        .c-card:hover {
+          transform: translateX(8px);
+          background: rgba(201, 168, 76, 0.03);
+        }
+
+        /* Quick bar items hover */
+        .qb-item {
+          transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .qb-item:hover {
+          transform: translateY(-5px);
+          background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Stats boxes hover */
+        .stat-box {
+          transition: transform 0.3s ease;
+        }
+        .stat-box:hover {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* MOBILE ONLY - Scroll-triggered animations (NO hover) */
+      @media (max-width: 768px) {
+        /* Elements start hidden */
+        .svc-card, .srv-block, .sector-card, .why-card, .why-item,
+        .market-card, .comp-card, .val-block, .team-card, 
+        .c-card, .qb-item, .tl-item, .stat-box, .ch-card,
+        .model-card, .invest-card, .kp, .bs, .vm-card,
+        .phil-item, .leader-card, .cap-list li, .tl-item {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), 
+                      transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        /* When element becomes visible via scroll */
+        .svc-card.visible, .srv-block.visible, .sector-card.visible, 
+        .why-card.visible, .why-item.visible, .market-card.visible, 
+        .comp-card.visible, .val-block.visible, .team-card.visible, 
+        .c-card.visible, .qb-item.visible, .tl-item.visible, 
+        .stat-box.visible, .ch-card.visible, .model-card.visible, 
+        .invest-card.visible, .kp.visible, .bs.visible, .vm-card.visible, 
+        .phil-item.visible, .leader-card.visible, .cap-list li.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Stagger delays for smooth cascading effect */
+        .svc-card:nth-child(1) { transition-delay: 0s; }
+        .svc-card:nth-child(2) { transition-delay: 0.05s; }
+        .svc-card:nth-child(3) { transition-delay: 0.1s; }
+        .svc-card:nth-child(4) { transition-delay: 0.15s; }
+        .svc-card:nth-child(5) { transition-delay: 0.2s; }
+        
+        .stat-box:nth-child(1) { transition-delay: 0s; }
+        .stat-box:nth-child(2) { transition-delay: 0.05s; }
+        .stat-box:nth-child(3) { transition-delay: 0.1s; }
+        .stat-box:nth-child(4) { transition-delay: 0.15s; }
+        .stat-box:nth-child(5) { transition-delay: 0.2s; }
+
+        .srv-block:nth-child(1) { transition-delay: 0s; }
+        .srv-block:nth-child(2) { transition-delay: 0.05s; }
+        .srv-block:nth-child(3) { transition-delay: 0.1s; }
+        .srv-block:nth-child(4) { transition-delay: 0.15s; }
+        .srv-block:nth-child(5) { transition-delay: 0.2s; }
+
+        /* Hero background zoom on scroll (not hover) */
+        .hero-bg-img {
+          transition: transform 0.8s ease-out;
+        }
+        .hero-bg-img.zoom {
+          transform: scale(1.05);
+        }
+
+        /* Disable all hover effects on mobile */
+        .hero:hover .hero-bg-img {
+          transform: none;
+        }
+        .svc-card:hover, .srv-block:hover, .sector-card:hover, 
+        .why-card:hover, .market-card:hover, .comp-card:hover,
+        .val-block:hover, .team-card:hover, .c-card:hover,
+        .qb-item:hover, .stat-box:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+
+      /* Universal Animations (Work on both desktop & mobile) */
+      
+      /* Floating animation for scroll indicator */
+      .hero-scroll {
+        animation: float 2s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(8px);
+        }
+      }
+
+      /* Glow effect on buttons on load */
+      .hero-btns .btn-gold {
+        animation: subtleGlow 1.5s ease-in-out 0.6s both;
+      }
+      @keyframes subtleGlow {
+        0%, 100% {
+          box-shadow: 0 0 0 rgba(201, 168, 76, 0);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+        }
+      }
+
+      /* Page Hero Sections (About, Contact, Profile) */
+      .page-hero .breadcrumb,
+      .page-hero .page-title,
+      .page-hero .page-subtitle,
+      .page-hero .print-btn {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+      .page-hero .breadcrumb {
+        animation-delay: 0.1s;
+      }
+      .page-hero .page-title {
+        animation-delay: 0.2s;
+      }
+      .page-hero .page-subtitle {
+        animation-delay: 0.35s;
+      }
+      .page-hero .print-btn {
+        animation-delay: 0.5s;
+      }
+
+      /* Investor Presentation Slide Cover */
+      .slide-cover .cover-tag,
+      .slide-cover .cover-h1,
+      .slide-cover .cover-sub,
+      .slide-cover .cover-meta {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s ease forwards;
+      }
+      .slide-cover .cover-tag {
+        animation-delay: 0.1s;
+      }
+      .slide-cover .cover-h1 {
+        animation-delay: 0.2s;
+      }
+      .slide-cover .cover-sub {
+        animation-delay: 0.35s;
+      }
+      .slide-cover .cover-meta {
+        animation-delay: 0.5s;
+      }
+
+
+      /* ── MOBILE FOOTER LAYOUT FIX ── 
+   Paste this inside your <style> tag on all pages
+   Quick Links + Our Services = side by side
+   Brand (top) → Quick Links | Services → Contact (bottom)
+*/
+
+@media (max-width: 768px) {
+  .footer-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+  }
+
+  /* Brand: full width, top */
+  .footer-grid .footer-brand {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  /* Quick Links: left half */
+  .footer-grid .footer-col:nth-child(2) {
+    width: calc(50% - 12px) !important;
+    order: 2 !important;
+  }
+
+  /* Our Services: right half — side by side with Quick Links */
+  .footer-grid .footer-col:nth-child(3) {
+    width: calc(50% - 12px) !important;
+    order: 3 !important;
+  }
+
+  /* Contact Us: full width, bottom */
+  .footer-grid .footer-col:nth-child(4) {
+    width: 100% !important;
+    order: 4 !important;
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+    padding-top: 20px;
+  }
+}
+
+/* Extra small screens — all stack */
+@media (max-width: 380px) {
+  .footer-grid .footer-col:nth-child(2),
+  .footer-grid .footer-col:nth-child(3) {
+    width: 100% !important;
+  }
+}
+    </style>
+  </head>
+  <body>
+       <nav id="navbar">
+      <div class="nav-wrap">
+        <a href="index.html" class="logo">
+          <img src="/img/RRH-LOGO.png" alt="Road Rock Holdings Logo" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="/project.html">Profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Get A Quote</a>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mob-menu" id="mobMenu">
+      <a href="index.html">Home</a><a href="about.html">About Us</a
+      ><a href="services.html">Services</a>
+      <a href="contact.html">Contact</a
+      ><a href="/investor-presentation.html">Investor Deck</a>
+      <a href="contact.html" class="mob-cta">Get A Quote →</a>
+    </div>
+
+    <!-- DECK PROGRESS NAV -->
+    <div class="deck-progress">
+      <div class="deck-nav">
+        <a href="#cover" class="active">01. Cover</a>
+        <a href="#summary">02. Overview</a>
+        <a href="#market">03. Market</a>
+        <a href="#model">04. Business Model</a>
+        <a href="#competitive">05. Advantage</a>
+        <a href="#investment">06. Investment</a>
+        <a href="#contact-slide">07. Contact</a>
+      </div>
+    </div>
+
+    <!-- SLIDE 1: COVER -->
+    <section class="slide slide-cover" id="cover">
+      <div class="bg"></div>
+      <div class="ov"></div>
+      <div class="grid-lines"></div>
+      <div class="slide-inner">
+        <div class="cover-tag">Investor Presentation 2026</div>
+        <h1 class="cover-h1">
+          ROAD ROCK<br />
+          <span class="gold">HOLDINGS</span>
+        </h1>
+        <p class="cover-sub">
+          Building the Future. Delivering Excellence. A multi-industry
+          conglomerate delivering world-class solutions in Construction, Real
+          Estate, Solar Energy, Technology, and Smart Interior Design across
+          Africa and Beyond.
+        </p>
+        <div class="cover-meta">
+          <div class="meta-item">
+            <div class="ml">Presented By</div>
+            <div class="mv">Tech Engineer Ikechukwu B. Anyanwu</div>
+          </div>
+          <div class="meta-item">
+            <div class="ml">Position</div>
+            <div class="mv">CEO &amp; Founder</div>
+          </div>
+          <div class="meta-item">
+            <div class="ml">Headquarters</div>
+            <div class="mv">Lagos, Nigeria</div>
+          </div>
+          <div class="meta-item">
+            <div class="ml">Year</div>
+            <div class="mv">2026</div>
+          </div>
+          <div class="meta-item">
+            <div class="ml">Contact</div>
+            <div class="mv">+234 808 236 3104 | +234 901 805 3469</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">
+        SLIDE 01 / 07 — ROAD ROCK HOLDINGS INVESTOR PRESENTATION 2026
+      </div>
+    </section>
+
+    <!-- SLIDE 2: EXECUTIVE SUMMARY -->
+    <section class="slide slide-summary" id="summary">
+      <div class="slide-bg-accent"></div>
+      <div class="slide-inner">
+        <div class="summary-grid">
+          <div>
+            <div class="sec-eyebrow">Executive Summary</div>
+            <h2 class="slide-h2">Who We <span>Are</span></h2>
+            <p class="body-p">
+              Road Rock Holdings is a visionary multi-sector holding company
+              established to transform industries through innovation,
+              engineering excellence, sustainability, and technology-driven
+              solutions across Africa's rapidly growing economies.
+            </p>
+            <p class="body-p">
+              We operate across five strategic sectors — combining deep
+              technical expertise with world-class project execution to deliver
+              impactful solutions for governments, businesses, and individuals.
+              Our mission is to build not just structures, but sustainable
+              futures.
+            </p>
+            <div class="key-points">
+              <div class="kp">
+                <div class="kp-icon"><i class="fas fa-road"></i></div>
+                <div>
+                  <div class="kp-title">Infrastructure-Led Growth</div>
+                  <div class="kp-text">
+                    Positioned at the forefront of Africa's infrastructure boom
+                    with proven capabilities in road construction, civil
+                    engineering and urban development.
+                  </div>
+                </div>
+              </div>
+              <div class="kp">
+                <div class="kp-icon"><i class="fas fa-solar-panel"></i></div>
+                <div>
+                  <div class="kp-title">Energy Transition Leader</div>
+                  <div class="kp-text">
+                    Leading Nigeria's renewable energy transition through
+                    scalable solar solutions for homes, businesses and
+                    industrial clients.
+                  </div>
+                </div>
+              </div>
+              <div class="kp">
+                <div class="kp-icon"><i class="fas fa-laptop-code"></i></div>
+                <div>
+                  <div class="kp-title">Digital Economy Enabler</div>
+                  <div class="kp-text">
+                    Empowering Nigerian businesses with enterprise-grade IT
+                    infrastructure, cybersecurity, and smart automation systems.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="big-stat-block">
+              <div class="bs">
+                <div class="bs-num" data-target="15">0+</div>
+                <div class="bs-lbl">Years of Experience</div>
+              </div>
+              <div class="bs">
+                <div class="bs-num" data-target="250">0+</div>
+                <div class="bs-lbl">Projects Delivered</div>
+              </div>
+              <div class="bs">
+                <div class="bs-num" data-target="100">0+</div>
+                <div class="bs-lbl">Satisfied Clients</div>
+              </div>
+              <div class="bs">
+                <div class="bs-num" data-target="5">0</div>
+                <div class="bs-lbl">Business Sectors</div>
+              </div>
+              <div class="bs">
+                <div class="bs-num" data-target="50">0+</div>
+                <div class="bs-lbl">Expert Professionals</div>
+              </div>
+              <div
+                class="bs"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    var(--gold),
+                    var(--gold-dark)
+                  );
+                "
+              >
+                <div class="bs-num" style="color: var(--black)">NGN</div>
+                <div class="bs-lbl" style="color: rgba(0, 0, 0, 0.7)">
+                  Nigerian & African Market
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">
+        SLIDE 02 / 07 — ROAD ROCK HOLDINGS INVESTOR PRESENTATION 2026
+      </div>
+    </section>
+
+    <!-- SLIDE 3: MARKET OPPORTUNITY -->
+    <section class="slide slide-market" id="market">
+      <div class="slide-inner">
+        <div class="sec-eyebrow">Market Opportunity</div>
+        <h2 class="slide-h2">A Massive <span>Growing Market</span></h2>
+        <p class="body-p" style="max-width: 680px">
+          Africa represents one of the world's largest untapped opportunities
+          across infrastructure, energy, and technology. Road Rock Holdings is
+          positioned at the intersection of all three.
+        </p>
+        <div class="market-grid">
+          <div class="market-card">
+            <div class="market-num">SECTOR 01</div>
+            <div class="market-size">$170B+</div>
+            <div class="market-title">Infrastructure Gap</div>
+            <p class="market-text">
+              Africa's annual infrastructure financing gap is estimated at over
+              $170 billion. Nigeria alone requires massive investment in roads,
+              bridges, and urban infrastructure.
+            </p>
+            <div class="market-growth">
+              <i class="fas fa-chart-line"></i> Growing at 7.2% CAGR
+            </div>
+          </div>
+          <div class="market-card">
+            <div class="market-num">SECTOR 02</div>
+            <div class="market-size">$24B+</div>
+            <div class="market-title">Solar Energy Market</div>
+            <p class="market-text">
+              Nigeria's solar energy market is projected to exceed $24 billion
+              by 2030 as over 85 million Nigerians remain without reliable
+              electricity access.
+            </p>
+            <div class="market-growth">
+              <i class="fas fa-chart-line"></i> Growing at 12.4% CAGR
+            </div>
+          </div>
+          <div class="market-card">
+            <div class="market-num">SECTOR 03</div>
+            <div class="market-size">$7B+</div>
+            <div class="market-title">Nigeria Tech Market</div>
+            <p class="market-text">
+              Nigeria's technology sector is Africa's fastest-growing, with IT
+              services demand rising rapidly as businesses digitise operations.
+            </p>
+            <div class="market-growth">
+              <i class="fas fa-chart-line"></i> Growing at 15.6% CAGR
+            </div>
+          </div>
+          <div class="market-card">
+            <div class="market-num">SECTOR 04</div>
+            <div class="market-size">$29B+</div>
+            <div class="market-title">Real Estate Market</div>
+            <p class="market-text">
+              Nigeria's real estate sector is valued at over $29 billion with a
+              housing deficit of 20+ million units driving unprecedented demand.
+            </p>
+            <div class="market-growth">
+              <i class="fas fa-chart-line"></i> Growing at 9.8% CAGR
+            </div>
+          </div>
+          <div class="market-card">
+            <div class="market-num">SECTOR 05</div>
+            <div class="market-size">$3B+</div>
+            <div class="market-title">Interior Design Market</div>
+            <p class="market-text">
+              Nigeria's interior design and finishing sector is rapidly
+              professionalising, driven by rising middle-class expectations.
+            </p>
+            <div class="market-growth">
+              <i class="fas fa-chart-line"></i> Growing at 8.3% CAGR
+            </div>
+          </div>
+          <div
+            class="market-card"
+            style="
+              background: linear-gradient(
+                135deg,
+                rgba(201, 168, 76, 0.1),
+                rgba(201, 168, 76, 0.04)
+              );
+              border-color: var(--gold);
+            "
+          >
+            <div class="market-num" style="color: var(--gold)">TOTAL</div>
+            <div class="market-size" style="color: var(--gold)">$233B+</div>
+            <div class="market-title" style="color: var(--white)">
+              Combined Market Size
+            </div>
+            <p class="market-text">
+              Road Rock Holdings operates across five sectors with a combined
+              addressable market of over $233 billion, with all five sectors
+              experiencing strong double-digit growth.
+            </p>
+            <div
+              class="market-growth"
+              style="background: rgba(201, 168, 76, 0.2)"
+            >
+              <i class="fas fa-globe-africa"></i> Pan-African Opportunity
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">
+        SLIDE 03 / 07 — ROAD ROCK HOLDINGS INVESTOR PRESENTATION 2026
+      </div>
+    </section>
+
+    <!-- SLIDE 4: BUSINESS MODEL -->
+    <section class="slide slide-model" id="model">
+      <div class="slide-inner">
+        <div class="sec-eyebrow">Business Model</div>
+        <h2 class="slide-h2">How We <span>Generate Value</span></h2>
+        <p class="body-p" style="max-width: 680px">
+          Road Rock Holdings operates a diversified revenue model across five
+          strategic business divisions, reducing risk while maximising growth
+          opportunities across Nigeria's booming economy.
+        </p>
+        <div class="model-grid">
+          <div class="model-card">
+            <div class="model-icon"><i class="fas fa-hard-hat"></i></div>
+            <div class="model-name">Construction Contracts</div>
+            <p class="model-stream">
+              Government and private sector civil engineering contracts, road
+              construction, bridge building, and urban infrastructure
+              development projects.
+            </p>
+            <div class="revenue-bar">
+              <div class="revenue-fill" style="width: 85%"></div>
+            </div>
+            <div
+              style="
+                font-size: 11px;
+                color: var(--gold);
+                margin-top: 6px;
+                font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                letter-spacing: 1px;
+                font-weight: 700;
+              "
+            >
+              HIGH REVENUE DRIVER
+            </div>
+          </div>
+          <div class="model-card">
+            <div class="model-icon"><i class="fas fa-building"></i></div>
+            <div class="model-name">Real Estate Sales &amp; Rental</div>
+            <p class="model-stream">
+              Property development, sale of residential and commercial units,
+              and ongoing rental income from managed properties and estates.
+            </p>
+            <div class="revenue-bar">
+              <div class="revenue-fill" style="width: 75%"></div>
+            </div>
+            <div
+              style="
+                font-size: 11px;
+                color: var(--gold);
+                margin-top: 6px;
+                font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                letter-spacing: 1px;
+                font-weight: 700;
+              "
+            >
+              RECURRING INCOME
+            </div>
+          </div>
+          <div class="model-card">
+            <div class="model-icon"><i class="fas fa-sun"></i></div>
+            <div class="model-name">Solar Installation &amp; Maintenance</div>
+            <p class="model-stream">
+              One-time solar installation revenue plus recurring maintenance
+              contracts and energy monitoring subscriptions for residential and
+              commercial clients.
+            </p>
+            <div class="revenue-bar">
+              <div class="revenue-fill" style="width: 70%"></div>
+            </div>
+            <div
+              style="
+                font-size: 11px;
+                color: var(--gold);
+                margin-top: 6px;
+                font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                letter-spacing: 1px;
+                font-weight: 700;
+              "
+            >
+              FAST-GROWING SECTOR
+            </div>
+          </div>
+          <div class="model-card">
+            <div class="model-icon"><i class="fas fa-microchip"></i></div>
+            <div class="model-name">IT Services &amp; Retainers</div>
+            <p class="model-stream">
+              Project-based IT implementation revenue combined with monthly
+              retainer contracts for ongoing support, managed services, and
+              cybersecurity monitoring.
+            </p>
+            <div class="revenue-bar">
+              <div class="revenue-fill" style="width: 65%"></div>
+            </div>
+            <div
+              style="
+                font-size: 11px;
+                color: var(--gold);
+                margin-top: 6px;
+                font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                letter-spacing: 1px;
+                font-weight: 700;
+              "
+            >
+              MONTHLY RECURRING
+            </div>
+          </div>
+          <div class="model-card">
+            <div class="model-icon"><i class="fas fa-paint-roller"></i></div>
+            <div class="model-name">Interior Design Projects</div>
+            <p class="model-stream">
+              High-margin interior design and finishing projects for
+              residential, hospitality, and commercial clients, with premium
+              pricing for luxury transformation services.
+            </p>
+            <div class="revenue-bar">
+              <div class="revenue-fill" style="width: 60%"></div>
+            </div>
+            <div
+              style="
+                font-size: 11px;
+                color: var(--gold);
+                margin-top: 6px;
+                font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                letter-spacing: 1px;
+                font-weight: 700;
+              "
+            >
+              HIGH MARGIN DIVISION
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">
+        SLIDE 04 / 07 — ROAD ROCK HOLDINGS INVESTOR PRESENTATION 2026
+      </div>
+    </section>
+
+    <!-- SLIDE 5: COMPETITIVE ADVANTAGE -->
+    <section class="slide slide-competitive" id="competitive">
+      <div class="slide-inner">
+        <div class="sec-eyebrow">Competitive Advantage</div>
+        <h2 class="slide-h2">Why Road Rock <span>Wins</span></h2>
+        <p class="body-p" style="max-width: 680px; margin-bottom: 0">
+          Our unique combination of multi-sector expertise, strong leadership,
+          and deep market knowledge gives Road Rock Holdings durable competitive
+          advantages across all five divisions.
+        </p>
+        <div class="comp-grid">
+          <div class="comp-card">
+            <div class="comp-icon"><i class="fas fa-chart-pie"></i></div>
+            <div>
+              <div class="comp-title">Multi-Sector Diversification</div>
+              <p class="comp-text">
+                Unlike single-sector competitors, Road Rock Holdings generates
+                revenue from five distinct industries, providing natural hedging
+                against sector-specific downturns and enabling cross-selling
+                opportunities.
+              </p>
+            </div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-icon"><i class="fas fa-user-tie"></i></div>
+            <div>
+              <div class="comp-title">Visionary Leadership</div>
+              <p class="comp-text">
+                Led by Tech Engineer Ikechukwu B. Anyanwu — a rare combination
+                of technical engineer and business strategist with hands-on
+                experience across all five operating divisions.
+              </p>
+            </div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="comp-title">Nigeria-First Market Position</div>
+              <p class="comp-text">
+                Deep understanding of Nigeria's regulatory environment,
+                procurement processes, client relationships, and cultural
+                business landscape — an advantage no foreign competitor can
+                easily replicate.
+              </p>
+            </div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-icon"><i class="fas fa-cubes"></i></div>
+            <div>
+              <div class="comp-title">First-Mover in Integration</div>
+              <p class="comp-text">
+                Road Rock Holdings is uniquely positioned to offer integrated
+                solutions — e.g., building a house AND installing solar AND
+                designing the interior AND providing IT — under one trusted
+                brand and contract.
+              </p>
+            </div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-icon"><i class="fas fa-wrench"></i></div>
+            <div>
+              <div class="comp-title">Technical Expertise</div>
+              <p class="comp-text">
+                A team of 50+ expert professionals across engineering,
+                architecture, technology, and design disciplines — providing
+                depth of capability that SME competitors cannot match.
+              </p>
+            </div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-icon"><i class="fas fa-chart-line"></i></div>
+            <div>
+              <div class="comp-title">Track Record &amp; Reputation</div>
+              <p class="comp-text">
+                With 250+ completed projects and 100+ satisfied clients, Road
+                Rock Holdings has built a strong reputation for delivering
+                quality — a critical competitive moat in relationship-driven
+                African markets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">
+        SLIDE 05 / 07 — ROAD ROCK HOLDINGS INVESTOR PRESENTATION 2026
+      </div>
+    </section>
+
+    <!-- SLIDE 6: INVESTMENT -->
+    <section class="slide slide-invest" id="investment">
+      <div class="slide-inner">
+        <div class="sec-eyebrow">Investment &amp; Partnership</div>
+        <h2 class="slide-h2">Investment <span>Opportunity</span></h2>
+        <div class="invest-grid">
+          <div>
+            <div class="invest-card">
+              <h3>Use of Investment</h3>
+              <ul class="invest-list">
+                <li>
+                  Heavy machinery and construction equipment acquisition for
+                  larger contract capacity
+                </li>
+                <li>
+                  Expansion of solar energy division with increased inventory
+                  and installation teams
+                </li>
+                <li>
+                  Real estate land bank acquisition for upcoming residential
+                  developments
+                </li>
+                <li>
+                  IT division scaling — hiring senior engineers and expanding
+                  service offerings
+                </li>
+                <li>
+                  Marketing and brand development for Pan-African market entry
+                </li>
+                <li>
+                  Working capital to execute multiple large-scale projects
+                  simultaneously
+                </li>
+              </ul>
+            </div>
+            <div class="invest-card">
+              <h3>Partnership Opportunities</h3>
+              <ul class="invest-list">
+                <li>Equity partnership in Road Rock Holdings Ltd</li>
+                <li>Joint venture on specific real estate developments</li>
+                <li>
+                  Project financing for government infrastructure contracts
+                </li>
+                <li>Technology licensing and sub-contracting arrangements</li>
+                <li>Strategic supplier or equipment leasing partnerships</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <h3
+              style="
+                font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                font-size: 20px;
+                font-weight: 800;
+                text-transform: uppercase;
+                color: var(--gold);
+                margin-bottom: 20px;
+                padding-bottom: 12px;
+                border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+              "
+            >
+              Financial Overview
+            </h3>
+            <table class="financial-table">
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Detail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Business Structure</td>
+                  <td>Multi-Sector Holding Company</td>
+                </tr>
+                <tr>
+                  <td>Operating Divisions</td>
+                  <td>5 Active Revenue Divisions</td>
+                </tr>
+                <tr>
+                  <td>Revenue Streams</td>
+                  <td>Project, Retainer &amp; Recurring</td>
+                </tr>
+                <tr>
+                  <td>Market Coverage</td>
+                  <td>Lagos + Pan-Nigeria + Africa</td>
+                </tr>
+                <tr>
+                  <td>Completed Projects</td>
+                  <td>250+ Projects Delivered</td>
+                </tr>
+                <tr>
+                  <td>Client Retention</td>
+                  <td>High — Relationship-Driven</td>
+                </tr>
+                <tr>
+                  <td>Growth Stage</td>
+                  <td>Expansion Phase</td>
+                </tr>
+                <tr>
+                  <td>Investment Type</td>
+                  <td>Equity / JV / Project Finance</td>
+                </tr>
+              </tbody>
+            </table>
+            <div
+              style="
+                margin-top: 24px;
+                padding: 24px;
+                background: rgba(201, 168, 76, 0.06);
+                border: 1px solid rgba(201, 168, 76, 0.2);
+              "
+            >
+              <div
+                style="
+                  font-family: &quot;Barlow Condensed&quot;, sans-serif;
+                  font-size: 13px;
+                  font-weight: 700;
+                  letter-spacing: 2px;
+                  text-transform: uppercase;
+                  color: var(--gold);
+                  margin-bottom: 12px;
+                "
+              >
+                Strategic Vision 2026–2030
+              </div>
+              <ul class="invest-list">
+                <li>
+                  Scale to 500+ projects delivered annually across Nigeria
+                </li>
+                <li>
+                  Establish regional offices in Abuja, Port Harcourt, and Kano
+                </li>
+                <li>
+                  Launch Pan-African operations in Ghana, Kenya, and South
+                  Africa
+                </li>
+                <li>Develop proprietary smart home technology platform</li>
+                <li>Target government infrastructure framework contracts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">
+        SLIDE 06 / 07 — ROAD ROCK HOLDINGS INVESTOR PRESENTATION 2026
+      </div>
+    </section>
+
+    <!-- SLIDE 7: CONTACT -->
+    <section
+      class="slide slide-cta"
+      id="contact-slide"
+      style="min-height: 70vh; align-items: center"
+    >
+      <div class="cta-bg"></div>
+      <div class="cta-ov"></div>
+      <div class="cta-content">
+        <div
+          style="
+            font-family: &quot;Barlow Condensed&quot;, sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+          "
+        >
+          <span
+            style="
+              display: block;
+              width: 32px;
+              height: 2px;
+              background: var(--gold);
+            "
+          ></span
+          >Let's Connect<span
+            style="
+              display: block;
+              width: 32px;
+              height: 2px;
+              background: var(--gold);
+            "
+          ></span>
+        </div>
+        <h1 class="cta-h1">Ready To <span>Invest</span><br />Or Partner?</h1>
+        <p class="cta-sub">
+          Contact Tech Engineer Ikechukwu B. Anyanwu directly to discuss
+          investment opportunities, strategic partnerships, or project
+          collaborations.
+        </p>
+        <div class="cta-btns">
+          <a href="contact.html" class="btn btn-gold">Get In Touch →</a>
+          <a href="/project.html" class="btn btn-outline"
+            >Company Profile</a
+          >
+        </div>
+        <div class="cta-contacts">
+          <div class="cc-item">
+            <div class="cl">
+              <i class="fas fa-phone-alt" style="margin-right: 6px"></i> Phone 1
+            </div>
+            <div class="cv">
+              <a href="tel:+2348082363104">+234 808 236 3104</a>
+            </div>
+          </div>
+          <div class="cc-item">
+            <div class="cl">
+              <i class="fas fa-phone-alt" style="margin-right: 6px"></i> Phone 2
+            </div>
+            <div class="cv">
+              <a href="tel:+2349018053469">+234 901 805 3469</a>
+            </div>
+          </div>
+          <div class="cc-item">
+            <div class="cl"><i class="fas fa-envelope"></i> Email</div>
+            <div class="cv">
+              <a href="mailto:info@roadrockholdings.com"
+                >info@roadrockholdings.com</a
+              >
+            </div>
+          </div>
+          <div class="cc-item">
+            <div class="cl"><i class="fab fa-whatsapp"></i> WhatsApp</div>
+            <div class="cv">
+              <a href="https://wa.me/2348082363104" target="_blank"
+                >Chat Now →</a
+              >
+            </div>
+          </div>
+          <div class="cc-item">
+            <div class="cl"><i class="fas fa-map-marker-alt"></i> Location</div>
+            <div class="cv">Lagos, Nigeria</div>
+          </div>
+        </div>
+      </div>
+      <div class="slide-num">
+        SLIDE 07 / 07 — ROAD ROCK HOLDINGS INVESTOR PRESENTATION 2026
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
+          Confidential Investor Presentation.
+        </p>
+        <p>Lagos, Nigeria | <span>info@roadrockholdings.com</span></p>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/2348082363104"
+      class="wa-fab"
+      target="_blank"
+      rel="noopener"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+
+    <script>
+      // Mobile menu
+      const hamburger = document.getElementById("hamburger"),
+        mobMenu = document.getElementById("mobMenu");
+      hamburger.addEventListener("click", () => {
+        mobMenu.classList.toggle("open");
+        const s = hamburger.querySelectorAll("span");
+        if (mobMenu.classList.contains("open")) {
+          s[0].style.transform = "rotate(45deg) translate(5px,5px)";
+          s[1].style.opacity = "0";
+          s[2].style.transform = "rotate(-45deg) translate(5px,-5px)";
+        } else {
+          s.forEach((x) => {
+            x.style.transform = "";
+            x.style.opacity = "";
+          });
+        }
+      });
+
+      // Counter animation
+      function animateCount(el) {
+        const t = parseInt(el.getAttribute("data-target"));
+        let c = 0;
+        const step = t / 60;
+        const i = setInterval(() => {
+          c += step;
+          if (c >= t) {
+            c = t;
+            clearInterval(i);
+          }
+          el.textContent =
+            el.classList.contains("bs-num") && t > 10
+              ? Math.floor(c) + "+"
+              : Math.floor(c) + (el.textContent.includes("+") ? "+" : "");
+        }, 25);
+      }
+      const obs = new IntersectionObserver(
+        (e) => {
+          e.forEach((x) => {
+            if (x.isIntersecting) {
+              animateCount(x.target);
+              obs.unobserve(x.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      document
+        .querySelectorAll("[data-target]")
+        .forEach((el) => obs.observe(el));
+
+      // Revenue bars animation
+      const barObs = new IntersectionObserver(
+        (e) => {
+          e.forEach((x) => {
+            if (x.isIntersecting) {
+              const fills = x.target.querySelectorAll(".revenue-fill");
+              fills.forEach((f) => {
+                const w = f.style.width;
+                f.style.width = "0";
+                setTimeout(() => (f.style.width = w), 100);
+              });
+              barObs.unobserve(x.target);
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+      document
+        .querySelectorAll(".model-grid")
+        .forEach((el) => barObs.observe(el));
+
+      // Active deck nav on scroll
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".deck-nav a");
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 200) current = s.id;
+        });
+        navLinks.forEach((a) => {
+          a.classList.remove("active");
+          if (a.getAttribute("href") === "#" + current)
+            a.classList.add("active");
+        });
+      });
+
+      // Scroll reveal
+      const revObs = new IntersectionObserver(
+        (e) => {
+          e.forEach((x) => {
+            if (x.isIntersecting) {
+              x.target.style.opacity = "1";
+              x.target.style.transform = "translateY(0)";
+              revObs.unobserve(x.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(
+          ".market-card,.comp-card,.model-card,.invest-card,.kp,.bs",
+        )
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity .5s ease, transform .5s ease";
+          revObs.observe(el);
+        });
+    </script>
+
+    <script>
+            // Mobile scroll animations - triggers animations when elements come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ensure hero animations trigger even on slow connections
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        const elements = heroContent.querySelectorAll('.hero-eyebrow, .hero-h1, .hero-sub, .hero-btns, .hero-stats');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight; // Force reflow
+          el.style.animation = null;
+        });
+      }
+      
+      // For page hero sections
+      const pageHero = document.querySelector('.page-hero-inner');
+      if (pageHero) {
+        const elements = pageHero.querySelectorAll('.breadcrumb, .page-title, .page-subtitle, .print-btn');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight;
+          el.style.animation = null;
+        });
+      }
+
+      // Check if mobile device
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        // Select all elements that should animate on scroll
+        const animateElements = document.querySelectorAll(
+          '.svc-card, .srv-block, .sector-card, .why-card, .why-item, ' +
+          '.market-card, .comp-card, .val-block, .team-card, ' +
+          '.c-card, .qb-item, .tl-item, .stat-box, .ch-card, ' +
+          '.model-card, .invest-card, .kp, .bs, .vm-card, ' +
+          '.phil-item, .leader-card, .cap-list li'
+        );
+        
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          // Element becomes visible when it's 100px from bottom of viewport
+          return rect.top <= windowHeight - 80 && rect.bottom >= 80;
+        }
+        
+        // Function to add visible class to elements in viewport
+        function checkVisibility() {
+          animateElements.forEach(el => {
+            if (isInViewport(el) && !el.classList.contains('visible')) {
+              // Small delay for smoother appearance
+              setTimeout(() => {
+                el.classList.add('visible');
+              }, 50);
+            }
+          });
+        }
+        
+        // Check on scroll with throttling for performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            requestAnimationFrame(function() {
+              checkVisibility();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+        
+        window.addEventListener('resize', function() {
+          checkVisibility();
+        });
+        
+        // Initial check after a short delay
+        setTimeout(checkVisibility, 200);
+        
+        // Background zoom on scroll for mobile hero
+        const heroBg = document.querySelector('.hero-bg-img');
+        if (heroBg) {
+          let zoomTriggered = false;
+          function checkHeroZoom() {
+            const heroSection = document.querySelector('.hero');
+            if (heroSection && !zoomTriggered) {
+              const rect = heroSection.getBoundingClientRect();
+              if (rect.top <= 150 && rect.bottom >= 150) {
+                heroBg.classList.add('zoom');
+                zoomTriggered = true;
+              }
+            }
+          }
+          window.addEventListener('scroll', checkHeroZoom);
+          checkHeroZoom();
+        }
+      }
+      
+      // Stats counter animation (works on both desktop and mobile)
+      function animateCount(el) {
+        const target = parseInt(el.getAttribute('data-target'));
+        const suffix = el.textContent.includes('+') ? '+' : '';
+        let current = 0;
+        const step = target / 50; // Smooth counting
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = Math.floor(current) + suffix;
+        }, 30);
+      }
+      
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              countObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      
+      document.querySelectorAll('[data-target]').forEach((el) => {
+        countObserver.observe(el);
+      });
+    });
+    </script>
+     <script src="js/ai.js"></script>
+     <script src="js/content-loader.js"></script>
+  </body>
+</html>

@@ -1,0 +1,2799 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Road Rock Holdings | Building the Future. Delivering Excellence.
+    </title>
+    <!-- Font Awesome 6 (Free) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c9a84c;
+        --gold-light: #e8c96d;
+        --gold-dark: #9a7a30;
+        --black: #0a0a0a;
+        --black-2: #111111;
+        --black-3: #181818;
+        --black-4: #222222;
+        --white: #ffffff;
+        --w80: rgba(255, 255, 255, 0.8);
+        --w60: rgba(255, 255, 255, 0.55);
+        --w10: rgba(255, 255, 255, 0.07);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--black);
+        color: var(--white);
+        font-family: "Barlow", sans-serif;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--black);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--gold);
+        border-radius: 3px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+          /* NAV */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+      }
+      .nav-wrap {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      /* FIXED LOGO STYLES - Responsive across all devices */
+      .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .logo img {
+        height: 90px;
+        width: auto;
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+      /* For very small screens, slightly reduce logo size */
+      @media (max-width: 480px) {
+        .logo img {
+          height: 90px;
+        }
+      }
+      .logo-words .brand {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #fff;
+        display: block;
+        line-height: 1.1;
+      }
+      .logo-words .brand em {
+        color: var(--gold);
+        font-style: normal;
+      }
+      .logo-words .tag {
+        font-size: 8.5px;
+        letter-spacing: 3px;
+        color: var(--gold);
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0;
+      }
+      .nav-links a {
+        padding: 8px 13px;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--w80);
+        transition: color 0.2s;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--gold);
+      }
+      .nav-cta {
+        margin-left: 12px;
+        padding: 11px 24px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: inline-block;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px rgba(201, 168, 76, 0.35);
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s;
+      }
+      .mob-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--black-2);
+        z-index: 999;
+        padding: 28px 24px;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .mob-menu.open {
+        display: flex;
+      }
+      .mob-menu a {
+        display: block;
+        padding: 16px 0;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        color: var(--w80);
+      }
+      .mob-menu a:hover {
+        color: var(--gold);
+      }
+      .mob-cta {
+        margin-top: 24px;
+        padding: 16px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black) !important;
+        text-align: center;
+      }
+      /* Tablet responsive adjustments */
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap {
+          padding: 0 16px;
+        }
+      }
+      /* NAV INFO STYLES - Professional contact info in navbar */
+      .nav-info {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-right: 20px;
+        font-family: "Barlow", sans-serif;
+      }
+      .nav-info a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--w80);
+        transition: color 0.2s;
+        white-space: nowrap;
+      }
+      .nav-info a:hover {
+        color: var(--gold);
+      }
+      .nav-info span {
+        color: rgba(201, 168, 76, 0.25);
+        font-size: 12px;
+      }
+      .nav-info .location-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--w60);
+        white-space: nowrap;
+      }
+      /* Responsive adjustments for nav-info */
+      @media (max-width: 1100px) {
+        .nav-info {
+          gap: 10px;
+          margin-right: 12px;
+        }
+        .nav-info a,
+        .nav-info .location-text {
+          font-size: 10px;
+        }
+      }
+      @media (max-width: 900px) {
+        .nav-info {
+          display: none;
+        }
+      }
+
+      /* HERO */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding-top: 70px;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .hero-bg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.6;
+      }
+     .hero-ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(10, 10, 10, 0.75) 38%,
+    rgba(10, 10, 10, 0.45) 70%,
+    rgba(10, 10, 10, 0.25) 100%
+  );
+}
+
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 80px 32px 60px;
+      }
+      .hero-eyebrow {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .hero-eyebrow::before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .hero-h1 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(50px, 8vw, 100px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 0.97;
+        margin-bottom: 14px;
+      }
+      .hero-h1 .gold {
+        color: var(--gold);
+        display: block;
+        font-size: clamp(56px, 9vw, 112px);
+      }
+      .hero-sub {
+        max-width: 500px;
+        font-size: clamp(14px, 1.5vw, 16px);
+        color: var(--w60);
+        line-height: 1.75;
+        margin-bottom: 40px;
+        font-weight: 300;
+      }
+      .hero-btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 64px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 32px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 32px rgba(201, 168, 76, 0.4);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid rgba(201, 168, 76, 0.4);
+      }
+      .btn-outline:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+      .hero-stats {
+        display: flex;
+        gap: clamp(24px, 4vw, 60px);
+        flex-wrap: wrap;
+      }
+      .stat-item .sn {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(30px, 3.5vw, 44px);
+        font-weight: 900;
+        color: var(--gold);
+        line-height: 1;
+      }
+      .stat-item .sl {
+        font-size: 11px;
+        color: var(--w60);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-top: 4px;
+        font-weight: 500;
+      }
+      .hero-scroll {
+        position: absolute;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-size: 10px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        opacity: 0.7;
+      }
+      .scroll-line {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(var(--gold), transparent);
+        animation: sa 2s ease-in-out infinite;
+      }
+      @keyframes sa {
+        0%,
+        100% {
+          opacity: 0.3;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      /* SERVICE STRIP */
+      .svc-strip {
+        background: var(--black-2);
+        border-top: 1px solid rgba(201, 168, 76, 0.12);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+      }
+      .svc-strip-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
+      .svc-card {
+        padding: 28px 20px;
+        border-right: 1px solid rgba(201, 168, 76, 0.1);
+        text-align: center;
+        transition: background 0.3s;
+        cursor: default;
+      }
+      .svc-card:last-child {
+        border-right: none;
+      }
+      .svc-card:hover {
+        background: rgba(201, 168, 76, 0.05);
+      }
+      .svc-icon {
+        width: 36px;
+        height: 36px;
+        margin: 0 auto 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .svc-icon svg {
+        width: 30px;
+        height: 30px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .svc-name {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #fff;
+        margin-bottom: 6px;
+      }
+      .svc-desc {
+        font-size: 11px;
+        color: var(--w60);
+        line-height: 1.5;
+      }
+      .svc-more {
+        display: block;
+        margin-top: 10px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      /* ABOUT */
+      .about-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black);
+      }
+      .about-grid {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 100px);
+        align-items: center;
+      }
+      .about-img-wrap {
+        position: relative;
+      }
+      .about-img {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+      }
+      .about-badge {
+        position: absolute;
+        bottom: -24px;
+        right: -24px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        padding: 24px 28px;
+        text-align: center;
+        min-width: 110px;
+      }
+      .badge-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 42px;
+        font-weight: 900;
+        color: var(--black);
+        line-height: 1;
+      }
+      .badge-txt {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--black);
+        opacity: 0.75;
+      }
+      .sec-eyebrow {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sec-eyebrow::before {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .sec-h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(28px, 4vw, 48px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      .sec-h2 span {
+        color: var(--gold);
+      }
+      .body-p {
+        font-size: 15px;
+        color: var(--w60);
+        line-height: 1.8;
+        margin-bottom: 14px;
+        font-weight: 300;
+      }
+      .about-vals {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin: 24px 0;
+      }
+      .val-it {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--w80);
+      }
+      .val-it::before {
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+
+      /* CLIENTS */
+      .clients-bar {
+        padding: 30px 0;
+        background: var(--black-3);
+        border-top: 1px solid rgba(201, 168, 76, 0.1);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+      }
+      .clients-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .clients-lbl {
+        text-align: center;
+        font-size: 10px;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--w60);
+        margin-bottom: 22px;
+        font-weight: 600;
+      }
+      .clients-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(18px, 4vw, 52px);
+        flex-wrap: wrap;
+      }
+      .cli {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        color: rgba(255, 255, 255, 0.18);
+        text-transform: uppercase;
+        transition: color 0.3s;
+        cursor: default;
+      }
+      .cli:hover {
+        color: rgba(201, 168, 76, 0.45);
+      }
+
+      /* SERVICES FULL */
+      .services-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black-2);
+      }
+      .sec-header {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px 52px;
+        text-align: center;
+      }
+      .sec-header .sec-label {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+      }
+      .sec-header .sec-label::before,
+      .sec-header .sec-label::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .sec-header h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(32px, 4.5vw, 54px);
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      .sec-header p {
+        font-size: 15px;
+        color: var(--w60);
+        max-width: 540px;
+        margin: 0 auto;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .srv-grid {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 3px;
+      }
+      .srv-block {
+        background: var(--black-3);
+        padding: 40px 32px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
+        cursor: default;
+      }
+      .srv-block::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), transparent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s;
+      }
+      .srv-block:hover {
+        transform: translateY(-4px);
+      }
+      .srv-block:hover::after {
+        transform: scaleX(1);
+      }
+      .srv-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 64px;
+        font-weight: 900;
+        color: rgba(201, 168, 76, 0.06);
+        line-height: 1;
+        margin-bottom: -12px;
+      }
+      .srv-ico {
+        width: 46px;
+        height: 46px;
+        border: 1px solid rgba(201, 168, 76, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+      .srv-ico svg {
+        width: 22px;
+        height: 22px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .srv-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        color: #fff;
+      }
+      .srv-text {
+        font-size: 14px;
+        color: var(--w60);
+        line-height: 1.7;
+        margin-bottom: 18px;
+        font-weight: 300;
+      }
+      .srv-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+      }
+      .srv-list li {
+        font-size: 12.5px;
+        color: var(--w60);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .srv-list li::before {
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        background: var(--gold);
+        flex-shrink: 0;
+      }
+
+      /* STATS */
+      .stats-bar {
+        padding: clamp(50px, 6vw, 80px) 0;
+        background: linear-gradient(135deg, var(--black-3), var(--black-2));
+      }
+      .stats-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+      }
+      .stat-box {
+        text-align: center;
+        padding: 32px 16px;
+        border-right: 1px solid rgba(201, 168, 76, 0.1);
+      }
+      .stat-box:last-child {
+        border-right: none;
+      }
+      .stat-big {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(36px, 4vw, 56px);
+        font-weight: 900;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .stat-lbl {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--w60);
+        font-weight: 600;
+      }
+
+      /* WHY US */
+      .why-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black);
+      }
+      .why-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .why-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        margin-top: 52px;
+      }
+      .why-item {
+        display: flex;
+        gap: 18px;
+        padding: 24px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-right: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .why-item:nth-child(even) {
+        border-right: none;
+      }
+      .why-ico {
+        width: 44px;
+        height: 44px;
+        background: rgba(201, 168, 76, 0.07);
+        border: 1px solid rgba(201, 168, 76, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .why-ico svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+      }
+      .why-h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 7px;
+      }
+      .why-p {
+        font-size: 13.5px;
+        color: var(--w60);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .cta-block {
+        background: linear-gradient(135deg, var(--black-3), var(--black-4));
+        border: 1px solid rgba(201, 168, 76, 0.15);
+        padding: 44px 40px;
+        margin-top: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .cta-block h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 28px;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+      .cta-block p {
+        font-size: 14px;
+        color: var(--w60);
+        font-weight: 300;
+      }
+
+      /* CHALLENGES */
+      .challenges-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black-2);
+      }
+      .challenges-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .ch-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+        margin-top: 52px;
+      }
+      .ch-card {
+        background: var(--black-3);
+        padding: 36px 32px;
+      }
+      .ch-card.sol {
+        background: rgba(201, 168, 76, 0.06);
+        border: 1px solid rgba(201, 168, 76, 0.14);
+      }
+      .ch-icon {
+        font-size: 34px;
+        margin-bottom: 14px;
+        color: var(--gold);
+      }
+      .ch-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+      .ch-card.sol .ch-title {
+        color: var(--gold);
+      }
+      .ch-text {
+        font-size: 13.5px;
+        color: var(--w60);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      /* CEO */
+      .ceo-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black);
+      }
+      .ceo-grid {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        gap: clamp(40px, 6vw, 80px);
+        align-items: center;
+      }
+      .ceo-img-wrap {
+        position: relative;
+      }
+      .ceo-title-tag {
+        position: absolute;
+        top: 24px;
+        left: 0;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        padding: 10px 20px;
+        z-index: 1;
+      }
+      .ceo-title-tag span {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--black);
+      }
+      .ceo-img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        filter: grayscale(15%);
+      }
+      .ceo-frame {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: -20px;
+        bottom: -20px;
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        z-index: -1;
+        pointer-events: none;
+      }
+      .ceo-eyebrow {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 6px;
+        display: block;
+      }
+      .ceo-sub {
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--w60);
+        margin-bottom: 20px;
+        display: block;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .ceo-name {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(30px, 4vw, 50px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.05;
+        margin-bottom: 24px;
+      }
+      .ceo-name span {
+        color: var(--gold);
+      }
+      .ceo-body {
+        font-size: 14.5px;
+        color: var(--w60);
+        line-height: 1.8;
+        margin-bottom: 14px;
+        font-weight: 300;
+      }
+      .ceo-quote {
+        border-left: 3px solid var(--gold);
+        padding-left: 22px;
+        margin: 26px 0;
+        font-size: 15px;
+        font-style: italic;
+        color: var(--w80);
+        line-height: 1.7;
+      }
+      .pillars {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+      .pillar {
+        padding: 7px 16px;
+        border: 1px solid rgba(201, 168, 76, 0.28);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      /* CONTACT STRIP */
+      .contact-strip {
+        padding: clamp(50px, 6vw, 80px) 0;
+        background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      }
+      .cs-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+      .cs-text h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(22px, 3.5vw, 40px);
+        font-weight: 900;
+        text-transform: uppercase;
+        color: var(--black);
+        line-height: 1.1;
+        margin-bottom: 8px;
+      }
+      .cs-text p {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      .cs-btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn-dark {
+        background: var(--black);
+        color: var(--white);
+        padding: 14px 32px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-dark:hover {
+        background: var(--black-3);
+        transform: translateY(-2px);
+      }
+      .btn-blk-out {
+        background: transparent;
+        color: var(--black);
+        border: 2px solid var(--black);
+        padding: 12px 28px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-blk-out:hover {
+        background: var(--black);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      /* FOOTER */
+      footer {
+        background: var(--black-2);
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+        padding: clamp(50px, 6vw, 80px) 0 0;
+      }
+      .footer-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: clamp(24px, 4vw, 56px);
+        margin-bottom: 44px;
+      }
+      .footer-brand p {
+        font-size: 13px;
+        color: var(--w60);
+        line-height: 1.7;
+        margin: 16px 0 18px;
+        font-weight: 300;
+      }
+      .socials {
+        display: flex;
+        gap: 9px;
+      }
+      .soc {
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(201, 168, 76, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .soc:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+      }
+      .soc svg {
+        width: 15px;
+        height: 15px;
+        fill: var(--w60);
+        transition: fill 0.3s;
+      }
+      .soc:hover svg {
+        fill: var(--black);
+      }
+      .footer-col h4 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-col ul li a {
+        font-size: 13px;
+        color: var(--w60);
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--gold);
+      }
+      .fci {
+        display: flex;
+        gap: 11px;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: var(--w60);
+      }
+      .fci svg {
+        width: 14px;
+        height: 14px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 18px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer-bottom p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .footer-bottom span {
+        color: var(--gold);
+      }
+
+      /* WA FAB */
+      .wa-fab {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 999;
+        width: 56px;
+        height: 56px;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        transition: transform 0.3s;
+        cursor: pointer;
+      }
+      .wa-fab:hover {
+        transform: scale(1.1);
+      }
+      .wa-fab i {
+        font-size: 32px;
+        color: #fff;
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 1100px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 56px;
+        }
+        .about-img-wrap {
+          max-width: 480px;
+        }
+        .ceo-grid {
+          grid-template-columns: 300px 1fr;
+        }
+        .stats-inner {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .stat-box:nth-child(3) {
+          border-right: none;
+        }
+        .stat-box:nth-child(4) {
+          border-right: 1px solid rgba(201, 168, 76, 0.1);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta,
+        .nav-info {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .svc-strip-inner {
+          grid-template-columns: repeat(3, 1fr);
+          padding: 0 16px;
+        }
+        .svc-card:nth-child(3) {
+          border-right: none;
+        }
+        .svc-card:nth-child(4) {
+          border-right: 1px solid rgba(201, 168, 76, 0.1);
+        }
+        .why-grid {
+          grid-template-columns: 1fr;
+        }
+        .why-item {
+          border-right: none !important;
+        }
+        .ch-grid {
+          grid-template-columns: 1fr;
+        }
+        .ceo-grid {
+          grid-template-columns: 1fr;
+        }
+        .ceo-img {
+          max-height: 400px;
+        }
+        .ceo-frame {
+          display: none;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap {
+          padding: 0 16px;
+        }
+        .hero-content {
+          padding: 60px 16px 40px;
+        }
+        .svc-strip-inner {
+          grid-template-columns: 1fr 1fr;
+          padding: 0;
+        }
+        .svc-card:nth-child(2) {
+          border-right: none;
+        }
+        .svc-card:nth-child(3) {
+          border-right: 1px solid rgba(201, 168, 76, 0.1);
+        }
+        .about-grid,
+        .why-grid,
+        .footer-grid {
+          padding: 0 16px;
+        }
+        .stats-inner {
+          grid-template-columns: 1fr 1fr;
+          padding: 0 16px;
+        }
+        .stat-box {
+          border-right: 1px solid rgba(201, 168, 76, 0.1) !important;
+        }
+        .stat-box:nth-child(2) {
+          border-right: none !important;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .cs-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .about-badge {
+          bottom: -14px;
+          right: -8px;
+          padding: 16px 20px;
+        }
+        .badge-num {
+          font-size: 30px;
+        }
+        .srv-grid,
+        .sec-header,
+        .why-inner,
+        .challenges-inner,
+        .ceo-grid {
+          padding: 0 16px;
+        }
+        .cta-block {
+          flex-direction: column;
+          text-align: center;
+          padding: 28px 20px;
+        }
+        .hero-stats {
+          gap: 20px;
+        }
+      }
+
+
+            /* HERO ANIMATIONS - Fade In Up with Stagger Effect */
+      .hero-content .hero-eyebrow,
+      .hero-content .hero-h1,
+      .hero-content .hero-sub,
+      .hero-content .hero-btns,
+      .hero-content .hero-stats {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+
+      .hero-content .hero-eyebrow {
+        animation-delay: 0.1s;
+      }
+      .hero-content .hero-h1 {
+        animation-delay: 0.2s;
+      }
+      .hero-content .hero-sub {
+        animation-delay: 0.4s;
+      }
+      .hero-content .hero-btns {
+        animation-delay: 0.6s;
+      }
+      .hero-content .hero-stats {
+        animation-delay: 0.8s;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* DESKTOP ONLY - Hover Effects */
+      @media (min-width: 769px) {
+        /* Hero background zoom on hover */
+        .hero-bg-img {
+          transition: transform 8s ease-in-out;
+        }
+        .hero:hover .hero-bg-img {
+          transform: scale(1.05);
+        }
+
+        /* Service cards hover */
+        .svc-card {
+          transition: all 0.4s ease;
+        }
+        .svc-card:hover {
+          transform: translateY(-8px);
+          background: rgba(201, 168, 76, 0.08);
+        }
+
+        /* Section cards hover */
+        .srv-block, .sector-card, .why-card, .market-card, .comp-card,
+        .model-card, .invest-card, .val-block, .team-card {
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .srv-block:hover, .sector-card:hover, .why-card:hover, 
+        .market-card:hover, .comp-card:hover, .model-card:hover, 
+        .invest-card:hover, .val-block:hover, .team-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Timeline items hover */
+        .tl-item {
+          transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+        .tl-item:hover {
+          transform: translateX(8px);
+        }
+
+        /* Contact cards hover */
+        .c-card {
+          transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+        .c-card:hover {
+          transform: translateX(8px);
+          background: rgba(201, 168, 76, 0.03);
+        }
+
+        /* Quick bar items hover */
+        .qb-item {
+          transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .qb-item:hover {
+          transform: translateY(-5px);
+          background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Stats boxes hover */
+        .stat-box {
+          transition: transform 0.3s ease;
+        }
+        .stat-box:hover {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* MOBILE ONLY - Scroll-triggered animations (NO hover) */
+      @media (max-width: 768px) {
+        /* Elements start hidden */
+        .svc-card, .srv-block, .sector-card, .why-card, .why-item,
+        .market-card, .comp-card, .val-block, .team-card, 
+        .c-card, .qb-item, .tl-item, .stat-box, .ch-card,
+        .model-card, .invest-card, .kp, .bs, .vm-card,
+        .phil-item, .leader-card, .cap-list li, .tl-item {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), 
+                      transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        /* When element becomes visible via scroll */
+        .svc-card.visible, .srv-block.visible, .sector-card.visible, 
+        .why-card.visible, .why-item.visible, .market-card.visible, 
+        .comp-card.visible, .val-block.visible, .team-card.visible, 
+        .c-card.visible, .qb-item.visible, .tl-item.visible, 
+        .stat-box.visible, .ch-card.visible, .model-card.visible, 
+        .invest-card.visible, .kp.visible, .bs.visible, .vm-card.visible, 
+        .phil-item.visible, .leader-card.visible, .cap-list li.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Stagger delays for smooth cascading effect */
+        .svc-card:nth-child(1) { transition-delay: 0s; }
+        .svc-card:nth-child(2) { transition-delay: 0.05s; }
+        .svc-card:nth-child(3) { transition-delay: 0.1s; }
+        .svc-card:nth-child(4) { transition-delay: 0.15s; }
+        .svc-card:nth-child(5) { transition-delay: 0.2s; }
+        
+        .stat-box:nth-child(1) { transition-delay: 0s; }
+        .stat-box:nth-child(2) { transition-delay: 0.05s; }
+        .stat-box:nth-child(3) { transition-delay: 0.1s; }
+        .stat-box:nth-child(4) { transition-delay: 0.15s; }
+        .stat-box:nth-child(5) { transition-delay: 0.2s; }
+
+        .srv-block:nth-child(1) { transition-delay: 0s; }
+        .srv-block:nth-child(2) { transition-delay: 0.05s; }
+        .srv-block:nth-child(3) { transition-delay: 0.1s; }
+        .srv-block:nth-child(4) { transition-delay: 0.15s; }
+        .srv-block:nth-child(5) { transition-delay: 0.2s; }
+
+        /* Hero background zoom on scroll (not hover) */
+        .hero-bg-img {
+          transition: transform 0.8s ease-out;
+        }
+        .hero-bg-img.zoom {
+          transform: scale(1.05);
+        }
+
+        /* Disable all hover effects on mobile */
+        .hero:hover .hero-bg-img {
+          transform: none;
+        }
+        .svc-card:hover, .srv-block:hover, .sector-card:hover, 
+        .why-card:hover, .market-card:hover, .comp-card:hover,
+        .val-block:hover, .team-card:hover, .c-card:hover,
+        .qb-item:hover, .stat-box:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+
+      /* Universal Animations (Work on both desktop & mobile) */
+      
+      /* Floating animation for scroll indicator */
+      .hero-scroll {
+        animation: float 2s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(8px);
+        }
+      }
+
+      /* Glow effect on buttons on load */
+      .hero-btns .btn-gold {
+        animation: subtleGlow 1.5s ease-in-out 0.6s both;
+      }
+      @keyframes subtleGlow {
+        0%, 100% {
+          box-shadow: 0 0 0 rgba(201, 168, 76, 0);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+        }
+      }
+
+      /* Page Hero Sections (About, Contact, Profile) */
+      .page-hero .breadcrumb,
+      .page-hero .page-title,
+      .page-hero .page-subtitle,
+      .page-hero .print-btn {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+      .page-hero .breadcrumb {
+        animation-delay: 0.1s;
+      }
+      .page-hero .page-title {
+        animation-delay: 0.2s;
+      }
+      .page-hero .page-subtitle {
+        animation-delay: 0.35s;
+      }
+      .page-hero .print-btn {
+        animation-delay: 0.5s;
+      }
+
+      /* Investor Presentation Slide Cover */
+      .slide-cover .cover-tag,
+      .slide-cover .cover-h1,
+      .slide-cover .cover-sub,
+      .slide-cover .cover-meta {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s ease forwards;
+      }
+      .slide-cover .cover-tag {
+        animation-delay: 0.1s;
+      }
+      .slide-cover .cover-h1 {
+        animation-delay: 0.2s;
+      }
+      .slide-cover .cover-sub {
+        animation-delay: 0.35s;
+      }
+      .slide-cover .cover-meta {
+        animation-delay: 0.5s;
+      }
+
+
+      /* ── MOBILE FOOTER LAYOUT FIX ── 
+   Paste this inside your <style> tag on all pages
+   Quick Links + Our Services = side by side
+   Brand (top) → Quick Links | Services → Contact (bottom)
+*/
+
+@media (max-width: 768px) {
+  .footer-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+  }
+
+  /* Brand: full width, top */
+  .footer-grid .footer-brand {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  /* Quick Links: left half */
+  .footer-grid .footer-col:nth-child(2) {
+    width: calc(50% - 12px) !important;
+    order: 2 !important;
+  }
+
+  /* Our Services: right half — side by side with Quick Links */
+  .footer-grid .footer-col:nth-child(3) {
+    width: calc(50% - 12px) !important;
+    order: 3 !important;
+  }
+
+  /* Contact Us: full width, bottom */
+  .footer-grid .footer-col:nth-child(4) {
+    width: 100% !important;
+    order: 4 !important;
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+    padding-top: 20px;
+  }
+}
+
+/* Extra small screens — all stack */
+@media (max-width: 380px) {
+  .footer-grid .footer-col:nth-child(2),
+  .footer-grid .footer-col:nth-child(3) {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .svc-strip {
+    display: block !important;
+  }
+  
+  .svc-strip-inner {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 0 !important;
+  }
+  
+  .svc-card {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .svc-card:nth-child(odd) {
+    border-right: 1px solid rgba(201, 168, 76, 0.1) !important;
+  }
+  
+  .svc-card:nth-child(5) {
+    grid-column: 1 / -1;
+    border-right: none !important;
+  }
+}
+
+
+/* "See More" arrow link on each srv-block card */
+.srv-see-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, gap 0.2s;
+}
+.srv-see-more:hover {
+  border-bottom-color: var(--gold);
+  gap: 11px;
+}
+.srv-see-more i {
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+.srv-see-more:hover i {
+  transform: translateX(3px);
+}
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+      <nav id="navbar">
+      <div class="nav-wrap">
+        <a href="index.html" class="logo">
+          <img src="/img/RRH-LOGO.png" alt="Road Rock Holdings Logo" />
+        </a>
+        <div class="nav-info">
+          <a href="tel:+2348082363104"
+            ><i
+              class="fas fa-phone-alt"
+              style="margin-right: 6px; font-size: 11px"
+            ></i>
+            +234 808 236 3104</a
+          >
+          <span class="sep">|</span>
+          <a href="tel:+2349018053469">+234 901 805 3469</a>
+          <span class="sep">|</span>
+          <a href="mailto:info@roadrockholdings.com"
+            ><i class="far fa-envelope" style="margin-right: 6px"></i>
+            info@roadrockholdings.com</a
+          >
+          <span class="sep">|</span>
+          <span style="color: var(--w60)"
+            ><i class="fas fa-map-marker-alt" style="margin-right: 5px"></i>
+            Lagos, Nigeria</span
+          >
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="/project.html">Profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta"
+          ><i class="fas fa-file-invoice-dollar" style="margin-right: 6px"></i>
+          Get A Quote</a
+        >
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mob-menu" id="mobMenu">
+      <a href="index.html"
+        ><i class="fas fa-home" style="margin-right: 12px"></i> Home</a
+      >
+      <a href="about.html"
+        ><i class="fas fa-users" style="margin-right: 12px"></i> About Us</a
+      >
+      <a href="services.html"
+        ><i class="fas fa-cogs" style="margin-right: 12px"></i> Services</a
+      >
+      <a href="/project.html"
+        ><i class="fas fa-hard-hat" style="margin-right: 12px"></i> Profile</a
+      >
+      <a href="contact.html"
+        ><i class="fas fa-phone-alt" style="margin-right: 12px"></i> Contact</a
+      >
+      <a href="/project.html"
+        ><i class="fas fa-building" style="margin-right: 12px"></i> Company
+        Profile</a
+      >
+      <div style="padding: 16px 0; font-size: 13px; color: var(--w60)">
+        <div style="margin-bottom: 8px">
+          <a href="tel:+2348082363104" style="color: var(--gold)"
+            ><i class="fas fa-phone-alt"></i> +234 808 236 3104</a
+          >
+        </div>
+        <div>
+          <a href="tel:+2349018053469" style="color: var(--gold)"
+            ><i class="fas fa-phone-alt"></i> +234 901 805 3469</a
+          >
+        </div>
+      </div>
+      <a href="contact.html" class="mob-cta"
+        ><i class="fas fa-arrow-right"></i> Get A Quote →</a
+      >
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-bg">
+       <video
+  class="hero-bg-img"
+  autoplay
+  muted
+  loop
+  playsinline
+  poster="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80">
+  <source
+    src="/video/RRH-video.mp4"
+    type="video/mp4"/>
+</video>
+        <div class="hero-ov"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <i class="fas fa-chart-line" style="margin-right: 8px"></i>
+          Multi-Industry Conglomerate — Lagos, Nigeria
+        </div>
+        <h1 class="hero-h1">
+          BUILDING THE<br />
+          <span class="gold">FUTURE.</span>
+          DELIVERING<br />EXCELLENCE.
+        </h1>
+        <p class="hero-sub">
+          A diversified holding company delivering innovative solutions in
+          Construction, Real Estate, Solar Energy, Technology and Smart Interior
+          Design across Africa and Beyond.
+        </p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn btn-gold"
+            ><i class="fas fa-calculator"></i> Get A Quote →</a
+          >
+          <a href="services.html" class="btn btn-outline"
+            ><i class="fas fa-globe"></i> Explore Our Services</a
+          >
+          <a href="contact.html" class="btn btn-outline"
+            ><i class="fas fa-handshake"></i> Partner With Us</a
+          >
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="sn" data-target="15">15+</div>
+            <div class="sl">
+              <i class="far fa-calendar-alt"></i> Years of Vision
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="sn" data-target="250">250+</div>
+            <div class="sl">
+              <i class="fas fa-hard-hat"></i> Projects Completed
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="sn" data-target="100">100+</div>
+            <div class="sl"><i class="far fa-smile"></i> Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="sn" data-target="5">5+</div>
+            <div class="sl">
+              <i class="fas fa-chart-pie"></i> Business Sectors
+            </div>
+          </div>
+          <div class="stat-item">
+            <div class="sn" data-target="50">50+</div>
+            <div class="sl">
+              <i class="fas fa-user-tie"></i> Expert Professionals
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="scroll-line"></div>
+        <span><i class="fas fa-arrow-down"></i> Scroll</span>
+      </div>
+    </section>
+
+    <!-- SERVICE STRIP -->
+<div class="svc-strip">
+  <div class="svc-strip-inner">
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="fas fa-road" style="font-size: 28px; color: var(--gold)"></i>
+      </div>
+      <div class="svc-name">Construction</div>
+      <div class="svc-desc">Building strong infrastructure for a better tomorrow.</div>
+      <a href="services.html#construction" class="svc-more">Read More →</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="fas fa-building" style="font-size: 28px; color: var(--gold)"></i>
+      </div>
+      <div class="svc-name">Real Estate</div>
+      <div class="svc-desc">Creating smart, sustainable and luxury spaces.</div>
+      <a href="services.html#real-estate" class="svc-more">Read More →</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="fas fa-solar-panel" style="font-size: 28px; color: var(--gold)"></i>
+      </div>
+      <div class="svc-name">Solar Energy</div>
+      <div class="svc-desc">Powering lives with clean, renewable energy solutions.</div>
+      <a href="services.html#solar" class="svc-more">Read More →</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="fas fa-microchip" style="font-size: 28px; color: var(--gold)"></i>
+      </div>
+      <div class="svc-name">Technology (IT)</div>
+      <div class="svc-desc">Innovative technology solutions for a digital future.</div>
+      <a href="services.html#technology" class="svc-more">Read More →</a>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <i class="fas fa-paint-roller" style="font-size: 28px; color: var(--gold)"></i>
+      </div>
+      <div class="svc-name">Interiors &amp; Exteriors</div>
+      <div class="svc-desc">Designing beautiful, functional and inspiring spaces.</div>
+      <a href="services.html#interiors" class="svc-more">Read More →</a>
+    </div>
+  </div>
+</div>
+
+    <!-- ABOUT (unchanged structure, emojis removed from section) -->
+    <section class="about-sec" id="about">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img
+            class="about-img"
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+            alt="Road Rock Holdings Construction"
+          />
+          <div class="about-badge">
+            <div class="badge-num">15+</div>
+            <div class="badge-txt">Years of<br />Excellence</div>
+          </div>
+        </div>
+        <div>
+          <div class="sec-eyebrow">About Road Rock Holdings</div>
+          <h2 class="sec-h2">
+            A Visionary <span>Multi-Sector</span><br />Holding Company
+          </h2>
+          <p class="body-p">
+            Road Rock Holdings is a multi-industry conglomerate with a mission
+            to deliver sustainable solutions that improve lives and transform
+            communities. Our strength lies in our people, our innovation and our
+            commitment to excellence in every project we execute.
+          </p>
+          <p class="body-p">
+            We operate across several strategic sectors combining technical
+            expertise with world-class project execution to deliver impactful
+            solutions for governments, businesses, and individuals across Africa
+            and beyond.
+          </p>
+          <div class="about-vals">
+            <div class="val-it">
+              <i
+                class="fas fa-road"
+                style="color: var(--gold); font-size: 12px"
+              ></i>
+              Road & Civil Construction
+            </div>
+            <div class="val-it">
+              <i class="fas fa-building" style="color: var(--gold)"></i> Real
+              Estate Development
+            </div>
+            <div class="val-it">
+              <i class="fas fa-sun" style="color: var(--gold)"></i> Solar &
+              Renewable Energy
+            </div>
+            <div class="val-it">
+              <i class="fas fa-laptop-code" style="color: var(--gold)"></i>
+              Information Technology
+            </div>
+            <div class="val-it">
+              <i class="fas fa-drafting-compass" style="color: var(--gold)"></i>
+              Interior & Exterior Design
+            </div>
+            <div class="val-it">
+              <i class="fas fa-city" style="color: var(--gold)"></i> Smart City
+              Solutions
+            </div>
+          </div>
+          <a href="about.html" class="btn btn-gold"
+            ><i class="fas fa-arrow-right"></i> Discover More About Us →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <div class="clients-bar">
+      <div class="clients-inner">
+        <p class="clients-lbl">
+          <i class="fas fa-handshake"></i> Trusted Partners & Clients
+        </p>
+        <div class="clients-row">
+          <span class="cli">Dangote</span><span class="cli">Fidelity Bank</span
+          ><span class="cli">Access Bank</span
+          ><span class="cli">MTN Nigeria</span><span class="cli">Airtel</span
+          ><span class="cli">Julius Berger</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES FULL (shortened for brevity but icons replaced) -->
+    <section class="services-sec" id="services">
+  <div class="sec-header">
+    <div class="sec-label"><i class="fas fa-cogs"></i> What We Do</div>
+    <h2>Our Core Services</h2>
+    <p>
+      We deliver integrated, world-class solutions across five key
+      industries, transforming challenges into opportunities for growth.
+    </p>
+  </div>
+  <div class="srv-grid">
+ 
+    <div class="srv-block">
+      <div class="srv-num">01</div>
+      <div class="srv-ico">
+        <i class="fas fa-road" style="font-size: 22px; stroke: none; color: var(--gold)"></i>
+      </div>
+      <div class="srv-title">Road &amp; Civil Construction</div>
+      <p class="srv-text">
+        We deliver durable and high-quality civil engineering projects using
+        modern construction technologies.
+      </p>
+      <ul class="srv-list">
+        <li>Highway Construction</li>
+        <li>Bridge Engineering</li>
+        <li>Asphalt &amp; Concrete Works</li>
+      </ul>
+      <a href="services.html#construction" class="srv-see-more">
+        See More <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+ 
+    <div class="srv-block">
+      <div class="srv-num">02</div>
+      <div class="srv-ico">
+        <i class="fas fa-home" style="font-size: 22px; color: var(--gold)"></i>
+      </div>
+      <div class="srv-title">Real Estate Development</div>
+      <p class="srv-text">
+        Modern residential and commercial spaces designed for comfort and
+        sustainability.
+      </p>
+      <ul class="srv-list">
+        <li>Smart Homes</li>
+        <li>Luxury Apartments</li>
+        <li>Commercial Buildings</li>
+      </ul>
+      <a href="services.html#real-estate" class="srv-see-more">
+        See More <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+ 
+    <div class="srv-block">
+      <div class="srv-num">03</div>
+      <div class="srv-ico">
+        <i class="fas fa-solar-panel" style="font-size: 22px; color: var(--gold)"></i>
+      </div>
+      <div class="srv-title">Solar &amp; Renewable Energy</div>
+      <p class="srv-text">
+        Reliable and cost-effective solar solutions for homes, businesses,
+        and industries.
+      </p>
+      <ul class="srv-list">
+        <li>Solar Panel Installation</li>
+        <li>Inverter Systems</li>
+        <li>Energy Consultation</li>
+      </ul>
+      <a href="services.html#solar" class="srv-see-more">
+        See More <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+ 
+    <div class="srv-block">
+      <div class="srv-num">04</div>
+      <div class="srv-ico">
+        <i class="fas fa-network-wired" style="font-size: 22px; color: var(--gold)"></i>
+      </div>
+      <div class="srv-title">Information Technology</div>
+      <p class="srv-text">
+        Leverage technology for growth, security, efficiency, and digital
+        transformation.
+      </p>
+      <ul class="srv-list">
+        <li>Network Infrastructure</li>
+        <li>Cybersecurity</li>
+        <li>Cloud Services</li>
+      </ul>
+      <a href="services.html#technology" class="srv-see-more">
+        See More <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+ 
+    <div class="srv-block">
+      <div class="srv-num">05</div>
+      <div class="srv-ico">
+        <i class="fas fa-paint-brush" style="font-size: 22px; color: var(--gold)"></i>
+      </div>
+      <div class="srv-title">Interiors &amp; Exteriors</div>
+      <p class="srv-text">
+        Elegant and functional living spaces tailored to modern lifestyles.
+      </p>
+      <ul class="srv-list">
+        <li>Modern Interior Designs</li>
+        <li>Landscaping</li>
+        <li>Luxury Space Transformations</li>
+      </ul>
+      <a href="services.html#interiors" class="srv-see-more">
+        See More <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+ 
+  </div>
+</section>
+
+    <!-- STATS (counter animated) -->
+    <div class="stats-bar" id="stats">
+      <div class="stats-inner">
+        <div class="stat-box">
+          <div class="stat-big" data-target="15">0+</div>
+          <div class="stat-lbl">
+            <i class="fas fa-trophy"></i> Years of Excellence
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-big" data-target="250">0+</div>
+          <div class="stat-lbl">
+            <i class="fas fa-draw-polygon"></i> Projects Completed
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-big" data-target="100">0+</div>
+          <div class="stat-lbl"><i class="fas fa-users"></i> Happy Clients</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-big" data-target="5">0+</div>
+          <div class="stat-lbl">
+            <i class="fas fa-chart-line"></i> Business Sectors
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-big" data-target="50">0+</div>
+          <div class="stat-lbl">
+            <i class="fas fa-user-graduate"></i> Expert Professionals
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY US (icons added) -->
+    <section class="why-sec" id="why">
+      <div class="why-inner">
+        <div class="sec-eyebrow">Why Choose Us</div>
+        <h2 class="sec-h2">The Road Rock <span>Advantage</span></h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-ico">
+              <i
+                class="fas fa-medal"
+                style="font-size: 20px; color: var(--gold)"
+              ></i>
+            </div>
+            <div>
+              <div class="why-h3">Professional Excellence</div>
+              <p class="why-p">
+                Every project is executed to the highest international standards
+                with rigorous quality control at every stage of delivery.
+              </p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-ico">
+              <i
+                class="fas fa-microchip"
+                style="font-size: 20px; color: var(--gold)"
+              ></i>
+            </div>
+            <div>
+              <div class="why-h3">Innovative Engineering</div>
+              <p class="why-p">
+                We integrate the latest engineering methodologies and
+                technologies to deliver future-proof, high-performance
+                solutions.
+              </p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-ico">
+              <i
+                class="fas fa-leaf"
+                style="font-size: 20px; color: var(--gold)"
+              ></i>
+            </div>
+            <div>
+              <div class="why-h3">Sustainable Solutions</div>
+              <p class="why-p">
+                Environmental responsibility is embedded in every project,
+                ensuring long-term value and ecological sensitivity.
+              </p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-ico">
+              <i
+                class="fas fa-clock"
+                style="font-size: 20px; color: var(--gold)"
+              ></i>
+            </div>
+            <div>
+              <div class="why-h3">Reliable Delivery</div>
+              <p class="why-p">
+                We honour our timelines and commitments, ensuring projects are
+                delivered on schedule and within budget.
+              </p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-ico">
+              <i
+                class="fas fa-chalkboard-user"
+                style="font-size: 20px; color: var(--gold)"
+              ></i>
+            </div>
+            <div>
+              <div class="why-h3">Experienced Team</div>
+              <p class="why-p">
+                Our multidisciplinary team of engineers, architects, and
+                specialists brings decades of combined expertise.
+              </p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-ico">
+              <i
+                class="fas fa-robot"
+                style="font-size: 20px; color: var(--gold)"
+              ></i>
+            </div>
+            <div>
+              <div class="why-h3">Modern Technologies</div>
+              <p class="why-p">
+                From AI-integrated systems to smart automation, we leverage
+                cutting-edge technology for superior outcomes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="cta-block">
+          <div>
+            <h3>Ready to Start Your Project?</h3>
+            <p>
+              Contact our team today for a free consultation and project quote.
+            </p>
+          </div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap">
+            <a href="contact.html" class="btn btn-gold"
+              ><i class="fas fa-file-signature"></i> Get A Free Quote</a
+            ><a href="about.html" class="btn btn-outline"
+              ><i class="fas fa-info-circle"></i> Learn More</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGES (FA icons instead of emojis) -->
+    <section class="challenges-sec" id="challenges">
+      <div class="challenges-inner">
+        <div class="sec-eyebrow">Problems We Solve</div>
+        <h2 class="sec-h2">Challenges &amp; <span>Our Solutions</span></h2>
+        <div class="ch-grid">
+          <div class="ch-card">
+            <div class="ch-icon"><i class="fas fa-road"></i></div>
+            <div class="ch-title">Infrastructure Challenges</div>
+            <p class="ch-text">
+              Poor road networks and outdated construction systems continue to
+              limit economic growth and safety across Africa, leaving
+              communities underserved and disconnected.
+            </p>
+          </div>
+          <div class="ch-card sol">
+            <div class="ch-icon">
+              <i class="fas fa-check-circle" style="color: var(--gold)"></i>
+            </div>
+            <div class="ch-title">Our Solution</div>
+            <p class="ch-text">
+              Sustainable infrastructure development using modern engineering
+              practices, durable materials, and internationally accepted
+              construction standards to build lasting roads and bridges.
+            </p>
+          </div>
+          <div class="ch-card">
+            <div class="ch-icon"><i class="fas fa-bolt"></i></div>
+            <div class="ch-title">Energy Challenges</div>
+            <p class="ch-text">
+              Many homes and businesses struggle with unstable electricity and
+              escalating energy costs, hindering productivity and quality of
+              life across Nigeria.
+            </p>
+          </div>
+          <div class="ch-card sol">
+            <div class="ch-icon">
+              <i class="fas fa-check-circle" style="color: var(--gold)"></i>
+            </div>
+            <div class="ch-title">Our Solution</div>
+            <p class="ch-text">
+              Smart renewable energy systems including solar panel
+              installations, inverter solutions, and industrial-scale solar for
+              reliable, cost-effective power independence.
+            </p>
+          </div>
+          <div class="ch-card">
+            <div class="ch-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="ch-title">Technology Challenges</div>
+            <p class="ch-text">
+              Businesses need secure, scalable, and innovative digital solutions
+              to compete effectively in a rapidly evolving global economy.
+            </p>
+          </div>
+          <div class="ch-card sol">
+            <div class="ch-icon">
+              <i class="fas fa-check-circle" style="color: var(--gold)"></i>
+            </div>
+            <div class="ch-title">Our Solution</div>
+            <p class="ch-text">
+              Innovative IT services including network infrastructure,
+              cybersecurity, cloud solutions, and custom software development
+              tailored for digital transformation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CEO (unchanged structure but icons added in pillars) -->
+    <section class="ceo-sec" id="ceo">
+      <div class="ceo-grid">
+        <div class="ceo-img-wrap">
+          <div style="position: relative">
+            <div class="ceo-title-tag">
+              <span><i class="fas fa-crown"></i> CEO & Founder</span>
+            </div>
+            <img
+              class="ceo-img"
+              src="/img/ceo-off-site.jpg"
+              alt="Tech Engineer Ikechukwu B. Anyanwu"
+            />
+            <div class="ceo-frame"></div>
+          </div>
+        </div>
+        <div>
+          <span class="ceo-eyebrow"
+            ><i class="fas fa-chart-line"></i> Leadership & Vision</span
+          ><span class="ceo-sub"
+            ><i class="fas fa-microchip"></i> Tech Engineer</span
+          >
+          <h2 class="ceo-name">IKECHUKWU B.<br /><span>ANYANWU</span></h2>
+          <p class="ceo-body">
+            Tech Engineer Ikechukwu B. Anyanwu is a visionary entrepreneur,
+            technology engineer, and infrastructure strategist with a passion
+            for innovation, engineering excellence, and transformational
+            development across emerging economies.
+          </p>
+          <p class="ceo-body">
+            With years of experience spanning technology, engineering systems,
+            construction planning, renewable energy integration, and business
+            leadership, he founded Road Rock Holdings with a bold vision to
+            create a diversified conglomerate capable of solving modern
+            infrastructure and technological challenges.
+          </p>
+          <blockquote class="ceo-quote">
+            <i
+              class="fas fa-quote-left"
+              style="margin-right: 8px; color: var(--gold)"
+            ></i>
+            "Our goal is to build a future where infrastructure, energy,
+            technology, and smart living solutions work together to improve
+            lives, empower businesses, and shape modern societies."
+          </blockquote>
+          <div class="pillars">
+            <span class="pillar"
+              ><i class="fas fa-lightbulb"></i> Innovation</span
+            ><span class="pillar"
+              ><i class="fas fa-handshake"></i> Integrity</span
+            ><span class="pillar"
+              ><i class="fas fa-seedling"></i> Sustainability</span
+            ><span class="pillar"><i class="fas fa-medal"></i> Excellence</span
+            ><span class="pillar"
+              ><i class="fas fa-heart"></i> Human-Centered</span
+            >
+          </div>
+          <div style="margin-top: 28px">
+            <a href="about.html" class="btn btn-gold"
+              ><i class="fas fa-user-circle"></i> Full CEO Biography →</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT STRIP (FA icons) -->
+    <div class="contact-strip">
+      <div class="cs-inner">
+        <div class="cs-text">
+          <h2>Let's Build Something<br />Extraordinary Together</h2>
+          <p>
+            Contact us for a consultation, project quote, or partnership
+            inquiry.
+          </p>
+        </div>
+        <div class="cs-btns">
+          <a href="contact.html" class="btn-dark"
+            ><i class="fas fa-calculator"></i> Get A Quote Now</a
+          ><a href="tel:+2348082363104" class="btn-blk-out"
+            ><i class="fas fa-phone-alt"></i> Call Us Now</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo" style="margin-bottom: 0"
+              ><img src="/img/RRH-LOGO.png" alt=""></a
+            >
+            <p>
+              A multi-industry conglomerate delivering excellence in
+              Construction, Renewable Energy, Technology, Real Estate and Smart
+              Living Solutions across Africa and Beyond.
+            </p>
+            <div class="socials">
+              <a href="#" class="soc" aria-label="Facebook"
+                ><i
+                  class="fab fa-facebook-f"
+                  style="font-size: 16px; color: var(--w60)"
+                ></i></a
+              ><a href="#" class="soc" aria-label="Instagram"
+                ><i
+                  class="fab fa-instagram"
+                  style="font-size: 16px; color: var(--w60)"
+                ></i></a
+              ><a href="#" class="soc" aria-label="LinkedIn"
+                ><i
+                  class="fab fa-linkedin-in"
+                  style="font-size: 16px; color: var(--w60)"
+                ></i></a
+              ><a href="#" class="soc" aria-label="YouTube"
+                ><i
+                  class="fab fa-youtube"
+                  style="font-size: 16px; color: var(--w60)"
+                ></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Our Services</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="services.html#construction">Road Construction</a></li>
+              <li><a href="services.html#real-estate">Real Estate</a></li>
+              <li><a href="services.html#solar">Solar Energy</a></li>
+              <li><a href="services.html#technology">IT Solutions</a></li>
+              <li><a href="services.html#interiors">Interiors & Exteriors</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <div class="fci">
+              <i class="fas fa-map-pin"></i><span>Lagos, Nigeria</span>
+            </div>
+            <div class="fci">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <a
+                  href="tel:+2348082363104"
+                  style="color: var(--w60); display: block"
+                  >+234 808 236 3104</a
+                ><a
+                  href="tel:+2349018053469"
+                  style="color: var(--w60); display: block"
+                  >+234 901 805 3469</a
+                >
+              </div>
+            </div>
+            <div class="fci">
+              <i class="far fa-envelope"></i
+              ><a
+                href="mailto:info@roadrockholdings.com"
+                style="color: var(--w60)"
+                >info@roadrockholdings.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
+          </p>
+          <p>Designed for <span>Excellence</span> | Lagos, Nigeria</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- WA FAB with FontAwesome -->
+    <a
+      href="https://wa.me/2348082363104"
+      class="wa-fab"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+      // Mobile menu toggle
+      const hamburger = document.getElementById("hamburger");
+      const mobMenu = document.getElementById("mobMenu");
+      hamburger.addEventListener("click", () => {
+        mobMenu.classList.toggle("open");
+        const s = hamburger.querySelectorAll("span");
+        if (mobMenu.classList.contains("open")) {
+          s[0].style.transform = "rotate(45deg) translate(5px,5px)";
+          s[1].style.opacity = "0";
+          s[2].style.transform = "rotate(-45deg) translate(5px,-5px)";
+        } else {
+          s.forEach((x) => {
+            x.style.transform = "";
+            x.style.opacity = "";
+          });
+        }
+      });
+      mobMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          mobMenu.classList.remove("open");
+          hamburger.querySelectorAll("span").forEach((s) => {
+            s.style.transform = "";
+            s.style.opacity = "";
+          });
+        }),
+      );
+
+      // Counter animation
+      function animateCount(el) {
+        const target = parseInt(el.getAttribute("data-target"));
+        const suffix = "+";
+        let current = 0;
+        const step = target / 60;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = Math.floor(current) + suffix;
+        }, 25);
+      }
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              animateCount(e.target);
+              countObserver.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      document
+        .querySelectorAll("[data-target]")
+        .forEach((el) => countObserver.observe(el));
+
+      // Scroll reveal
+      const reveals = document.querySelectorAll(
+        ".srv-block, .why-item, .ch-card, .about-grid > *, .stat-box",
+      );
+      const revealObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = "1";
+              e.target.style.transform = "translateY(0)";
+              revealObs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.15 },
+      );
+      reveals.forEach((el) => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(24px)";
+        el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        revealObs.observe(el);
+      });
+    </script>
+
+    <script>
+            // Mobile scroll animations - triggers animations when elements come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ensure hero animations trigger even on slow connections
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        const elements = heroContent.querySelectorAll('.hero-eyebrow, .hero-h1, .hero-sub, .hero-btns, .hero-stats');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight; // Force reflow
+          el.style.animation = null;
+        });
+      }
+      
+      // For page hero sections
+      const pageHero = document.querySelector('.page-hero-inner');
+      if (pageHero) {
+        const elements = pageHero.querySelectorAll('.breadcrumb, .page-title, .page-subtitle, .print-btn');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight;
+          el.style.animation = null;
+        });
+      }
+
+      // Check if mobile device
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        // Select all elements that should animate on scroll
+        const animateElements = document.querySelectorAll(
+          '.svc-card, .srv-block, .sector-card, .why-card, .why-item, ' +
+          '.market-card, .comp-card, .val-block, .team-card, ' +
+          '.c-card, .qb-item, .tl-item, .stat-box, .ch-card, ' +
+          '.model-card, .invest-card, .kp, .bs, .vm-card, ' +
+          '.phil-item, .leader-card, .cap-list li'
+        );
+        
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          // Element becomes visible when it's 100px from bottom of viewport
+          return rect.top <= windowHeight - 80 && rect.bottom >= 80;
+        }
+        
+        // Function to add visible class to elements in viewport
+        function checkVisibility() {
+          animateElements.forEach(el => {
+            if (isInViewport(el) && !el.classList.contains('visible')) {
+              // Small delay for smoother appearance
+              setTimeout(() => {
+                el.classList.add('visible');
+              }, 50);
+            }
+          });
+        }
+        
+        // Check on scroll with throttling for performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            requestAnimationFrame(function() {
+              checkVisibility();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+        
+        window.addEventListener('resize', function() {
+          checkVisibility();
+        });
+        
+        // Initial check after a short delay
+        setTimeout(checkVisibility, 200);
+        
+        // Background zoom on scroll for mobile hero
+        const heroBg = document.querySelector('.hero-bg-img');
+        if (heroBg) {
+          let zoomTriggered = false;
+          function checkHeroZoom() {
+            const heroSection = document.querySelector('.hero');
+            if (heroSection && !zoomTriggered) {
+              const rect = heroSection.getBoundingClientRect();
+              if (rect.top <= 150 && rect.bottom >= 150) {
+                heroBg.classList.add('zoom');
+                zoomTriggered = true;
+              }
+            }
+          }
+          window.addEventListener('scroll', checkHeroZoom);
+          checkHeroZoom();
+        }
+      }
+      
+      // Stats counter animation (works on both desktop and mobile)
+      function animateCount(el) {
+        const target = parseInt(el.getAttribute('data-target'));
+        const suffix = el.textContent.includes('+') ? '+' : '';
+        let current = 0;
+        const step = target / 50; // Smooth counting
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = Math.floor(current) + suffix;
+        }, 30);
+      }
+      
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              countObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      
+      document.querySelectorAll('[data-target]').forEach((el) => {
+        countObserver.observe(el);
+      });
+    });
+    </script>
+     <script src="js/ai.js"></script>
+     <script src="js/content-loader.js"></script>
+  </body>
+</html>

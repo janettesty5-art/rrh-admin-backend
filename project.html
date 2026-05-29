@@ -1,0 +1,2091 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Profile | Road Rock Holdings</title>
+    <!-- Font Awesome 6 (Free) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #c9a84c;
+        --gold-light: #e8c96d;
+        --gold-dark: #9a7a30;
+        --black: #0a0a0a;
+        --black-2: #111111;
+        --black-3: #181818;
+        --black-4: #222222;
+        --white: #ffffff;
+        --w80: rgba(255, 255, 255, 0.8);
+        --w60: rgba(255, 255, 255, 0.55);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--black);
+        color: var(--white);
+        font-family: "Barlow", sans-serif;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--black);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--gold);
+        border-radius: 3px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+            /* NAV */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+      }
+      .nav-wrap {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      /* FIXED LOGO STYLES - Responsive across all devices */
+      .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .logo img {
+        height: 90px;
+        width: auto;
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+      /* For very small screens, slightly reduce logo size */
+      @media (max-width: 480px) {
+        .logo img {
+          height: 90px;
+        }
+      }
+      .logo-words .brand {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        color: #fff;
+        display: block;
+        line-height: 1.1;
+      }
+      .logo-words .brand em {
+        color: var(--gold);
+        font-style: normal;
+      }
+      .logo-words .tag {
+        font-size: 8.5px;
+        letter-spacing: 3px;
+        color: var(--gold);
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 0;
+      }
+      .nav-links a {
+        padding: 8px 13px;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--w80);
+        transition: color 0.2s;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--gold);
+      }
+      .nav-cta {
+        margin-left: 12px;
+        padding: 11px 24px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: inline-block;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px rgba(201, 168, 76, 0.35);
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s;
+      }
+      .mob-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--black-2);
+        z-index: 999;
+        padding: 28px 24px;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .mob-menu.open {
+        display: flex;
+      }
+      .mob-menu a {
+        display: block;
+        padding: 16px 0;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        color: var(--w80);
+      }
+      .mob-menu a:hover {
+        color: var(--gold);
+      }
+      .mob-cta {
+        margin-top: 24px;
+        padding: 16px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black) !important;
+        text-align: center;
+      }
+      /* Tablet responsive adjustments */
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap {
+          padding: 0 16px;
+        }
+      }
+
+      /* PAGE HERO */
+      .page-hero {
+        padding: 140px 32px 80px;
+        background: var(--black-2);
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80")
+          center/cover;
+        opacity: 0.3;
+      }
+      .page-hero-ov {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+    110deg,
+    rgba(10, 10, 10, 0.75) 38%,
+    rgba(10, 10, 10, 0.45) 70%,
+    rgba(10, 10, 10, 0.25) 100%
+  );
+      }
+      .page-hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .page-hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1320px;
+        margin: 0 auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--w60);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .breadcrumb a {
+        color: var(--gold);
+        font-weight: 600;
+      }
+      .breadcrumb span {
+        color: rgba(201, 168, 76, 0.4);
+      }
+      .page-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(42px, 6vw, 80px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 0.97;
+        margin-bottom: 16px;
+      }
+      .page-title span {
+        color: var(--gold);
+      }
+      .page-subtitle {
+        font-size: 16px;
+        color: var(--w60);
+        max-width: 500px;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .print-btn {
+        padding: 14px 28px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+        flex-shrink: 0;
+        align-self: flex-end;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .print-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(201, 168, 76, 0.4);
+      }
+      /* UTILS */
+      .container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      .sec-eyebrow {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sec-eyebrow::before {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .sec-h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(28px, 4vw, 48px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.05;
+        margin-bottom: 22px;
+      }
+      .sec-h2 span {
+        color: var(--gold);
+      }
+      .body-p {
+        font-size: 15px;
+        color: var(--w60);
+        line-height: 1.8;
+        margin-bottom: 14px;
+        font-weight: 300;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 32px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 32px rgba(201, 168, 76, 0.4);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid rgba(201, 168, 76, 0.4);
+      }
+      .btn-outline:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      /* PROFILE OVERVIEW */
+      .overview-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black);
+      }
+      .overview-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 6vw, 80px);
+        align-items: start;
+      }
+      .profile-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 28px;
+      }
+      .profile-table tr {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .profile-table td {
+        padding: 14px 0;
+        font-size: 14px;
+        vertical-align: top;
+      }
+      .profile-table td:first-child {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        width: 40%;
+        padding-right: 16px;
+      }
+      .profile-table td:last-child {
+        color: var(--w80);
+      }
+      .intro-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+      }
+      .gold-accent {
+        border-left: 3px solid var(--gold);
+        padding: 20px 24px;
+        background: rgba(201, 168, 76, 0.04);
+        margin: 24px 0;
+        font-size: 15px;
+        font-style: italic;
+        color: var(--w80);
+        line-height: 1.7;
+      }
+      .gold-accent i {
+        color: var(--gold);
+        margin-right: 8px;
+        font-size: 18px;
+      }
+      /* SECTORS */
+      .sectors-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black-2);
+      }
+      .sectors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 3px;
+        margin-top: 52px;
+      }
+      .sector-card {
+        background: var(--black-3);
+        padding: 36px 28px;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
+      }
+      .sector-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--gold), transparent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s;
+      }
+      .sector-card:hover {
+        transform: translateY(-4px);
+      }
+      .sector-card:hover::after {
+        transform: scaleX(1);
+      }
+      .sector-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 56px;
+        font-weight: 900;
+        color: rgba(201, 168, 76, 0.06);
+        line-height: 1;
+        margin-bottom: -8px;
+      }
+      .sector-ico {
+        font-size: 32px;
+        margin-bottom: 14px;
+        color: var(--gold);
+      }
+      .sector-name {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 19px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 10px;
+      }
+      .sector-desc {
+        font-size: 13.5px;
+        color: var(--w60);
+        line-height: 1.7;
+        font-weight: 300;
+        margin-bottom: 16px;
+      }
+      .sector-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .tag {
+        padding: 5px 10px;
+        background: rgba(201, 168, 76, 0.07);
+        border: 1px solid rgba(201, 168, 76, 0.15);
+        font-size: 10.5px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+      /* STATS FULL */
+      .stats-bar {
+        padding: clamp(50px, 6vw, 80px) 0;
+        background: linear-gradient(135deg, var(--black-3), var(--black-2));
+      }
+      .stats-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0;
+      }
+      .stat-box {
+        text-align: center;
+        padding: 32px 16px;
+        border-right: 1px solid rgba(201, 168, 76, 0.1);
+      }
+      .stat-box:last-child {
+        border-right: none;
+      }
+      .stat-big {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(36px, 4vw, 54px);
+        font-weight: 900;
+        color: var(--gold);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .stat-lbl {
+        font-size: 11px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--w60);
+        font-weight: 600;
+      }
+      /* LEADERSHIP */
+      .leadership-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black);
+      }
+      .leader-card {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: clamp(32px, 5vw, 60px);
+        align-items: start;
+        background: var(--black-3);
+        padding: 40px;
+        margin-top: 52px;
+      }
+      .leader-img-wrap {
+        position: relative;
+      }
+      .leader-tag {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        padding: 10px 16px;
+        text-align: center;
+      }
+      .leader-tag span {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--black);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .leader-img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        filter: grayscale(20%);
+      }
+      .leader-eyebrow {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .leader-name {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(26px, 3.5vw, 40px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1.05;
+        margin-bottom: 6px;
+      }
+      .leader-name span {
+        color: var(--gold);
+      }
+      .leader-title {
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--w60);
+        margin-bottom: 20px;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .leader-quote {
+        border-left: 3px solid var(--gold);
+        padding-left: 20px;
+        margin: 20px 0;
+        font-size: 15px;
+        font-style: italic;
+        color: var(--w80);
+        line-height: 1.7;
+      }
+      .pillars {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .pillar {
+        padding: 6px 14px;
+        border: 1px solid rgba(201, 168, 76, 0.28);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      /* CAPABILITIES */
+      .capabilities-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black-2);
+      }
+      .cap-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(40px, 5vw, 80px);
+        margin-top: 52px;
+      }
+      .cap-col h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      }
+      .cap-col h3 span {
+        color: var(--gold);
+      }
+      .cap-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .cap-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 14px;
+        color: var(--w60);
+        line-height: 1.6;
+      }
+      .cap-list li i {
+        color: var(--gold);
+        font-size: 12px;
+        margin-top: 4px;
+        flex-shrink: 0;
+      }
+      /* WHY PARTNER */
+      .why-sec {
+        padding: clamp(70px, 9vw, 120px) 0;
+        background: var(--black);
+      }
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+        margin-top: 52px;
+      }
+      .why-card {
+        background: var(--black-3);
+        padding: 28px;
+        border-top: 3px solid var(--gold);
+      }
+      .why-icon {
+        font-size: 32px;
+        margin-bottom: 14px;
+        color: var(--gold);
+      }
+      .why-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        color: var(--white);
+      }
+      .why-text {
+        font-size: 13.5px;
+        color: var(--w60);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      /* CTA */
+      .cta-strip {
+        padding: clamp(50px, 6vw, 80px) 0;
+        background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      }
+      .cta-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+      .cta-inner h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(22px, 3.5vw, 38px);
+        font-weight: 900;
+        text-transform: uppercase;
+        color: var(--black);
+        line-height: 1.1;
+        margin-bottom: 8px;
+      }
+      .cta-inner p {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      .btn-dark {
+        background: var(--black);
+        color: var(--white);
+        padding: 14px 32px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-dark:hover {
+        background: var(--black-3);
+        transform: translateY(-2px);
+      }
+      /* FOOTER */
+      footer {
+        background: var(--black-2);
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+        padding: clamp(50px, 6vw, 80px) 0 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: clamp(24px, 4vw, 56px);
+        margin-bottom: 44px;
+      }
+      .footer-brand p {
+        font-size: 13px;
+        color: var(--w60);
+        line-height: 1.7;
+        margin: 16px 0 18px;
+        font-weight: 300;
+      }
+      .soc-row {
+        display: flex;
+        gap: 9px;
+      }
+      .soc {
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(201, 168, 76, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+        border-radius: 0;
+      }
+      .soc:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+      }
+      .soc i {
+        font-size: 16px;
+        color: var(--w60);
+        transition: color 0.3s;
+      }
+      .soc:hover i {
+        color: var(--black);
+      }
+      .footer-col h4 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-col ul li a {
+        font-size: 13px;
+        color: var(--w60);
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--gold);
+      }
+      .fci {
+        display: flex;
+        gap: 11px;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: var(--w60);
+      }
+      .fci i {
+        color: var(--gold);
+        font-size: 14px;
+        margin-top: 2px;
+        width: 16px;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 18px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer-bottom p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .footer-bottom span {
+        color: var(--gold);
+      }
+      .wa-fab {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 999;
+        width: 56px;
+        height: 56px;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        transition: transform 0.3s;
+      }
+      .wa-fab:hover {
+        transform: scale(1.1);
+      }
+      .wa-fab i {
+        font-size: 32px;
+        color: #fff;
+      }
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+        .overview-grid,
+        .leader-card,
+        .cap-grid {
+          grid-template-columns: 1fr;
+        }
+        .stats-inner {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .stat-box:nth-child(3) {
+          border-right: none;
+        }
+        .stat-box:nth-child(4) {
+          border-right: 1px solid rgba(201, 168, 76, 0.1);
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap,
+        .container,
+        .page-hero {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .stats-inner {
+          grid-template-columns: 1fr 1fr;
+          padding: 0 16px;
+        }
+        .stat-box {
+          border-right: 1px solid rgba(201, 168, 76, 0.1) !important;
+        }
+        .stat-box:nth-child(2) {
+          border-right: none !important;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .cta-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .leader-card {
+          padding: 24px 16px;
+        }
+      }
+      @media print {
+        #navbar,
+        .wa-fab,
+        .mob-menu {
+          display: none !important;
+        }
+        .page-hero {
+          padding-top: 40px;
+        }
+      }
+
+
+            /* HERO ANIMATIONS - Fade In Up with Stagger Effect */
+      .hero-content .hero-eyebrow,
+      .hero-content .hero-h1,
+      .hero-content .hero-sub,
+      .hero-content .hero-btns,
+      .hero-content .hero-stats {
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+
+      .hero-content .hero-eyebrow {
+        animation-delay: 0.1s;
+      }
+      .hero-content .hero-h1 {
+        animation-delay: 0.2s;
+      }
+      .hero-content .hero-sub {
+        animation-delay: 0.4s;
+      }
+      .hero-content .hero-btns {
+        animation-delay: 0.6s;
+      }
+      .hero-content .hero-stats {
+        animation-delay: 0.8s;
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* DESKTOP ONLY - Hover Effects */
+      @media (min-width: 769px) {
+        /* Hero background zoom on hover */
+        .hero-bg-img {
+          transition: transform 8s ease-in-out;
+        }
+        .hero:hover .hero-bg-img {
+          transform: scale(1.05);
+        }
+
+        /* Service cards hover */
+        .svc-card {
+          transition: all 0.4s ease;
+        }
+        .svc-card:hover {
+          transform: translateY(-8px);
+          background: rgba(201, 168, 76, 0.08);
+        }
+
+        /* Section cards hover */
+        .srv-block, .sector-card, .why-card, .market-card, .comp-card,
+        .model-card, .invest-card, .val-block, .team-card {
+          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .srv-block:hover, .sector-card:hover, .why-card:hover, 
+        .market-card:hover, .comp-card:hover, .model-card:hover, 
+        .invest-card:hover, .val-block:hover, .team-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Timeline items hover */
+        .tl-item {
+          transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+        .tl-item:hover {
+          transform: translateX(8px);
+        }
+
+        /* Contact cards hover */
+        .c-card {
+          transition: transform 0.3s ease, padding-left 0.3s ease;
+        }
+        .c-card:hover {
+          transform: translateX(8px);
+          background: rgba(201, 168, 76, 0.03);
+        }
+
+        /* Quick bar items hover */
+        .qb-item {
+          transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .qb-item:hover {
+          transform: translateY(-5px);
+          background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Stats boxes hover */
+        .stat-box {
+          transition: transform 0.3s ease;
+        }
+        .stat-box:hover {
+          transform: translateY(-5px);
+        }
+      }
+
+      /* MOBILE ONLY - Scroll-triggered animations (NO hover) */
+      @media (max-width: 768px) {
+        /* Elements start hidden */
+        .svc-card, .srv-block, .sector-card, .why-card, .why-item,
+        .market-card, .comp-card, .val-block, .team-card, 
+        .c-card, .qb-item, .tl-item, .stat-box, .ch-card,
+        .model-card, .invest-card, .kp, .bs, .vm-card,
+        .phil-item, .leader-card, .cap-list li, .tl-item {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), 
+                      transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        /* When element becomes visible via scroll */
+        .svc-card.visible, .srv-block.visible, .sector-card.visible, 
+        .why-card.visible, .why-item.visible, .market-card.visible, 
+        .comp-card.visible, .val-block.visible, .team-card.visible, 
+        .c-card.visible, .qb-item.visible, .tl-item.visible, 
+        .stat-box.visible, .ch-card.visible, .model-card.visible, 
+        .invest-card.visible, .kp.visible, .bs.visible, .vm-card.visible, 
+        .phil-item.visible, .leader-card.visible, .cap-list li.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Stagger delays for smooth cascading effect */
+        .svc-card:nth-child(1) { transition-delay: 0s; }
+        .svc-card:nth-child(2) { transition-delay: 0.05s; }
+        .svc-card:nth-child(3) { transition-delay: 0.1s; }
+        .svc-card:nth-child(4) { transition-delay: 0.15s; }
+        .svc-card:nth-child(5) { transition-delay: 0.2s; }
+        
+        .stat-box:nth-child(1) { transition-delay: 0s; }
+        .stat-box:nth-child(2) { transition-delay: 0.05s; }
+        .stat-box:nth-child(3) { transition-delay: 0.1s; }
+        .stat-box:nth-child(4) { transition-delay: 0.15s; }
+        .stat-box:nth-child(5) { transition-delay: 0.2s; }
+
+        .srv-block:nth-child(1) { transition-delay: 0s; }
+        .srv-block:nth-child(2) { transition-delay: 0.05s; }
+        .srv-block:nth-child(3) { transition-delay: 0.1s; }
+        .srv-block:nth-child(4) { transition-delay: 0.15s; }
+        .srv-block:nth-child(5) { transition-delay: 0.2s; }
+
+        /* Hero background zoom on scroll (not hover) */
+        .hero-bg-img {
+          transition: transform 0.8s ease-out;
+        }
+        .hero-bg-img.zoom {
+          transform: scale(1.05);
+        }
+
+        /* Disable all hover effects on mobile */
+        .hero:hover .hero-bg-img {
+          transform: none;
+        }
+        .svc-card:hover, .srv-block:hover, .sector-card:hover, 
+        .why-card:hover, .market-card:hover, .comp-card:hover,
+        .val-block:hover, .team-card:hover, .c-card:hover,
+        .qb-item:hover, .stat-box:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+
+      /* Universal Animations (Work on both desktop & mobile) */
+      
+      /* Floating animation for scroll indicator */
+      .hero-scroll {
+        animation: float 2s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%, 100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(8px);
+        }
+      }
+
+      /* Glow effect on buttons on load */
+      .hero-btns .btn-gold {
+        animation: subtleGlow 1.5s ease-in-out 0.6s both;
+      }
+      @keyframes subtleGlow {
+        0%, 100% {
+          box-shadow: 0 0 0 rgba(201, 168, 76, 0);
+        }
+        50% {
+          box-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+        }
+      }
+
+      /* Page Hero Sections (About, Contact, Profile) */
+      .page-hero .breadcrumb,
+      .page-hero .page-title,
+      .page-hero .page-subtitle,
+      .page-hero .print-btn {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+      .page-hero .breadcrumb {
+        animation-delay: 0.1s;
+      }
+      .page-hero .page-title {
+        animation-delay: 0.2s;
+      }
+      .page-hero .page-subtitle {
+        animation-delay: 0.35s;
+      }
+      .page-hero .print-btn {
+        animation-delay: 0.5s;
+      }
+
+      /* Investor Presentation Slide Cover */
+      .slide-cover .cover-tag,
+      .slide-cover .cover-h1,
+      .slide-cover .cover-sub,
+      .slide-cover .cover-meta {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s ease forwards;
+      }
+      .slide-cover .cover-tag {
+        animation-delay: 0.1s;
+      }
+      .slide-cover .cover-h1 {
+        animation-delay: 0.2s;
+      }
+      .slide-cover .cover-sub {
+        animation-delay: 0.35s;
+      }
+      .slide-cover .cover-meta {
+        animation-delay: 0.5s;
+      }
+
+
+      /* ── MOBILE FOOTER LAYOUT FIX ── 
+   Paste this inside your <style> tag on all pages
+   Quick Links + Our Services = side by side
+   Brand (top) → Quick Links | Services → Contact (bottom)
+*/
+
+@media (max-width: 768px) {
+  .footer-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+  }
+
+  /* Brand: full width, top */
+  .footer-grid .footer-brand {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  /* Quick Links: left half */
+  .footer-grid .footer-col:nth-child(2) {
+    width: calc(50% - 12px) !important;
+    order: 2 !important;
+  }
+
+  /* Our Services: right half — side by side with Quick Links */
+  .footer-grid .footer-col:nth-child(3) {
+    width: calc(50% - 12px) !important;
+    order: 3 !important;
+  }
+
+  /* Contact Us: full width, bottom */
+  .footer-grid .footer-col:nth-child(4) {
+    width: 100% !important;
+    order: 4 !important;
+    border-top: 1px solid rgba(201, 168, 76, 0.1);
+    padding-top: 20px;
+  }
+}
+
+/* Extra small screens — all stack */
+@media (max-width: 380px) {
+  .footer-grid .footer-col:nth-child(2),
+  .footer-grid .footer-col:nth-child(3) {
+    width: 100% !important;
+  }
+}
+
+.page-hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.page-hero-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+}
+@media (min-width: 769px) {
+  .page-hero-video video {
+    transition: transform 8s ease-in-out;
+  }
+  .page-hero:hover .page-hero-video video {
+    transform: scale(1.05);
+  }
+}
+    </style>
+  </head>
+  <body>
+       <nav id="navbar">
+      <div class="nav-wrap">
+        <a href="index.html" class="logo">
+          <img src="/img/RRH-LOGO.png" alt="Road Rock Holdings Logo" />
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="/project.html">Profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Get A Quote</a>
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mob-menu" id="mobMenu">
+      <a href="index.html"><i class="fas fa-home"></i> Home</a
+      ><a href="about.html"><i class="fas fa-users"></i> About Us</a>
+      <a href="services.html"><i class="fas fa-cogs"></i> Services</a>
+      <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact</a
+      ><a href="/project.html"
+        ><i class="fas fa-building"></i> Company Profile</a
+      >
+      <a href="contact.html" class="mob-cta"
+        ><i class="fas fa-arrow-right"></i> Get A Quote →</a
+      >
+    </div>
+
+    <!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-video">
+    <video autoplay muted loop playsinline
+      poster="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80">
+      <source src="/video/RRH-video.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-ov"></div>
+  <div class="page-hero-grid"></div>
+    <div class="page-hero-inner">
+        <div>
+          <div class="breadcrumb">
+            <a href="index.html">Home</a><span>/</span
+            ><span><i class="fas fa-file-alt"></i> Company Profile</span>
+          </div>
+          <h1 class="page-title">Company <span>Profile</span></h1>
+          <p class="page-subtitle">
+            A comprehensive overview of Road Rock Holdings — our structure,
+            capabilities, leadership, and strategic vision for Africa and
+            beyond.
+          </p>
+        </div>
+        <button class="print-btn" onclick="window.print()">
+          <i class="fas fa-print"></i> Print / Download Profile
+        </button>
+      </div>
+</div>
+
+    <!-- OVERVIEW -->
+    <section class="overview-sec">
+      <div class="container">
+        <div class="overview-grid">
+          <div>
+            <div class="sec-eyebrow">Company Overview</div>
+            <h2 class="sec-h2">Road Rock <span>Holdings</span></h2>
+            <table class="profile-table">
+              <tr>
+                <td>Company Name</td>
+                <td>Road Rock Holdings</td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td>Multi-Industry Holding Company (Private)</td>
+              </tr>
+              <tr>
+                <td>Headquarters</td>
+                <td>Lagos, Nigeria</td>
+              </tr>
+              <tr>
+                <td>CEO / Founder</td>
+                <td>Tech Engineer Ikechukwu B. Anyanwu</td>
+              </tr>
+              <tr>
+                <td>Business Sectors</td>
+                <td>5 Core Divisions</td>
+              </tr>
+              <tr>
+                <td>Team Size</td>
+                <td>50+ Expert Professionals</td>
+              </tr>
+              <tr>
+                <td>Projects Delivered</td>
+                <td>250+ Completed Projects</td>
+              </tr>
+              <tr>
+                <td>Clients Served</td>
+                <td>100+ Satisfied Clients</td>
+              </tr>
+              <tr>
+                <td>Phone</td>
+                <td>
+                  <a href="tel:+2348082363104" style="color: var(--gold)"
+                    ><i class="fas fa-phone-alt"></i> +234 808 236 3104</a
+                  >
+                  |
+                  <a href="tel:+2349018053469" style="color: var(--gold)"
+                    >+234 901 805 3469</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>
+                  <a
+                    href="mailto:info@roadrockholdings.com"
+                    style="color: var(--gold)"
+                    ><i class="far fa-envelope"></i>
+                    info@roadrockholdings.com</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td>Coverage</td>
+                <td>Nigeria | Africa | Global Markets</td>
+              </tr>
+            </table>
+            <a href="contact.html" class="btn btn-gold"
+              ><i class="fas fa-arrow-right"></i> Request Full Profile →</a
+            >
+          </div>
+          <div>
+            <img
+              class="intro-img"
+              src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80"
+              alt="Road Rock Holdings"
+            />
+            <div class="gold-accent" style="margin-top: 24px">
+              <i class="fas fa-quote-left"></i> "At Road Rock Holdings, we are
+              building more than structures — we are building sustainable
+              futures. Through engineering excellence, innovative technologies,
+              renewable energy, and smart infrastructure solutions, we are
+              committed to transforming communities and empowering industries
+              for generations to come."
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats-bar">
+      <div class="stats-inner">
+        <div class="stat-box">
+          <div class="stat-big" data-target="15">0+</div>
+          <div class="stat-lbl">
+            <i class="fas fa-trophy"></i> Years of Excellence
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-big" data-target="250">0+</div>
+          <div class="stat-lbl">
+            <i class="fas fa-draw-polygon"></i> Projects Completed
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-big" data-target="100">0+</div>
+          <div class="stat-lbl"><i class="fas fa-smile"></i> Happy Clients</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-big" data-target="5">0+</div>
+          <div class="stat-lbl">
+            <i class="fas fa-chart-pie"></i> Business Sectors
+          </div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-big" data-target="50">0+</div>
+          <div class="stat-lbl">
+            <i class="fas fa-user-tie"></i> Expert Professionals
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTORS -->
+    <section class="sectors-sec">
+      <div class="container">
+        <div class="sec-eyebrow">Business Divisions</div>
+        <h2 class="sec-h2">Our Five <span>Strategic Sectors</span></h2>
+        <div class="sectors-grid">
+          <div class="sector-card">
+            <div class="sector-num">01</div>
+            <div class="sector-ico"><i class="fas fa-road"></i></div>
+            <div class="sector-name">Road &amp; Civil Construction</div>
+            <p class="sector-desc">
+              We deliver durable and high-quality civil engineering projects
+              using modern construction technologies and internationally
+              accepted standards.
+            </p>
+            <div class="sector-tags">
+              <span class="tag">Highway Construction</span
+              ><span class="tag">Bridge Engineering</span
+              ><span class="tag">Road Rehabilitation</span
+              ><span class="tag">Urban Infrastructure</span>
+            </div>
+          </div>
+          <div class="sector-card">
+            <div class="sector-num">02</div>
+            <div class="sector-ico"><i class="fas fa-building"></i></div>
+            <div class="sector-name">Real Estate Development</div>
+            <p class="sector-desc">
+              We create modern residential and commercial spaces designed for
+              comfort, security, sustainability, and long-term investment value.
+            </p>
+            <div class="sector-tags">
+              <span class="tag">Smart Homes</span
+              ><span class="tag">Luxury Apartments</span
+              ><span class="tag">Commercial Buildings</span
+              ><span class="tag">Estate Planning</span>
+            </div>
+          </div>
+          <div class="sector-card">
+            <div class="sector-num">03</div>
+            <div class="sector-ico"><i class="fas fa-solar-panel"></i></div>
+            <div class="sector-name">Solar &amp; Renewable Energy</div>
+            <p class="sector-desc">
+              Clean, reliable, and cost-effective solar solutions for homes,
+              businesses, and industries, reducing dependence on grid
+              electricity.
+            </p>
+            <div class="sector-tags">
+              <span class="tag">Solar Installation</span
+              ><span class="tag">Inverter Systems</span
+              ><span class="tag">Industrial Solar</span
+              ><span class="tag">Energy Consultation</span>
+            </div>
+          </div>
+          <div class="sector-card">
+            <div class="sector-num">04</div>
+            <div class="sector-ico"><i class="fas fa-laptop-code"></i></div>
+            <div class="sector-name">Information Technology</div>
+            <p class="sector-desc">
+              We help businesses leverage technology for growth, security,
+              efficiency, and digital transformation through cutting-edge IT
+              solutions.
+            </p>
+            <div class="sector-tags">
+              <span class="tag">Network Infrastructure</span
+              ><span class="tag">Cybersecurity</span
+              ><span class="tag">Cloud Services</span
+              ><span class="tag">Software Development</span>
+            </div>
+          </div>
+          <div class="sector-card">
+            <div class="sector-num">05</div>
+            <div class="sector-ico"><i class="fas fa-paint-roller"></i></div>
+            <div class="sector-name">Interiors &amp; Exteriors</div>
+            <p class="sector-desc">
+              Elegant, functional, and architecturally superior living spaces
+              tailored to modern lifestyles — from concept design to luxury
+              completion.
+            </p>
+            <div class="sector-tags">
+              <span class="tag">Modern Interior Design</span
+              ><span class="tag">POP Ceilings</span
+              ><span class="tag">Smart Home Finishing</span
+              ><span class="tag">Landscaping</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="leadership-sec">
+      <div class="container">
+        <div class="sec-eyebrow">Leadership</div>
+        <h2 class="sec-h2">Executive <span>Leadership</span></h2>
+        <div class="leader-card">
+          <div class="leader-img-wrap">
+            <img
+              class="leader-img"
+              src="/img/ceo-off-site.jpg"
+              alt="CEO"
+            />
+            <div class="leader-tag">
+              <span><i class="fas fa-crown"></i> CEO &amp; Founder</span>
+            </div>
+          </div>
+          <div>
+            <div class="leader-eyebrow">
+              <i class="fas fa-microchip"></i> Tech Engineer
+            </div>
+            <h3 class="leader-name">IKECHUKWU B. <span>ANYANWU</span></h3>
+            <div class="leader-title">
+              CEO &amp; Founder — Road Rock Holdings
+            </div>
+            <p class="body-p">
+              Tech Engineer Ikechukwu B. Anyanwu is a visionary entrepreneur,
+              technology engineer, and infrastructure strategist with a passion
+              for innovation, engineering excellence, and transformational
+              development.
+            </p>
+            <p class="body-p">
+              With years of experience spanning technology, engineering systems,
+              construction planning, renewable energy integration, and business
+              leadership, he founded Road Rock Holdings with a vision to create
+              a diversified conglomerate capable of solving modern
+              infrastructure and technological challenges across emerging
+              economies.
+            </p>
+            <blockquote class="leader-quote">
+              <i
+                class="fas fa-quote-left"
+                style="color: var(--gold); margin-right: 8px"
+              ></i>
+              "Our goal is to build a future where infrastructure, energy,
+              technology, and smart living solutions work together to improve
+              lives, empower businesses, and shape modern societies."
+            </blockquote>
+            <div class="pillars">
+              <span class="pillar"
+                ><i class="fas fa-lightbulb"></i> Innovation</span
+              ><span class="pillar"
+                ><i class="fas fa-handshake"></i> Integrity</span
+              >
+              <span class="pillar"
+                ><i class="fas fa-seedling"></i> Sustainability</span
+              ><span class="pillar"
+                ><i class="fas fa-medal"></i> Excellence</span
+              >
+              <span class="pillar"
+                ><i class="fas fa-heart"></i> Human-Centered</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPABILITIES -->
+    <section class="capabilities-sec">
+      <div class="container">
+        <div class="sec-eyebrow">What We Deliver</div>
+        <h2 class="sec-h2">Our Core <span>Capabilities</span></h2>
+        <div class="cap-grid">
+          <div class="cap-col">
+            <h3>Technical <span>Capabilities</span></h3>
+            <ul class="cap-list">
+              <li>
+                <i class="fas fa-check-circle"></i> Highway and road
+                construction using modern asphalt and concrete technologies
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Bridge design, engineering
+                and construction to international standards
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Residential and commercial
+                real estate development and management
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Solar photovoltaic (PV)
+                system design and installation at all scales
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Enterprise network
+                infrastructure design and deployment
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Custom software development
+                and smart automation systems
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Interior architecture and
+                luxury space transformation
+              </li>
+            </ul>
+          </div>
+          <div class="cap-col">
+            <h3>Management <span>Capabilities</span></h3>
+            <ul class="cap-list">
+              <li>
+                <i class="fas fa-check-circle"></i> End-to-end project
+                management from concept to commissioning
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Quality assurance and
+                international standards compliance (ISO)
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Government, institutional
+                and private sector project delivery
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Contract management,
+                procurement and vendor coordination
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Risk assessment, mitigation
+                and project insurance management
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Post-project maintenance,
+                facilities management and support
+              </li>
+              <li>
+                <i class="fas fa-check-circle"></i> Environmental impact
+                assessment and sustainability planning
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY PARTNER -->
+    <section class="why-sec">
+      <div class="container">
+        <div class="sec-eyebrow">Why Choose Us</div>
+        <h2 class="sec-h2">Why Partner With <span>Road Rock Holdings</span></h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-medal"></i></div>
+            <div class="why-title">Professional Excellence</div>
+            <p class="why-text">
+              Every project is executed to the highest international standards
+              with rigorous quality control.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-microchip"></i></div>
+            <div class="why-title">Innovative Engineering</div>
+            <p class="why-text">
+              We integrate the latest methodologies and technologies for
+              future-proof solutions.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-leaf"></i></div>
+            <div class="why-title">Sustainable Solutions</div>
+            <p class="why-text">
+              Environmental responsibility embedded in every project for
+              long-term value.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-clock"></i></div>
+            <div class="why-title">Reliable Delivery</div>
+            <p class="why-text">
+              We honour timelines and commitments, delivering on schedule and
+              within budget.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-users"></i></div>
+            <div class="why-title">Experienced Team</div>
+            <p class="why-text">
+              Multidisciplinary team with decades of combined expertise.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-robot"></i></div>
+            <div class="why-title">Modern Technologies</div>
+            <p class="why-text">
+              AI-integrated systems and smart automation for superior outcomes.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-smile"></i></div>
+            <div class="why-title">Customer Satisfaction</div>
+            <p class="why-text">
+              Client-first approach that delivers exactly what our clients need.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon"><i class="fas fa-globe-africa"></i></div>
+            <div class="why-title">Pan-African Vision</div>
+            <p class="why-text">
+              Committed to Africa's development and global market expansion.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-strip">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready to Work With Us?</h2>
+          <p>
+            Contact our team for a consultation, quote, or partnership
+            discussion.
+          </p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a href="contact.html" class="btn-dark"
+            ><i class="fas fa-arrow-right"></i> Get In Touch →</a
+          ><a
+            href="/investor-presentation.html"
+            class="btn-dark"
+            style="
+              background: rgba(0, 0, 0, 0.5);
+              border: 1px solid rgba(0, 0, 0, 0.3);
+            "
+            ><i class="fas fa-chart-line"></i> Investor Deck →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo"
+              ><img src="/img/RRH-LOGO.png" alt=""></a
+            >
+            <p>
+              A multi-industry conglomerate delivering excellence across five
+              strategic sectors.
+            </p>
+            <div class="soc-row">
+              <a href="#" class="soc"><i class="fab fa-facebook-f"></i></a
+              ><a href="#" class="soc"><i class="fab fa-instagram"></i></a
+              ><a href="#" class="soc"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/investor-presentation.html">Investor Deck</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="services.html#construction">Road Construction</a></li>
+              <li><a href="services.html#real-estate">Real Estate</a></li>
+              <li><a href="services.html#solar">Solar Energy</a></li>
+              <li><a href="services.html#technology">IT Solutions</a></li>
+              <li><a href="services.html#interiors">Interiors & Exteriors</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact</h4>
+            <div class="fci">
+              <i class="fas fa-map-marker-alt"></i><span>Lagos, Nigeria</span>
+            </div>
+            <div class="fci">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <a href="tel:+2348082363104" style="color: var(--w60)"
+                  >+234 808 236 3104</a
+                ><br /><a href="tel:+2349018053469" style="color: var(--w60)"
+                  >+234 901 805 3469</a
+                >
+              </div>
+            </div>
+            <div class="fci">
+              <i class="far fa-envelope"></i
+              ><a
+                href="mailto:info@roadrockholdings.com"
+                style="color: var(--w60)"
+                >info@roadrockholdings.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
+          </p>
+          <p><i class="fas fa-map-pin"></i> Lagos, Nigeria</p>
+        </div>
+      </div>
+    </footer>
+    <a
+      href="https://wa.me/2348082363104"
+      class="wa-fab"
+      target="_blank"
+      rel="noopener"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+
+    <script>
+      const hamburger = document.getElementById("hamburger"),
+        mobMenu = document.getElementById("mobMenu");
+      hamburger.addEventListener("click", () => {
+        mobMenu.classList.toggle("open");
+        const s = hamburger.querySelectorAll("span");
+        if (mobMenu.classList.contains("open")) {
+          s[0].style.transform = "rotate(45deg) translate(5px,5px)";
+          s[1].style.opacity = "0";
+          s[2].style.transform = "rotate(-45deg) translate(5px,-5px)";
+        } else {
+          s.forEach((x) => {
+            x.style.transform = "";
+            x.style.opacity = "";
+          });
+        }
+      });
+      function animateCount(el) {
+        const t = parseInt(el.getAttribute("data-target"));
+        let c = 0;
+        const step = t / 60;
+        const i = setInterval(() => {
+          c += step;
+          if (c >= t) {
+            c = t;
+            clearInterval(i);
+          }
+          el.textContent = Math.floor(c) + "+";
+        }, 25);
+      }
+      const obs = new IntersectionObserver(
+        (e) => {
+          e.forEach((x) => {
+            if (x.isIntersecting) {
+              animateCount(x.target);
+              obs.unobserve(x.target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+      document
+        .querySelectorAll("[data-target]")
+        .forEach((el) => obs.observe(el));
+      const revObs = new IntersectionObserver(
+        (e) => {
+          e.forEach((x) => {
+            if (x.isIntersecting) {
+              x.target.style.opacity = "1";
+              x.target.style.transform = "translateY(0)";
+              revObs.unobserve(x.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".sector-card,.why-card,.cap-list li")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity .5s ease, transform .5s ease";
+          revObs.observe(el);
+        });
+    </script>
+
+    <script>
+            // Mobile scroll animations - triggers animations when elements come into view
+    document.addEventListener('DOMContentLoaded', function() {
+      // Ensure hero animations trigger even on slow connections
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        const elements = heroContent.querySelectorAll('.hero-eyebrow, .hero-h1, .hero-sub, .hero-btns, .hero-stats');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight; // Force reflow
+          el.style.animation = null;
+        });
+      }
+      
+      // For page hero sections
+      const pageHero = document.querySelector('.page-hero-inner');
+      if (pageHero) {
+        const elements = pageHero.querySelectorAll('.breadcrumb, .page-title, .page-subtitle, .print-btn');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          el.offsetHeight;
+          el.style.animation = null;
+        });
+      }
+
+      // Check if mobile device
+      const isMobile = window.innerWidth <= 768;
+      
+      if (isMobile) {
+        // Select all elements that should animate on scroll
+        const animateElements = document.querySelectorAll(
+          '.svc-card, .srv-block, .sector-card, .why-card, .why-item, ' +
+          '.market-card, .comp-card, .val-block, .team-card, ' +
+          '.c-card, .qb-item, .tl-item, .stat-box, .ch-card, ' +
+          '.model-card, .invest-card, .kp, .bs, .vm-card, ' +
+          '.phil-item, .leader-card, .cap-list li'
+        );
+        
+        // Function to check if element is in viewport
+        function isInViewport(element) {
+          const rect = element.getBoundingClientRect();
+          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+          // Element becomes visible when it's 100px from bottom of viewport
+          return rect.top <= windowHeight - 80 && rect.bottom >= 80;
+        }
+        
+        // Function to add visible class to elements in viewport
+        function checkVisibility() {
+          animateElements.forEach(el => {
+            if (isInViewport(el) && !el.classList.contains('visible')) {
+              // Small delay for smoother appearance
+              setTimeout(() => {
+                el.classList.add('visible');
+              }, 50);
+            }
+          });
+        }
+        
+        // Check on scroll with throttling for performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            requestAnimationFrame(function() {
+              checkVisibility();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+        
+        window.addEventListener('resize', function() {
+          checkVisibility();
+        });
+        
+        // Initial check after a short delay
+        setTimeout(checkVisibility, 200);
+        
+        // Background zoom on scroll for mobile hero
+        const heroBg = document.querySelector('.hero-bg-img');
+        if (heroBg) {
+          let zoomTriggered = false;
+          function checkHeroZoom() {
+            const heroSection = document.querySelector('.hero');
+            if (heroSection && !zoomTriggered) {
+              const rect = heroSection.getBoundingClientRect();
+              if (rect.top <= 150 && rect.bottom >= 150) {
+                heroBg.classList.add('zoom');
+                zoomTriggered = true;
+              }
+            }
+          }
+          window.addEventListener('scroll', checkHeroZoom);
+          checkHeroZoom();
+        }
+      }
+      
+      // Stats counter animation (works on both desktop and mobile)
+      function animateCount(el) {
+        const target = parseInt(el.getAttribute('data-target'));
+        const suffix = el.textContent.includes('+') ? '+' : '';
+        let current = 0;
+        const step = target / 50; // Smooth counting
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            current = target;
+            clearInterval(timer);
+          }
+          el.textContent = Math.floor(current) + suffix;
+        }, 30);
+      }
+      
+      const countObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              animateCount(entry.target);
+              countObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      
+      document.querySelectorAll('[data-target]').forEach((el) => {
+        countObserver.observe(el);
+      });
+    });
+    </script>
+     <script src="js/ai.js"></script>
+     <script src="js/content-loader.js"></script>
+  </body>
+</html>

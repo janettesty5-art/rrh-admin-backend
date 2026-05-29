@@ -1,0 +1,2714 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | Road Rock Holdings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ── ROOT & RESET ─────────────────────────────────────────── */
+      :root {
+        --gold: #c9a84c;
+        --gold-light: #e8c96d;
+        --gold-dark: #9a7a30;
+        --black: #0a0a0a;
+        --black-2: #111111;
+        --black-3: #181818;
+        --black-4: #222222;
+        --white: #ffffff;
+        --w80: rgba(255, 255, 255, 0.8);
+        --w60: rgba(255, 255, 255, 0.55);
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--black);
+        color: var(--white);
+        font-family: "Barlow", sans-serif;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--black);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--gold);
+        border-radius: 3px;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* ── NAV ─────────────────────────────────────────────────── */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(10, 10, 10, 0.96);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+      }
+      .nav-wrap {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+      }
+      .logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+      }
+      .logo img {
+        height: 90px;
+        width: auto;
+        max-width: 100%;
+        display: block;
+        object-fit: contain;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+      }
+      .nav-links a {
+        padding: 8px 13px;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--w80);
+        transition: color 0.2s;
+        font-family: "Barlow Condensed", sans-serif;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--gold);
+      }
+      .nav-cta {
+        margin-left: 12px;
+        padding: 11px 24px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: inline-block;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .nav-cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 24px rgba(201, 168, 76, 0.35);
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 4px;
+        flex-shrink: 0;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #fff;
+        transition: all 0.3s;
+      }
+      .mob-menu {
+        display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--black-2);
+        z-index: 999;
+        padding: 28px 24px;
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .mob-menu.open {
+        display: flex;
+      }
+      .mob-menu a {
+        display: block;
+        padding: 16px 0;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+        color: var(--w80);
+      }
+      .mob-menu a:hover {
+        color: var(--gold);
+      }
+      .mob-cta {
+        margin-top: 24px;
+        padding: 16px;
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black) !important;
+        text-align: center;
+      }
+      @media (max-width: 900px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+      @media (max-width: 640px) {
+        .nav-wrap {
+          padding: 0 16px;
+        }
+      }
+
+      /* ── PAGE HERO ───────────────────────────────────────────── */
+      .page-hero {
+        padding: 140px 32px 80px;
+        background: var(--black-2);
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80")
+          center/cover;
+        opacity: 0.3;
+      }
+      .page-hero-ov {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+    110deg,
+    rgba(10, 10, 10, 0.75) 38%,
+    rgba(10, 10, 10, 0.45) 70%,
+    rgba(10, 10, 10, 0.25) 100%
+  );
+      }
+      .page-hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(201, 168, 76, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(201, 168, 76, 0.04) 1px, transparent 1px);
+        background-size: 80px 80px;
+      }
+      .page-hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1320px;
+        margin: 0 auto;
+      }
+      .breadcrumb {
+        font-size: 12px;
+        color: var(--w60);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .breadcrumb a {
+        color: var(--gold);
+        font-weight: 600;
+      }
+      .breadcrumb span {
+        color: rgba(201, 168, 76, 0.4);
+      }
+      .page-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(42px, 6vw, 80px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 0.97;
+        margin-bottom: 16px;
+      }
+      .page-title span {
+        color: var(--gold);
+      }
+      .page-subtitle {
+        font-size: 16px;
+        color: var(--w60);
+        max-width: 560px;
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .page-hero .breadcrumb,
+      .page-hero .page-title,
+      .page-hero .page-subtitle {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+      }
+      .page-hero .breadcrumb {
+        animation-delay: 0.1s;
+      }
+      .page-hero .page-title {
+        animation-delay: 0.2s;
+      }
+      .page-hero .page-subtitle {
+        animation-delay: 0.35s;
+      }
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── SERVICE NAV TABS ─────────────────────────────────────── */
+      .svc-tabs {
+        position: sticky;
+        top: 70px;
+        z-index: 900;
+        background: rgba(10, 10, 10, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+        overflow-x: auto;
+      }
+      .svc-tabs-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        gap: 0;
+        white-space: nowrap;
+      }
+      .tab-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 16px 20px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        border-bottom: 2px solid transparent;
+        margin-bottom: -1px;
+        transition: all 0.2s;
+        cursor: pointer;
+      }
+      .tab-link:hover {
+        color: var(--gold);
+      }
+      .tab-link.active {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+      }
+      .tab-link i {
+        font-size: 14px;
+      }
+      @media (max-width: 640px) {
+        .svc-tabs-inner {
+          padding: 0 12px;
+        }
+        .tab-link {
+          padding: 14px 12px;
+          font-size: 10px;
+          gap: 6px;
+        }
+        .tab-link i {
+          font-size: 12px;
+        }
+      }
+
+      /* ── CONTAINER ───────────────────────────────────────────── */
+      .container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      @media (max-width: 640px) {
+        .container {
+          padding: 0 16px;
+        }
+      }
+
+      /* ── SERVICE SECTION BASE ────────────────────────────────── */
+      .service-section {
+        padding: clamp(70px, 9vw, 120px) 0;
+        scroll-margin-top: 140px;
+      }
+      .service-section:nth-child(odd) {
+        background: var(--black);
+      }
+      .service-section:nth-child(even) {
+        background: var(--black-2);
+      }
+
+      /* ── SERVICE HEADER ──────────────────────────────────────── */
+      .svc-section-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        margin-bottom: 52px;
+      }
+      .svc-number {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(80px, 10vw, 120px);
+        font-weight: 900;
+        color: rgba(201, 168, 76, 0.06);
+        line-height: 1;
+        flex-shrink: 0;
+        margin-top: -10px;
+      }
+      .svc-eyebrow {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .svc-eyebrow::before {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: var(--gold);
+      }
+      .svc-title {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(32px, 4.5vw, 56px);
+        font-weight: 900;
+        text-transform: uppercase;
+        line-height: 1;
+        margin-bottom: 16px;
+      }
+      .svc-title span {
+        color: var(--gold);
+      }
+      .svc-desc {
+        font-size: 15px;
+        color: var(--w60);
+        line-height: 1.8;
+        max-width: 680px;
+        font-weight: 300;
+      }
+
+      /* ── SERVICE CONTENT GRID ────────────────────────────────── */
+      .svc-content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(32px, 5vw, 72px);
+        align-items: start;
+        margin-bottom: 48px;
+      }
+      .svc-content-grid.reverse {
+        direction: rtl;
+      }
+      .svc-content-grid.reverse > * {
+        direction: ltr;
+      }
+
+      /* ── SERVICE DETAILS ─────────────────────────────────────── */
+      .svc-what-we-do {
+        margin-bottom: 28px;
+      }
+      .svc-what-we-do h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+      }
+      .svc-services-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+      .svc-service-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 12px;
+        background: rgba(201, 168, 76, 0.04);
+        border-left: 2px solid var(--gold);
+      }
+      .svc-service-item i {
+        color: var(--gold);
+        font-size: 13px;
+        margin-top: 2px;
+        flex-shrink: 0;
+      }
+      .svc-service-item span {
+        font-size: 13px;
+        color: var(--w80);
+        font-weight: 500;
+      }
+      .svc-why {
+        background: var(--black-3);
+        padding: 24px;
+        margin-bottom: 28px;
+      }
+      .svc-why h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 14px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 14px;
+      }
+      .svc-why p {
+        font-size: 14px;
+        color: var(--w60);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+      .svc-cta-btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 13px 28px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+        color: var(--black);
+      }
+      .btn-gold:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(201, 168, 76, 0.4);
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--white);
+        border: 1px solid rgba(201, 168, 76, 0.4);
+      }
+      .btn-outline:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      /* ══════════════════════════════════════════════════════════
+   ██  CINEMATIC GALLERY SYSTEM  ██
+   A breathtaking multi-image display built for 10-20 images
+   ══════════════════════════════════════════════════════════ */
+
+      /* ── GALLERY WRAPPER ─────────────────────────────────────── */
+      .svc-gallery {
+        position: relative;
+      }
+
+      /* ── HERO STAGE: large featured image with Ken Burns zoom ── */
+      .gallery-stage {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16/9;
+        overflow: hidden;
+        background: var(--black-3);
+        cursor: pointer;
+      }
+      .gallery-stage-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform-origin: center center;
+        transition: opacity 0.6s ease;
+        opacity: 0;
+      }
+      .gallery-stage-img.active {
+        opacity: 1;
+        animation: kenBurns 8s ease-in-out forwards;
+      }
+      @keyframes kenBurns {
+        0% {
+          transform: scale(1) translate(0, 0);
+        }
+        100% {
+          transform: scale(1.08) translate(-1%, -1%);
+        }
+      }
+
+      /* Stage overlay: gradient + caption */
+      .gallery-stage-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(10, 10, 10, 0.85) 0%,
+          transparent 55%
+        );
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px 22px;
+        pointer-events: none;
+      }
+      .gallery-caption {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 4px;
+      }
+      .gallery-counter {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.45);
+        font-weight: 300;
+      }
+
+      /* Stage nav arrows */
+      .gallery-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+        width: 40px;
+        height: 40px;
+        background: rgba(10, 10, 10, 0.7);
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        pointer-events: all;
+      }
+      .gallery-nav:hover {
+        background: var(--gold);
+      }
+      .gallery-nav:hover i {
+        color: var(--black);
+      }
+      .gallery-nav i {
+        color: var(--white);
+        font-size: 12px;
+        transition: color 0.2s;
+      }
+      .gallery-nav.prev {
+        left: 14px;
+      }
+      .gallery-nav.next {
+        right: 14px;
+      }
+
+      /* Expand button */
+      .gallery-expand {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        z-index: 3;
+        width: 36px;
+        height: 36px;
+        background: rgba(10, 10, 10, 0.7);
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .gallery-expand:hover {
+        background: var(--gold);
+      }
+      .gallery-expand:hover i {
+        color: var(--black);
+      }
+      .gallery-expand i {
+        color: var(--white);
+        font-size: 11px;
+        transition: color 0.2s;
+      }
+
+      /* ── FILMSTRIP THUMBNAILS ─────────────────────────────────── */
+      .gallery-filmstrip {
+        display: flex;
+        gap: 4px;
+        margin-top: 4px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: var(--gold-dark) var(--black-3);
+        padding-bottom: 2px;
+      }
+      .gallery-filmstrip::-webkit-scrollbar {
+        height: 3px;
+      }
+      .gallery-filmstrip::-webkit-scrollbar-track {
+        background: var(--black-3);
+      }
+      .gallery-filmstrip::-webkit-scrollbar-thumb {
+        background: var(--gold-dark);
+        border-radius: 2px;
+      }
+      .film-thumb {
+        flex-shrink: 0;
+        width: 78px;
+        height: 52px;
+        object-fit: cover;
+        cursor: pointer;
+        opacity: 0.45;
+        transition:
+          opacity 0.2s,
+          outline 0.2s;
+        outline: 2px solid transparent;
+      }
+      .film-thumb.active {
+        opacity: 1;
+        outline: 2px solid var(--gold);
+      }
+      .film-thumb:hover {
+        opacity: 0.8;
+      }
+
+      /* ── MOSAIC ROW: secondary mini-grid shown below filmstrip ── */
+      .gallery-mosaic {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
+        margin-top: 4px;
+      }
+      .mosaic-cell {
+        aspect-ratio: 1;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+      }
+      .mosaic-cell img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition:
+          transform 0.4s ease,
+          filter 0.4s ease;
+        filter: brightness(0.75);
+      }
+      .mosaic-cell:hover img {
+        transform: scale(1.08);
+        filter: brightness(1);
+      }
+      .mosaic-more {
+        position: absolute;
+        inset: 0;
+        background: rgba(10, 10, 10, 0.65);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 18px;
+        font-weight: 900;
+        color: var(--gold);
+      }
+
+      /* ── FULLSCREEN LIGHTBOX ─────────────────────────────────── */
+      .lightbox {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: rgba(5, 5, 5, 0.97);
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .lightbox.open {
+        display: flex;
+      }
+      .lightbox-img-wrap {
+        position: relative;
+        max-width: 90vw;
+        max-height: 78vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .lightbox-img-wrap img {
+        max-width: 90vw;
+        max-height: 78vh;
+        object-fit: contain;
+        display: block;
+        box-shadow: 0 0 80px rgba(0, 0, 0, 0.8);
+      }
+      .lb-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        background: rgba(201, 168, 76, 0.15);
+        border: 1px solid rgba(201, 168, 76, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .lb-nav:hover {
+        background: var(--gold);
+      }
+      .lb-nav:hover i {
+        color: var(--black);
+      }
+      .lb-nav i {
+        color: var(--white);
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+      .lb-nav.prev {
+        left: -64px;
+      }
+      .lb-nav.next {
+        right: -64px;
+      }
+      .lb-close {
+        position: fixed;
+        top: 20px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+        background: rgba(201, 168, 76, 0.15);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+        z-index: 10;
+      }
+      .lb-close:hover {
+        background: var(--gold);
+      }
+      .lb-close:hover i {
+        color: var(--black);
+      }
+      .lb-close i {
+        color: var(--white);
+        font-size: 16px;
+        transition: color 0.2s;
+      }
+      .lb-caption {
+        margin-top: 16px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: rgba(201, 168, 76, 0.7);
+        text-align: center;
+      }
+      .lb-strip {
+        display: flex;
+        gap: 4px;
+        margin-top: 12px;
+        overflow-x: auto;
+        max-width: 90vw;
+        padding-bottom: 2px;
+      }
+      .lb-strip::-webkit-scrollbar {
+        height: 3px;
+      }
+      .lb-strip::-webkit-scrollbar-thumb {
+        background: var(--gold-dark);
+      }
+      .lb-strip-thumb {
+        flex-shrink: 0;
+        width: 60px;
+        height: 40px;
+        object-fit: cover;
+        opacity: 0.4;
+        cursor: pointer;
+        transition:
+          opacity 0.2s,
+          outline 0.2s;
+        outline: 2px solid transparent;
+      }
+      .lb-strip-thumb.active {
+        opacity: 1;
+        outline: 2px solid var(--gold);
+      }
+      .lb-strip-thumb:hover {
+        opacity: 0.75;
+      }
+
+      /* ── PROCESS STEPS ───────────────────────────────────────── */
+      .svc-process {
+        margin-top: 48px;
+      }
+      .svc-process h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+      }
+      .svc-process h3 span {
+        color: var(--gold);
+      }
+      .process-steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 3px;
+      }
+      .process-step {
+        background: var(--black-4);
+        padding: 24px 20px;
+        position: relative;
+      }
+      .process-step::after {
+        content: "→";
+        position: absolute;
+        right: -14px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gold);
+        font-size: 18px;
+        z-index: 1;
+      }
+      .process-step:last-child::after {
+        display: none;
+      }
+      .step-num {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 32px;
+        font-weight: 900;
+        color: rgba(201, 168, 76, 0.15);
+        line-height: 1;
+        margin-bottom: 8px;
+      }
+      .step-name {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 13px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 6px;
+      }
+      .step-desc {
+        font-size: 12px;
+        color: var(--w60);
+        line-height: 1.5;
+        font-weight: 300;
+      }
+
+      /* ── CTA STRIP ───────────────────────────────────────────── */
+      .cta-strip {
+        padding: clamp(50px, 6vw, 80px) 0;
+        background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      }
+      .cta-inner {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+      .cta-inner h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: clamp(22px, 3.5vw, 38px);
+        font-weight: 900;
+        text-transform: uppercase;
+        color: var(--black);
+        line-height: 1.1;
+        margin-bottom: 8px;
+      }
+      .cta-inner p {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      .btn-dark {
+        background: var(--black);
+        color: var(--white);
+        padding: 14px 32px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .btn-dark:hover {
+        background: var(--black-3);
+        transform: translateY(-2px);
+      }
+
+      /* ── FOOTER ──────────────────────────────────────────────── */
+      footer {
+        background: var(--black-2);
+        border-top: 1px solid rgba(201, 168, 76, 0.15);
+        padding: clamp(50px, 6vw, 80px) 0 0;
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr 1fr 1fr;
+        gap: clamp(24px, 4vw, 56px);
+        margin-bottom: 44px;
+      }
+      .footer-brand p {
+        font-size: 13px;
+        color: var(--w60);
+        line-height: 1.7;
+        margin: 16px 0 18px;
+        font-weight: 300;
+      }
+      .soc-row {
+        display: flex;
+        gap: 9px;
+      }
+      .soc {
+        width: 36px;
+        height: 36px;
+        border: 1px solid rgba(201, 168, 76, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s;
+      }
+      .soc:hover {
+        background: var(--gold);
+        border-color: var(--gold);
+      }
+      .soc i {
+        font-size: 14px;
+        color: var(--w60);
+        transition: color 0.3s;
+      }
+      .soc:hover i {
+        color: var(--black);
+      }
+      .footer-col h4 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+      .footer-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .footer-col ul li a {
+        font-size: 13px;
+        color: var(--w60);
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--gold);
+      }
+      .fci {
+        display: flex;
+        gap: 11px;
+        align-items: flex-start;
+        margin-bottom: 12px;
+        font-size: 13px;
+        color: var(--w60);
+      }
+      .fci i {
+        color: var(--gold);
+        font-size: 14px;
+        margin-top: 2px;
+        width: 16px;
+        flex-shrink: 0;
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 18px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .footer-bottom p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.28);
+      }
+      .footer-bottom span {
+        color: var(--gold);
+      }
+      .wa-fab {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 999;
+        width: 56px;
+        height: 56px;
+        background: #25d366;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        transition: transform 0.3s;
+      }
+      .wa-fab:hover {
+        transform: scale(1.1);
+      }
+      .wa-fab i {
+        font-size: 32px;
+        color: #fff;
+      }
+
+      /* ── RESPONSIVE ──────────────────────────────────────────── */
+      @media (max-width: 900px) {
+        .svc-content-grid {
+          grid-template-columns: 1fr;
+        }
+        .svc-content-grid.reverse {
+          direction: ltr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .svc-section-header {
+          flex-direction: column;
+          gap: 8px;
+        }
+        .svc-number {
+          font-size: 60px;
+        }
+        .process-steps {
+          grid-template-columns: 1fr 1fr;
+        }
+        .process-step::after {
+          display: none;
+        }
+        .lb-nav.prev {
+          left: -10px;
+        }
+        .lb-nav.next {
+          right: -10px;
+        }
+        .mosaic-cell:nth-child(n + 4) {
+          display: none;
+        }
+        .gallery-mosaic {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 640px) {
+        .page-hero {
+          padding: 120px 16px 60px;
+        }
+        .svc-services-list {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .cta-inner {
+          flex-direction: column;
+          text-align: center;
+        }
+        .svc-cta-btns {
+          justify-content: center;
+        }
+        .process-steps {
+          grid-template-columns: 1fr;
+        }
+        .svc-tabs-inner {
+          gap: 0;
+        }
+        .gallery-mosaic {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .film-thumb {
+          width: 60px;
+          height: 40px;
+        }
+      }
+      @media (max-width: 768px) {
+        .footer-grid {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          gap: 24px !important;
+        }
+        .footer-grid .footer-brand {
+          width: 100% !important;
+          order: 1 !important;
+        }
+        .footer-grid .footer-col:nth-child(2) {
+          width: calc(50% - 12px) !important;
+          order: 2 !important;
+        }
+        .footer-grid .footer-col:nth-child(3) {
+          width: calc(50% - 12px) !important;
+          order: 3 !important;
+        }
+        .footer-grid .footer-col:nth-child(4) {
+          width: 100% !important;
+          order: 4 !important;
+          border-top: 1px solid rgba(201, 168, 76, 0.1);
+          padding-top: 20px;
+        }
+      }
+      @media (max-width: 380px) {
+        .footer-grid .footer-col:nth-child(2),
+        .footer-grid .footer-col:nth-child(3) {
+          width: 100% !important;
+        }
+      }
+
+      .page-hero-video {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .page-hero-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.75;
+      }
+      @media (min-width: 769px) {
+        .page-hero-video video {
+          transition: transform 8s ease-in-out;
+        }
+        .page-hero:hover .page-hero-video video {
+          transform: scale(1.05);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAV -->
+    <nav id="navbar">
+      <div class="nav-wrap">
+        <a href="index.html" class="logo"
+          ><img src="/img/RRH-LOGO.png" alt="Road Rock Holdings Logo"
+        /></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="/project.html">Profile</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta"
+          ><i class="fas fa-file-invoice-dollar" style="margin-right: 6px"></i>
+          Get A Quote</a
+        >
+        <button class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mob-menu" id="mobMenu">
+      <a href="index.html"
+        ><i class="fas fa-home" style="margin-right: 12px"></i> Home</a
+      >
+      <a href="about.html"
+        ><i class="fas fa-users" style="margin-right: 12px"></i> About Us</a
+      >
+      <a href="services.html"
+        ><i class="fas fa-cogs" style="margin-right: 12px"></i> Services</a
+      >
+      <a href="/project.html"
+        ><i class="fas fa-hard-hat" style="margin-right: 12px"></i> Profile</a
+      >
+      <a href="contact.html"
+        ><i class="fas fa-phone-alt" style="margin-right: 12px"></i> Contact</a
+      >
+      <a href="contact.html" class="mob-cta"
+        ><i class="fas fa-arrow-right"></i> Get A Quote →</a
+      >
+    </div>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero-video">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80"
+        >
+          <source src="/video/RRH-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="page-hero-bg"></div>
+      <div class="page-hero-ov"></div>
+      <div class="page-hero-grid"></div>
+      <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a><span>/</span><span>Our Services</span>
+        </div>
+        <h1 class="page-title">Our <span>Core Services</span></h1>
+        <p class="page-subtitle">
+          Five strategic divisions delivering world-class solutions across
+          construction, energy, technology, real estate, and design — all under
+          one trusted roof.
+        </p>
+      </div>
+    </div>
+
+    <!-- STICKY SERVICE TABS -->
+    <div class="svc-tabs">
+      <div class="svc-tabs-inner">
+        <a href="#construction" class="tab-link active"
+          ><i class="fas fa-road"></i> Construction</a
+        >
+        <a href="#real-estate" class="tab-link"
+          ><i class="fas fa-building"></i> Real Estate</a
+        >
+        <a href="#solar" class="tab-link"
+          ><i class="fas fa-solar-panel"></i> Solar Energy</a
+        >
+        <a href="#technology" class="tab-link"
+          ><i class="fas fa-microchip"></i> Technology</a
+        >
+        <a href="#interiors" class="tab-link"
+          ><i class="fas fa-paint-roller"></i> Interiors</a
+        >
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════
+     SERVICE 01 — ROAD & CIVIL CONSTRUCTION
+     ══════════════════════════════════════════════════════ -->
+    <section class="service-section" id="construction">
+      <div class="container">
+        <div class="svc-section-header">
+          <div class="svc-number">01</div>
+          <div class="svc-header-content">
+            <div class="svc-eyebrow">
+              <i class="fas fa-road"></i> Division One
+            </div>
+            <h2 class="svc-title">
+              Road &amp; Civil <span>Construction</span>
+            </h2>
+            <p class="svc-desc">
+              We deliver durable, high-quality civil engineering projects using
+              modern construction technologies, advanced equipment, and
+              internationally accepted engineering standards — building the
+              infrastructure that powers economic growth across Nigeria and
+              Africa.
+            </p>
+          </div>
+        </div>
+
+        <div class="svc-content-grid">
+          <!-- ── CINEMATIC GALLERY ── -->
+          <div class="svc-gallery" data-gallery="construction">
+            <div class="gallery-stage">
+              <!-- Add YOUR images: replace src values below. Keep the data-caption text too. -->
+              <img
+                class="gallery-stage-img active"
+                src="img/rd-con1.jpeg"
+                data-caption="Road Construction Project"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rd-con2.jpeg"
+                data-caption="Road Construction Project"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rd-con3.jpeg"
+                data-caption="Road Construction Project"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rd-con4.jpeg"
+                data-caption="Road Construction Project"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rd-con5.jpeg"
+                data-caption="Road Construction Project"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rd-con6.jpeg"
+                data-caption="Road Construction Project"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rd-con7.jpeg"
+                data-caption="Road Construction Project"
+                alt=""
+              />
+
+              <div class="gallery-stage-overlay">
+                <div class="gallery-caption"></div>
+                <div class="gallery-counter"></div>
+              </div>
+              <div class="gallery-nav prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="gallery-nav next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div class="gallery-expand">
+                <i class="fas fa-expand-alt"></i>
+              </div>
+            </div>
+
+            <!-- Scrollable filmstrip -->
+            <div class="gallery-filmstrip"></div>
+
+            <!-- Mosaic mini-grid (shows first 5, "+N more" on last) -->
+            <div class="gallery-mosaic"></div>
+          </div>
+
+          <!-- DETAILS -->
+          <div class="svc-details">
+            <div class="svc-what-we-do">
+              <h3>
+                <i
+                  class="fas fa-list-check"
+                  style="margin-right: 8px; color: var(--gold)"
+                ></i>
+                What We Deliver
+              </h3>
+              <div class="svc-services-list">
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Highway Construction</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Bridge Engineering</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Road Rehabilitation</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Drainage Systems</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Urban Infrastructure</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Asphalt &amp; Concrete Works</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Earthworks &amp; Grading</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Traffic Management Systems</span>
+                </div>
+              </div>
+            </div>
+            <div class="svc-why">
+              <h3>
+                <i class="fas fa-star" style="margin-right: 8px"></i> Why Choose
+                Our Construction Division
+              </h3>
+              <p>
+                With a team of experienced civil engineers, project managers,
+                and construction specialists, Road Rock Holdings delivers road
+                and infrastructure projects that meet international standards.
+                We use modern equipment, quality-certified materials, and
+                rigorous quality control processes to ensure every road we build
+                stands the test of time.
+              </p>
+            </div>
+            <div class="svc-cta-btns">
+              <a href="contact.html" class="btn btn-gold"
+                ><i class="fas fa-calculator"></i> Get A Quote</a
+              >
+              <a href="contact.html" class="btn btn-outline"
+                ><i class="fas fa-phone-alt"></i> Call Us</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-process">
+          <h3>Our Construction <span>Process</span></h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-name">Site Survey</div>
+              <div class="step-desc">
+                Detailed topographic survey and soil analysis of the project
+                site
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-name">Engineering Design</div>
+              <div class="step-desc">
+                Structural design, drawings, and BOQ prepared by our engineers
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-name">Procurement</div>
+              <div class="step-desc">
+                Sourcing certified materials and mobilising equipment
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-name">Construction</div>
+              <div class="step-desc">
+                On-site execution with quality control at every stage
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">05</div>
+              <div class="step-name">Handover</div>
+              <div class="step-desc">
+                Final inspection, documentation, and project handover
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     SERVICE 02 — REAL ESTATE
+     ══════════════════════════════════════════════════════ -->
+    <section class="service-section" id="real-estate">
+      <div class="container">
+        <div class="svc-section-header">
+          <div class="svc-number">02</div>
+          <div class="svc-header-content">
+            <div class="svc-eyebrow">
+              <i class="fas fa-building"></i> Division Two
+            </div>
+            <h2 class="svc-title">Real Estate <span>Development</span></h2>
+            <p class="svc-desc">
+              We create modern residential and commercial spaces designed for
+              comfort, security, sustainability, and long-term investment value.
+              From concept to completion, we deliver properties that define
+              luxury modern living across Nigeria.
+            </p>
+          </div>
+        </div>
+
+        <div class="svc-content-grid reverse">
+          <div class="svc-details">
+            <div class="svc-what-we-do">
+              <h3>
+                <i
+                  class="fas fa-list-check"
+                  style="margin-right: 8px; color: var(--gold)"
+                ></i>
+                What We Deliver
+              </h3>
+              <div class="svc-services-list">
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Smart Homes</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Luxury Apartments</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Commercial Buildings</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Estate Planning</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Property Development</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Facility Management</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Off-Plan Sales</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Property Investment Advisory</span>
+                </div>
+              </div>
+            </div>
+            <div class="svc-why">
+              <h3>
+                <i class="fas fa-star" style="margin-right: 8px"></i> Why Choose
+                Our Real Estate Division
+              </h3>
+              <p>
+                Road Rock Holdings combines architectural excellence with smart
+                technology integration to deliver properties that exceed
+                expectations. Every development is built with quality materials,
+                thoughtful design, and long-term investment value in mind.
+              </p>
+            </div>
+            <div class="svc-cta-btns">
+              <a href="contact.html" class="btn btn-gold"
+                ><i class="fas fa-calculator"></i> Get A Quote</a
+              >
+              <a href="contact.html" class="btn btn-outline"
+                ><i class="fas fa-phone-alt"></i> Call Us</a
+              >
+            </div>
+          </div>
+
+          <div class="svc-gallery" data-gallery="real-estate">
+            <div class="gallery-stage">
+              <img
+                class="gallery-stage-img active"
+                src="img/rl-es4.jpeg"
+                data-caption="Real Estate Development"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rl-es1.jpeg"
+                data-caption="Real Estate Development"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rl-es5.jpeg"
+                data-caption="Real Estate Development"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rl-es2.jpeg"
+                data-caption="Real Estate Development"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rl-es3.jpeg"
+                data-caption="Real Estate Development"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rl-es6.jpeg"
+                data-caption="Real Estate Development"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/rl-es7.jpeg"
+                data-caption="Real Estate Development"
+                alt=""
+              />
+
+              <div class="gallery-stage-overlay">
+                <div class="gallery-caption"></div>
+                <div class="gallery-counter"></div>
+              </div>
+              <div class="gallery-nav prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="gallery-nav next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div class="gallery-expand">
+                <i class="fas fa-expand-alt"></i>
+              </div>
+            </div>
+            <div class="gallery-filmstrip"></div>
+            <div class="gallery-mosaic"></div>
+          </div>
+        </div>
+
+        <div class="svc-process">
+          <h3>Our Real Estate <span>Process</span></h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-name">Consultation</div>
+              <div class="step-desc">
+                Understanding your requirements, budget, and property goals
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-name">Design</div>
+              <div class="step-desc">
+                Architectural design, 3D renders, and floor plan approval
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-name">Approvals</div>
+              <div class="step-desc">
+                All regulatory and town planning approvals secured
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-name">Build</div>
+              <div class="step-desc">
+                Construction with quality materials and milestone updates
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">05</div>
+              <div class="step-name">Delivery</div>
+              <div class="step-desc">
+                Finishing, snagging, and keys handover to you
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     SERVICE 03 — SOLAR ENERGY
+     ══════════════════════════════════════════════════════ -->
+    <section class="service-section" id="solar">
+      <div class="container">
+        <div class="svc-section-header">
+          <div class="svc-number">03</div>
+          <div class="svc-header-content">
+            <div class="svc-eyebrow">
+              <i class="fas fa-solar-panel"></i> Division Three
+            </div>
+            <h2 class="svc-title">Solar &amp; Renewable <span>Energy</span></h2>
+            <p class="svc-desc">
+              Our renewable energy division provides clean, reliable, and
+              cost-effective solar solutions for homes, businesses, and
+              industries. We eliminate dependence on unstable grid power and
+              deliver sustainable energy independence across Nigeria.
+            </p>
+          </div>
+        </div>
+
+        <div class="svc-content-grid">
+          <div class="svc-gallery" data-gallery="solar">
+            <div class="gallery-stage">
+              <img
+                class="gallery-stage-img active"
+                src="img/sol3.jpeg"
+                data-caption="Commercial Solar Installation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/sol2.jpeg"
+                data-caption="Commercial Solar Installation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=900&q=80"
+                data-caption="Inverter & Battery Systems"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/sol1.jpeg"
+                data-caption="Commercial Solar Installation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/sol5.jpeg"
+                data-caption="Commercial Solar Installation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/sol4.jpeg"
+                data-caption="Commercial Solar Installation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=900&q=80"
+                data-caption="Industrial Solar Array"
+                alt=""
+              />
+              <div class="gallery-stage-overlay">
+                <div class="gallery-caption"></div>
+                <div class="gallery-counter"></div>
+              </div>
+              <div class="gallery-nav prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="gallery-nav next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div class="gallery-expand">
+                <i class="fas fa-expand-alt"></i>
+              </div>
+            </div>
+            <div class="gallery-filmstrip"></div>
+            <div class="gallery-mosaic"></div>
+          </div>
+
+          <div class="svc-details">
+            <div class="svc-what-we-do">
+              <h3>
+                <i
+                  class="fas fa-list-check"
+                  style="margin-right: 8px; color: var(--gold)"
+                ></i>
+                What We Deliver
+              </h3>
+              <div class="svc-services-list">
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Solar Panel Installation</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Inverter &amp; Battery Systems</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Industrial Solar Solutions</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Smart Energy Management</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Solar Street Lights</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Energy Consultation</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Hybrid Power Systems</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>System Maintenance</span>
+                </div>
+              </div>
+            </div>
+            <div class="svc-why">
+              <h3>
+                <i class="fas fa-star" style="margin-right: 8px"></i> Why Choose
+                Our Solar Division
+              </h3>
+              <p>
+                With Nigeria's energy challenges intensifying, Road Rock
+                Holdings delivers solar solutions that give you complete power
+                independence. From small residential systems to large industrial
+                installations, we design, supply, install, and maintain every
+                system with precision — backed by warranties and
+                post-installation support.
+              </p>
+            </div>
+            <div class="svc-cta-btns">
+              <a href="contact.html" class="btn btn-gold"
+                ><i class="fas fa-calculator"></i> Get A Quote</a
+              >
+              <a href="contact.html" class="btn btn-outline"
+                ><i class="fas fa-phone-alt"></i> Call Us</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-process">
+          <h3>Our Solar Installation <span>Process</span></h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-name">Energy Audit</div>
+              <div class="step-desc">
+                We assess your current energy consumption and needs
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-name">System Design</div>
+              <div class="step-desc">
+                Custom solar system designed for your specific load
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-name">Supply</div>
+              <div class="step-desc">
+                Quality panels, inverters, and batteries sourced and delivered
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-name">Installation</div>
+              <div class="step-desc">
+                Professional installation by certified solar engineers
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">05</div>
+              <div class="step-name">Support</div>
+              <div class="step-desc">
+                Ongoing maintenance and system monitoring support
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     SERVICE 04 — INFORMATION TECHNOLOGY
+     ══════════════════════════════════════════════════════ -->
+    <section class="service-section" id="technology">
+      <div class="container">
+        <div class="svc-section-header">
+          <div class="svc-number">04</div>
+          <div class="svc-header-content">
+            <div class="svc-eyebrow">
+              <i class="fas fa-microchip"></i> Division Four
+            </div>
+            <h2 class="svc-title">Information <span>Technology</span></h2>
+            <p class="svc-desc">
+              We help businesses leverage technology for growth, security,
+              efficiency, and digital transformation through cutting-edge IT
+              solutions and consultancy. From network infrastructure to
+              cybersecurity, we build the digital backbone your business needs.
+            </p>
+          </div>
+        </div>
+
+        <div class="svc-content-grid reverse">
+          <div class="svc-details">
+            <div class="svc-what-we-do">
+              <h3>
+                <i
+                  class="fas fa-list-check"
+                  style="margin-right: 8px; color: var(--gold)"
+                ></i>
+                What We Deliver
+              </h3>
+              <div class="svc-services-list">
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Network Infrastructure</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Cybersecurity Solutions</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Cloud Services</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Software Development</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Smart Automation</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>IT Support &amp; Consultancy</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>CCTV &amp; Surveillance</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Web &amp; App Development</span>
+                </div>
+              </div>
+            </div>
+            <div class="svc-why">
+              <h3>
+                <i class="fas fa-star" style="margin-right: 8px"></i> Why Choose
+                Our IT Division
+              </h3>
+              <p>
+                In today's digital economy, your technology infrastructure is
+                your competitive advantage. Road Rock Holdings' IT division
+                builds secure, scalable, and modern technology ecosystems for
+                businesses across all sectors — from small businesses to large
+                enterprises.
+              </p>
+            </div>
+            <div class="svc-cta-btns">
+              <a href="contact.html" class="btn btn-gold"
+                ><i class="fas fa-calculator"></i> Get A Quote</a
+              >
+              <a href="contact.html" class="btn btn-outline"
+                ><i class="fas fa-phone-alt"></i> Call Us</a
+              >
+            </div>
+          </div>
+
+          <div class="svc-gallery" data-gallery="technology">
+            <div class="gallery-stage">
+              <img
+                class="gallery-stage-img active"
+                src="img/tech1.jpeg"
+                data-caption="Enterprise Network Infrastructure"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80"
+                data-caption="Enterprise Network Infrastructure"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/tech2.jpeg"
+                data-caption="Enterprise Network Infrastructure"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/tech5.jpeg"
+                data-caption="Enterprise Network Infrastructure"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/tech3.jpeg"
+                data-caption="Enterprise Network Infrastructure"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/tech4.jpeg"
+                data-caption="Enterprise Network Infrastructure"
+                alt=""
+              />
+              <div class="gallery-stage-overlay">
+                <div class="gallery-caption"></div>
+                <div class="gallery-counter"></div>
+              </div>
+              <div class="gallery-nav prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="gallery-nav next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div class="gallery-expand">
+                <i class="fas fa-expand-alt"></i>
+              </div>
+            </div>
+            <div class="gallery-filmstrip"></div>
+            <div class="gallery-mosaic"></div>
+          </div>
+        </div>
+
+        <div class="svc-process">
+          <h3>Our IT Solutions <span>Process</span></h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-name">IT Audit</div>
+              <div class="step-desc">
+                Assessment of your current technology infrastructure and gaps
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-name">Strategy</div>
+              <div class="step-desc">
+                Custom IT roadmap designed for your business objectives
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-name">Implementation</div>
+              <div class="step-desc">
+                Deployment of hardware, software, and network solutions
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-name">Security</div>
+              <div class="step-desc">
+                Cybersecurity hardening and staff training
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">05</div>
+              <div class="step-name">Support</div>
+              <div class="step-desc">
+                Ongoing managed IT support and system monitoring
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+     SERVICE 05 — INTERIORS & EXTERIORS
+     ══════════════════════════════════════════════════════ -->
+    <section class="service-section" id="interiors">
+      <div class="container">
+        <div class="svc-section-header">
+          <div class="svc-number">05</div>
+          <div class="svc-header-content">
+            <div class="svc-eyebrow">
+              <i class="fas fa-paint-roller"></i> Division Five
+            </div>
+            <h2 class="svc-title">Interiors &amp; <span>Exteriors</span></h2>
+            <p class="svc-desc">
+              We design elegant and functional living spaces tailored to modern
+              lifestyles and architectural excellence. From POP ceiling
+              masterpieces to full luxury home transformations, we turn spaces
+              into experiences that reflect your personality and aspirations.
+            </p>
+          </div>
+        </div>
+
+        <div class="svc-content-grid">
+          <div class="svc-gallery" data-gallery="interiors">
+            <div class="gallery-stage">
+              <img
+                class="gallery-stage-img active"
+                src="img/int5.jpeg"
+                data-caption="Luxury Interior Transformation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/int9.jpeg"
+                data-caption="Luxury Interior Transformation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/int1.jpeg"
+                data-caption="Luxury Interior Transformation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/int8.jpeg"
+                data-caption="Luxury Interior Transformation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/int4.jpeg"
+                data-caption="Luxury Interior Transformation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="img/int3.jpeg"
+                data-caption="Luxury Interior Transformation"
+                alt=""
+              />
+              <img
+                class="gallery-stage-img"
+                src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=900&q=80"
+                data-caption="Kitchen Design"
+                alt=""
+              />
+              <div class="gallery-stage-overlay">
+                <div class="gallery-caption"></div>
+                <div class="gallery-counter"></div>
+              </div>
+              <div class="gallery-nav prev">
+                <i class="fas fa-chevron-left"></i>
+              </div>
+              <div class="gallery-nav next">
+                <i class="fas fa-chevron-right"></i>
+              </div>
+              <div class="gallery-expand">
+                <i class="fas fa-expand-alt"></i>
+              </div>
+            </div>
+            <div class="gallery-filmstrip"></div>
+            <div class="gallery-mosaic"></div>
+          </div>
+
+          <div class="svc-details">
+            <div class="svc-what-we-do">
+              <h3>
+                <i
+                  class="fas fa-list-check"
+                  style="margin-right: 8px; color: var(--gold)"
+                ></i>
+                What We Deliver
+              </h3>
+              <div class="svc-services-list">
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Modern Interior Designs</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>POP Ceiling Designs</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Smart Home Finishing</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Landscaping</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Exterior Beautification</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Luxury Transformations</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i><span>Office Fit-Outs</span>
+                </div>
+                <div class="svc-service-item">
+                  <i class="fas fa-check"></i
+                  ><span>Flooring &amp; Wall Finishing</span>
+                </div>
+              </div>
+            </div>
+            <div class="svc-why">
+              <h3>
+                <i class="fas fa-star" style="margin-right: 8px"></i> Why Choose
+                Our Interiors Division
+              </h3>
+              <p>
+                Your home or office should tell your story. Our interior and
+                exterior design team combines artistic vision with technical
+                precision to create spaces that are not just beautiful but
+                deeply functional. From concept sketches to the final finishing
+                touch, we manage every detail — so you don't have to.
+              </p>
+            </div>
+            <div class="svc-cta-btns">
+              <a href="contact.html" class="btn btn-gold"
+                ><i class="fas fa-calculator"></i> Get A Quote</a
+              >
+              <a href="contact.html" class="btn btn-outline"
+                ><i class="fas fa-phone-alt"></i> Call Us</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="svc-process">
+          <h3>Our Design <span>Process</span></h3>
+          <div class="process-steps">
+            <div class="process-step">
+              <div class="step-num">01</div>
+              <div class="step-name">Discovery</div>
+              <div class="step-desc">
+                Understanding your taste, lifestyle, and space requirements
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">02</div>
+              <div class="step-name">Concept Design</div>
+              <div class="step-desc">
+                Mood boards, 3D visualisations, and material selection
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">03</div>
+              <div class="step-name">Approval</div>
+              <div class="step-desc">
+                Design review, adjustments, and final sign-off
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">04</div>
+              <div class="step-name">Execution</div>
+              <div class="step-desc">
+                Expert installation by skilled craftsmen and designers
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num">05</div>
+              <div class="step-name">Reveal</div>
+              <div class="step-desc">
+                Final walk-through, snagging, and handover of your dream space
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-strip">
+      <div class="cta-inner">
+        <div>
+          <h2>Ready to Start Your Project?</h2>
+          <p>
+            Contact our team today for a free consultation and project quote
+            across any of our five divisions.
+          </p>
+        </div>
+        <div style="display: flex; gap: 12px; flex-wrap: wrap">
+          <a href="contact.html" class="btn-dark"
+            ><i class="fas fa-calculator"></i> Get A Free Quote</a
+          >
+          <a
+            href="tel:+2348082363104"
+            class="btn-dark"
+            style="
+              background: rgba(0, 0, 0, 0.5);
+              border: 1px solid rgba(0, 0, 0, 0.3);
+            "
+            ><i class="fas fa-phone-alt"></i> Call Now</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="logo"
+              ><img src="/img/RRH-LOGO.png" alt="" style="height: 80px"
+            /></a>
+            <p>
+              A multi-industry conglomerate delivering excellence in
+              Construction, Renewable Energy, Technology, Real Estate and Smart
+              Living Solutions across Africa and Beyond.
+            </p>
+            <div class="soc-row">
+              <a href="#" class="soc"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="soc"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="soc"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" class="soc"><i class="fab fa-youtube"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="/project.html">Company Profile</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Our Services</h4>
+            <ul>
+              <li>
+                <a href="services.html#construction">Road Construction</a>
+              </li>
+              <li><a href="services.html#real-estate">Real Estate</a></li>
+              <li><a href="services.html#solar">Solar Energy</a></li>
+              <li><a href="services.html#technology">IT Solutions</a></li>
+              <li>
+                <a href="services.html#interiors">Interiors & Exteriors</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Contact Us</h4>
+            <div class="fci">
+              <i class="fas fa-map-pin"></i><span>Lagos, Nigeria</span>
+            </div>
+            <div class="fci">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <a
+                  href="tel:+2348082363104"
+                  style="color: var(--w60); display: block"
+                  >+234 808 236 3104</a
+                ><a
+                  href="tel:+2349018053469"
+                  style="color: var(--w60); display: block"
+                  >+234 901 805 3469</a
+                >
+              </div>
+            </div>
+            <div class="fci">
+              <i class="far fa-envelope"></i
+              ><a
+                href="mailto:info@roadrockholdings.com"
+                style="color: var(--w60)"
+                >info@roadrockholdings.com</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
+          </p>
+          <p>Lagos, Nigeria</p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/2348082363104"
+      class="wa-fab"
+      target="_blank"
+      rel="noopener"
+      ><i class="fab fa-whatsapp"></i
+    ></a>
+
+    <!-- FULLSCREEN LIGHTBOX (single shared instance) -->
+    <div class="lightbox" id="lightbox">
+      <div class="lb-close" id="lbClose"><i class="fas fa-times"></i></div>
+      <div class="lightbox-img-wrap">
+        <img id="lbImg" src="" alt="" />
+        <div class="lb-nav prev" id="lbPrev">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="lb-nav next" id="lbNext">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+      <div class="lb-caption" id="lbCaption"></div>
+      <div class="lb-strip" id="lbStrip"></div>
+    </div>
+
+    <script>
+      /* ══════════════════════════════════════════════════════════
+   GALLERY ENGINE
+   ══════════════════════════════════════════════════════════ */
+      (function () {
+        document.querySelectorAll(".svc-gallery").forEach((gallery) => {
+          const stage = gallery.querySelector(".gallery-stage");
+          const imgs = [...stage.querySelectorAll(".gallery-stage-img")];
+          const caption = stage.querySelector(".gallery-caption");
+          const counter = stage.querySelector(".gallery-counter");
+          const filmstrip = gallery.querySelector(".gallery-filmstrip");
+          const mosaic = gallery.querySelector(".gallery-mosaic");
+          const btnPrev = stage.querySelector(".gallery-nav.prev");
+          const btnNext = stage.querySelector(".gallery-nav.next");
+          const btnExpand = stage.querySelector(".gallery-expand");
+          let current = 0;
+          let timer = null;
+
+          imgs.forEach((img, i) => {
+            const t = document.createElement("img");
+            t.className = "film-thumb" + (i === 0 ? " active" : "");
+            t.src = img.src;
+            t.alt = img.dataset.caption || "";
+            t.addEventListener("click", () => goTo(i));
+            filmstrip.appendChild(t);
+          });
+
+          const mosaicCount = Math.min(imgs.length, 5);
+          for (let i = 0; i < mosaicCount; i++) {
+            const cell = document.createElement("div");
+            cell.className = "mosaic-cell";
+            const mImg = document.createElement("img");
+            mImg.src = imgs[i].src;
+            mImg.alt = "";
+            cell.appendChild(mImg);
+            if (i === 4 && imgs.length > 5) {
+              const more = document.createElement("div");
+              more.className = "mosaic-more";
+              more.textContent = "+" + (imgs.length - 4) + " more";
+              cell.appendChild(more);
+            }
+            cell.addEventListener("click", () => goTo(i));
+            mosaic.appendChild(cell);
+          }
+
+          function goTo(index) {
+            imgs[current].classList.remove("active");
+            filmstrip
+              .querySelectorAll(".film-thumb")
+              [current].classList.remove("active");
+            current = (index + imgs.length) % imgs.length;
+            const next = imgs[current];
+            next.classList.add("active");
+            next.style.animation = "none";
+            next.offsetHeight;
+            next.style.animation = "";
+
+            const thumbs = filmstrip.querySelectorAll(".film-thumb");
+            thumbs[current].classList.add("active");
+
+            // ✅ Scroll only the FILMSTRIP element, not the page
+            const activeThumb = thumbs[current];
+            filmstrip.scrollLeft =
+              activeThumb.offsetLeft -
+              filmstrip.offsetWidth / 2 +
+              activeThumb.offsetWidth / 2;
+
+            caption.textContent = next.dataset.caption || "";
+            counter.textContent = current + 1 + " / " + imgs.length;
+
+            resetTimer();
+          }
+
+          function resetTimer() {
+            clearInterval(timer);
+            timer = setInterval(() => goTo(current + 1), 5000);
+          }
+
+          caption.textContent = imgs[0].dataset.caption || "";
+          counter.textContent = "1 / " + imgs.length;
+          resetTimer();
+
+          btnPrev.addEventListener("click", (e) => {
+            e.stopPropagation();
+            goTo(current - 1);
+          });
+          btnNext.addEventListener("click", (e) => {
+            e.stopPropagation();
+            goTo(current + 1);
+          });
+
+          let startX = 0;
+          stage.addEventListener(
+            "touchstart",
+            (e) => {
+              startX = e.touches[0].clientX;
+            },
+            { passive: true },
+          );
+          stage.addEventListener("touchend", (e) => {
+            const dx = e.changedTouches[0].clientX - startX;
+            if (Math.abs(dx) > 50)
+              dx < 0 ? goTo(current + 1) : goTo(current - 1);
+          });
+
+          function openLightbox(startIndex) {
+            const lb = document.getElementById("lightbox");
+            const lbImg = document.getElementById("lbImg");
+            const lbCap = document.getElementById("lbCaption");
+            const lbStrip = document.getElementById("lbStrip");
+            let lbCurrent = startIndex;
+
+            lbStrip.innerHTML = "";
+            imgs.forEach((img, i) => {
+              const t = document.createElement("img");
+              t.className =
+                "lb-strip-thumb" + (i === startIndex ? " active" : "");
+              t.src = img.src;
+              t.addEventListener("click", () => lbGoTo(i));
+              lbStrip.appendChild(t);
+            });
+
+            function lbGoTo(i) {
+              lbCurrent = (i + imgs.length) % imgs.length;
+              lbImg.src = imgs[lbCurrent].src;
+              lbCap.textContent =
+                (imgs[lbCurrent].dataset.caption || "") +
+                "  —  " +
+                (lbCurrent + 1) +
+                " / " +
+                imgs.length;
+              lbStrip.querySelectorAll(".lb-strip-thumb").forEach((t, ti) => {
+                t.classList.toggle("active", ti === lbCurrent);
+              });
+              // ✅ Same fix for lightbox strip
+              const active =
+                lbStrip.querySelectorAll(".lb-strip-thumb")[lbCurrent];
+              lbStrip.scrollLeft =
+                active.offsetLeft -
+                lbStrip.offsetWidth / 2 +
+                active.offsetWidth / 2;
+            }
+
+            lbGoTo(startIndex);
+            lb.classList.add("open");
+            document.body.style.overflow = "hidden";
+
+            document.getElementById("lbPrev").onclick = () =>
+              lbGoTo(lbCurrent - 1);
+            document.getElementById("lbNext").onclick = () =>
+              lbGoTo(lbCurrent + 1);
+
+            document._lbKeyHandler = (e) => {
+              if (e.key === "ArrowRight") lbGoTo(lbCurrent + 1);
+              if (e.key === "ArrowLeft") lbGoTo(lbCurrent - 1);
+              if (e.key === "Escape") closeLightbox();
+            };
+            document.addEventListener("keydown", document._lbKeyHandler);
+          }
+
+          btnExpand.addEventListener("click", (e) => {
+            e.stopPropagation();
+            openLightbox(current);
+          });
+          stage.addEventListener("click", () => openLightbox(current));
+        });
+
+        function closeLightbox() {
+          document.getElementById("lightbox").classList.remove("open");
+          document.body.style.overflow = "";
+          document.removeEventListener("keydown", document._lbKeyHandler);
+        }
+        document
+          .getElementById("lbClose")
+          .addEventListener("click", closeLightbox);
+        document
+          .getElementById("lightbox")
+          .addEventListener("click", function (e) {
+            if (e.target === this) closeLightbox();
+          });
+      })();
+
+      /* ══════════════════════════════════════════════════════════
+   MOBILE MENU
+   ══════════════════════════════════════════════════════════ */
+      const hamburger = document.getElementById("hamburger"),
+        mobMenu = document.getElementById("mobMenu");
+      hamburger.addEventListener("click", () => {
+        mobMenu.classList.toggle("open");
+        const s = hamburger.querySelectorAll("span");
+        if (mobMenu.classList.contains("open")) {
+          s[0].style.transform = "rotate(45deg) translate(5px,5px)";
+          s[1].style.opacity = "0";
+          s[2].style.transform = "rotate(-45deg) translate(5px,-5px)";
+        } else {
+          s.forEach((x) => {
+            x.style.transform = "";
+            x.style.opacity = "";
+          });
+        }
+      });
+      mobMenu.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          mobMenu.classList.remove("open");
+          hamburger.querySelectorAll("span").forEach((s) => {
+            s.style.transform = "";
+            s.style.opacity = "";
+          });
+        }),
+      );
+
+      /* ══════════════════════════════════════════════════════════
+   ACTIVE TAB ON SCROLL
+   ══════════════════════════════════════════════════════════ */
+      const sections = document.querySelectorAll(".service-section[id]");
+      const tabLinks = document.querySelectorAll(".tab-link");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              tabLinks.forEach((t) => t.classList.remove("active"));
+              const active = document.querySelector(
+                `.tab-link[href="#${e.target.id}"]`,
+              );
+              if (active) {
+                active.classList.add("active");
+                // ✅ Scroll only the tabs container, not the page
+                const tabsContainer = active.closest(".svc-tabs-inner");
+                if (tabsContainer) {
+                  tabsContainer.scrollLeft =
+                    active.offsetLeft -
+                    tabsContainer.offsetWidth / 2 +
+                    active.offsetWidth / 2;
+                }
+              }
+            }
+          });
+        },
+        { threshold: 0.3, rootMargin: "-140px 0px 0px 0px" },
+      );
+      sections.forEach((s) => observer.observe(s)); // ✅ This line was missing in your last version!
+
+      /* ══════════════════════════════════════════════════════════
+   SCROLL REVEAL
+   ══════════════════════════════════════════════════════════ */
+      const revObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.style.opacity = "1";
+              e.target.style.transform = "translateY(0)";
+              revObs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      document
+        .querySelectorAll(".svc-service-item,.process-step")
+        .forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity .5s ease, transform .5s ease";
+          revObs.observe(el);
+        });
+
+      /* ══════════════════════════════════════════════════════════
+   HASH SCROLL ON LOAD
+   ══════════════════════════════════════════════════════════ */
+      if (window.location.hash) {
+        setTimeout(() => {
+          const el = document.querySelector(window.location.hash);
+          if (el) {
+            el.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 300);
+      }
+    </script>
+     <script src="js/ai.js"></script>
+     <script src="js/content-loader.js"></script>
+  </body>
+</html>

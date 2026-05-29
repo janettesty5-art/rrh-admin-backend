@@ -1,0 +1,52 @@
+{
+  // FIX: Enable suggestions
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.wordBasedSuggestions": "matchingDocuments",
+  
+  // FIX: Disable unnecessary yellow lines (squiggles)
+  "editor.semanticHighlighting.enabled": false,
+  "editor.linkedEditing": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.renderWhitespace": "none",
+  
+  // FIX: Django-HTML conflict resolution
+  "files.associations": {
+    "*.html": "html",  // Force .html as HTML, not Django HTML
+    "**/templates/**/*.html": "django-html",  // Only Django templates
+    "**/static/**/*.html": "html"  // Static HTML as normal HTML
+  },
+  
+  // FIX: Disable Django for non-Django files
+  "django.snippets.enabled": false,  // Turn off Django snippets for now
+  
+  // FIX: Language-specific settings
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.suggest.showSnippets": true,
+    "editor.suggest.showWords": true
+  },
+  
+  "[django-html]": {
+    "editor.suggest.showSnippets": true,
+    "editor.suggest.showWords": true,
+    "editor.defaultFormatter": "batisteo.vscode-django"
+  },
+  
+  // FIX: Turn off annoying validations
+  "html.validate.scripts": false,
+  "html.validate.styles": false,
+  "css.lint.unknownProperties": "ignore",
+  "javascript.suggestionActions.enabled": false,
+  
+  // FIX: Performance improvements
+  "editor.suggestSelection": "first",
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.suggest.filterGraceful": true,
+  "liveServer.settings.port": 5501
+}
