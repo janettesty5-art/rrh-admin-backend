@@ -101,8 +101,9 @@
       /* For very small screens, slightly reduce logo size */
      @media (max-width: 480px) {
         .logo img {
-          height: 90px;
-        }
+    height: 48px;
+    max-width: 120px;
+  }
       }
 
       .logo-words .brand {
@@ -1294,6 +1295,33 @@
   }
   .page-hero:hover .page-hero-video video {
     transform: scale(1.05);
+  }
+}
+
+/* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
+.logo {
+  max-width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .logo img {
+    height: 65px !important;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    max-width: 160px;
+  }
+  .logo img {
+    height: 58px !important;
+  }
+}
+@media (max-width: 380px) {
+  .logo {
+    max-width: 140px;
+  }
+  .logo img {
+    height: 52px !important;
   }
 }
     </style>

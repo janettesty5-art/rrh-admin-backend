@@ -1241,6 +1241,104 @@
           transform: scale(1.05);
         }
       }
+
+
+      /* ── SERVICES PAGE MOBILE FIXES ── */
+@media (max-width: 640px) {
+
+  /* Section header: stack number + text */
+  .svc-section-header {
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 32px;
+  }
+  .svc-number {
+    font-size: 48px;
+    line-height: 1;
+    margin-top: 0;
+  }
+
+  /* Gallery: force 16:10 on small screens (taller = better thumb browsing) */
+  .gallery-stage {
+    aspect-ratio: 4/3;
+  }
+
+  /* Filmstrip thumbs: smaller on mobile */
+  .film-thumb {
+    width: 56px;
+    height: 38px;
+  }
+
+  /* Mosaic: 3 columns max */
+  .gallery-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Service items: single column */
+  .svc-services-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Process steps: single column, no arrows */
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+  .process-step::after {
+    display: none;
+  }
+
+  /* Reverse grid: reset direction */
+  .svc-content-grid.reverse {
+    direction: ltr;
+  }
+
+  /* CTA buttons: stack */
+  .svc-cta-btns {
+    flex-direction: column;
+  }
+  .svc-cta-btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Tab bar: smaller text, more compact */
+  .tab-link {
+    padding: 12px 10px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    gap: 4px;
+  }
+  .tab-link i {
+    font-size: 11px;
+  }
+}
+
+/* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
+.logo {
+  max-width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .logo img {
+    height: 65px !important;
+  }
+}
+@media (max-width: 480px) {
+  .logo {
+    max-width: 160px;
+  }
+  .logo img {
+    height: 58px !important;
+  }
+}
+@media (max-width: 380px) {
+  .logo {
+    max-width: 140px;
+  }
+  .logo img {
+    height: 52px !important;
+  }
+}
     </style>
   </head>
   <body>
