@@ -19,6 +19,8 @@ const activityRoutes = require('./routes/activity');
 const app  = express();
 const PORT = process.env.PORT || 3000;
 
+app.set('trust proxy', 1);
+
 // ── Security middleware ───────────────────────────────────────
 app.use(helmet());
 
