@@ -1766,30 +1766,99 @@
 }
 
 /* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
-.logo {
-  max-width: 100%;
-  overflow: hidden;
-}
 @media (max-width: 768px) {
   .logo img {
-    height: 65px !important;
+    height: 80px !important;
   }
 }
 @media (max-width: 480px) {
   .logo {
-    max-width: 160px;
+    max-width: 180px;
   }
   .logo img {
-    height: 58px !important;
+    height: 72px !important;
   }
 }
 @media (max-width: 380px) {
   .logo {
-    max-width: 140px;
+    max-width: 160px;
   }
   .logo img {
-    height: 52px !important;
+    height: 65px !important;
   }
+}
+
+
+.clients-track-wrap {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.2) 0%,
+    black 12%,
+    black 88%,
+    rgba(0,0,0,0.2) 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.2) 0%,
+    black 12%,
+    black 88%,
+    rgba(0,0,0,0.2) 100%
+  );
+}
+
+.clients-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  padding: 8px 0;
+}
+
+.clients-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.cli-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  opacity: 0.45;
+  transition: opacity 0.3s;
+  cursor: default;
+}
+
+.cli-item:hover {
+  opacity: 0.85;
+}
+
+.cli-item img {
+  height: 28px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+  display: block;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+.cli-item:hover img {
+  opacity: 1;
+}
+
+.cli-item span {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  white-space: nowrap;
 }
     </style>
   </head>
@@ -2071,18 +2140,66 @@
 
     <!-- CLIENTS -->
     <div class="clients-bar">
-      <div class="clients-inner">
-        <p class="clients-lbl">
-          <i class="fas fa-handshake"></i> Trusted Partners & Clients
-        </p>
-        <div class="clients-row">
-          <span class="cli">Dangote</span><span class="cli">Fidelity Bank</span
-          ><span class="cli">Access Bank</span
-          ><span class="cli">MTN Nigeria</span><span class="cli">Airtel</span
-          ><span class="cli">Julius Berger</span>
-        </div>
+  <div class="clients-inner">
+    <p class="clients-lbl">
+      <i class="fas fa-handshake"></i> Trusted Partners &amp; Clients
+    </p>
+  </div>
+  <div class="clients-track-wrap">
+    <div class="clients-track">
+      <!-- Set 1 -->
+      <div class="cli-item">
+        <img src="img/dangote.png" alt="Dangote" />
+        <span>Dangote</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/fidelity.png" />
+        <span>Fidelity Bank</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/access.png" alt="Access Bank" />
+        <span>Access Bank</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/mtn.png" alt="MTN Nigeria" />
+        <span>MTN Nigeria</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/airtel.png" alt="Airtel" />
+        <span>Airtel</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/jb.png" alt="Julius Berger" />
+        <span>Julius Berger</span>
+      </div>
+      <!-- Set 2 — exact duplicate for seamless loop -->
+      <div class="cli-item">
+        <img src="img/dangote.png" alt="Dangote" />
+        <span>Dangote</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/fidelity.png" alt="Fidelity Bank" />
+        <span>Fidelity Bank</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/access.png" alt="Access Bank" />
+        <span>Access Bank</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/mtn.png" alt="MTN Nigeria" />
+        <span>MTN Nigeria</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/airtel.png" alt="Airtel" />
+        <span>Airtel</span>
+      </div>
+      <div class="cli-item">
+        <img src="img/jb.png" alt="Julius Berger" />
+        <span>Julius Berger</span>
       </div>
     </div>
+  </div>
+</div>
 
     <!-- SERVICES FULL (shortened for brevity but icons replaced) -->
     <section class="services-sec" id="services">
@@ -2589,11 +2706,11 @@
             </div>
           </div>
         </div>
-        <div class="footer-bottom">
+       <div class="footer-bottom">
           <p>
             &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
           </p>
-          <p>Designed for <span>Excellence</span> | Lagos, Nigeria</p>
+          <p>Lagos, Nigeria</p>
         </div>
       </div>
     </footer>

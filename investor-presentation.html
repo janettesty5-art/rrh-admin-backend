@@ -313,17 +313,38 @@
         margin-bottom: 40px;
         font-weight: 300;
       }
-      .slide-num {
-        position: absolute;
-        right: 32px;
-        bottom: 40px;
-        font-family: "Barlow Condensed", sans-serif;
-        font-size: 11px;
-        font-weight: 700;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-        color: rgba(201, 168, 76, 0.3);
-      }
+    .slide-num {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 16px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(201, 168, 76, 0.35);
+  background: rgba(10, 10, 10, 0.6);
+  z-index: 5;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.5;
+}
+
+@media (min-width: 769px) {
+  .slide-num {
+    left: auto;
+    right: 32px;
+    bottom: 20px;
+    padding: 0;
+    font-size: 11px;
+    letter-spacing: 3px;
+    background: transparent;
+    white-space: nowrap;
+    word-break: normal;
+  }
+}
       .cover-meta {
         display: flex;
         gap: 32px;
@@ -782,12 +803,91 @@
         color: var(--gold);
         transform: translateY(-2px);
       }
-      .cta-contacts {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-        flex-wrap: wrap;
-      }
+      /* NEW — replace with this */
+.cta-contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  max-width: 520px;
+  margin: 0 auto;
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.cc-item {
+  padding: 18px 20px;
+  border-right: 1px solid rgba(201, 168, 76, 0.12);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  position: relative;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: ccFadeIn 0.5s ease forwards;
+  text-align: left;
+}
+
+/* Remove right border on every second item */
+.cc-item:nth-child(2n) {
+  border-right: none;
+}
+
+/* Last row — remove bottom border */
+.cc-item:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+/* If odd total, last item spans full width */
+.cc-item:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  text-align: center;
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Staggered reveal */
+.cc-item:nth-child(1) { animation-delay: 0.1s; }
+.cc-item:nth-child(2) { animation-delay: 0.2s; }
+.cc-item:nth-child(3) { animation-delay: 0.3s; }
+.cc-item:nth-child(4) { animation-delay: 0.4s; }
+.cc-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes ccFadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Subtle hover lift on desktop */
+@media (min-width: 769px) {
+  .cc-item:hover {
+    background: rgba(201, 168, 76, 0.04);
+  }
+}
+
+/* On large screens, go back to flexible row */
+@media (min-width: 900px) {
+  .cta-contacts {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border: none;
+    max-width: 100%;
+  }
+  .cc-item {
+    padding: 0 32px;
+    border-right: 1px solid rgba(201, 168, 76, 0.15);
+    border-bottom: none;
+  }
+  .cc-item:last-child {
+    border-right: none;
+    grid-column: unset;
+    text-align: left;
+  }
+  .cc-item:nth-child(2n) {
+    border-right: 1px solid rgba(201, 168, 76, 0.15);
+  }
+  .cc-item:last-child:nth-child(odd) {
+    grid-column: unset;
+    text-align: left;
+    border-right: none;
+  }
+}
       .cc-item .cl {
         font-size: 10px;
         letter-spacing: 3px;
@@ -927,11 +1027,6 @@
         .market-grid,
         .big-stat-block {
           grid-template-columns: 1fr;
-        }
-        .cta-contacts {
-          flex-direction: column;
-          align-items: center;
-          gap: 20px;
         }
         .comp-grid {
           grid-template-columns: 1fr;
@@ -1235,29 +1330,41 @@
 }
 
 /* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
-.logo {
-  max-width: 100%;
-  overflow: hidden;
-}
 @media (max-width: 768px) {
   .logo img {
-    height: 65px !important;
+    height: 80px !important;
   }
 }
 @media (max-width: 480px) {
   .logo {
-    max-width: 160px;
+    max-width: 180px;
   }
   .logo img {
-    height: 58px !important;
+    height: 72px !important;
   }
 }
 @media (max-width: 380px) {
   .logo {
-    max-width: 140px;
+    max-width: 160px;
   }
   .logo img {
-    height: 52px !important;
+    height: 65px !important;
+  }
+}
+
+
+/* Tighter font inside the 2-col grid on mobile */
+@media (max-width: 899px) {
+  .cc-item .cv {
+    font-size: 12.5px;
+    word-break: break-word;
+  }
+  .cc-item .cl {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+  .cc-item {
+    padding: 14px 12px;
   }
 }
     </style>
@@ -2030,13 +2137,12 @@
 
     <!-- FOOTER -->
     <footer>
-      <div class="footer-bottom">
-        <p>
-          &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
-          Confidential Investor Presentation.
-        </p>
-        <p>Lagos, Nigeria | <span>info@roadrockholdings.com</span></p>
-      </div>
+    <div class="footer-bottom">
+          <p>
+            &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
+          </p>
+          <p>Lagos, Nigeria</p>
+        </div>
     </footer>
 
     <a

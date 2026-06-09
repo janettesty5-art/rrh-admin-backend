@@ -1314,29 +1314,164 @@
 }
 
 /* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
-.logo {
-  max-width: 100%;
-  overflow: hidden;
-}
 @media (max-width: 768px) {
   .logo img {
-    height: 65px !important;
+    height: 80px !important;
   }
 }
 @media (max-width: 480px) {
   .logo {
-    max-width: 160px;
+    max-width: 180px;
   }
   .logo img {
-    height: 58px !important;
+    height: 72px !important;
   }
 }
 @media (max-width: 380px) {
   .logo {
-    max-width: 140px;
+    max-width: 160px;
   }
   .logo img {
-    height: 52px !important;
+    height: 65px !important;
+  }
+}
+
+/* ── COMPLETE MOBILE OVERFLOW FIX ── */
+@media (max-width: 768px) {
+
+  /* Prevent any horizontal overflow */
+  .service-section,
+  .svc-section-header,
+  .svc-content-grid,
+  .svc-details,
+  .svc-gallery,
+  .svc-process,
+  .process-steps,
+  .svc-services-list,
+  .svc-why,
+  .svc-cta-btns {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Content grid: always single column */
+  .svc-content-grid,
+  .svc-content-grid.reverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+    gap: 24px;
+  }
+
+  /* Section header: stack vertically */
+  .svc-section-header {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 28px;
+  }
+  .svc-number {
+    font-size: 52px;
+    margin-top: 0;
+  }
+
+  /* Gallery stage: better aspect ratio */
+  .gallery-stage {
+    aspect-ratio: 4/3;
+  }
+
+  /* Service items: single column */
+  .svc-services-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Process steps: single column */
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+  .process-step::after {
+    display: none;
+  }
+
+  /* CTA buttons: full width stacked */
+  .svc-cta-btns {
+    flex-direction: column;
+  }
+  .svc-cta-btns .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Why box: full width */
+  .svc-why {
+    padding: 18px 16px;
+  }
+
+  /* Container padding */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Tab bar */
+  .svc-tabs-inner {
+    padding: 0 8px;
+  }
+  .tab-link {
+    padding: 12px 8px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    gap: 4px;
+  }
+  .tab-link i {
+    font-size: 11px;
+  }
+
+  /* Page hero */
+  .page-hero {
+    padding: 110px 16px 56px;
+  }
+
+  /* Lightbox nav on mobile */
+  .lb-nav.prev { left: 4px; }
+  .lb-nav.next { right: 4px; }
+
+  /* Mosaic: 3 cols */
+  .gallery-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .mosaic-cell:nth-child(n + 4) {
+    display: none;
+  }
+
+  /* Filmstrip thumbs */
+  .film-thumb {
+    width: 56px;
+    height: 38px;
+  }
+
+  /* CTA strip */
+  .cta-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 16px;
+  }
+  .cta-inner > div:last-child {
+    justify-content: center;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  .tab-link {
+    padding: 10px 6px;
+    font-size: 8px;
+  }
+  .svc-title {
+    font-size: 28px;
+  }
+  .gallery-stage {
+    aspect-ratio: 1/1;
   }
 }
     </style>
