@@ -44,6 +44,7 @@
         color: var(--white);
         font-family: "Barlow", sans-serif;
         overflow-x: hidden;
+        width: 100%;
       }
       ::-webkit-scrollbar {
         width: 5px;
@@ -64,7 +65,7 @@
         color: inherit;
       }
 
-      /* ─── NAV ─── */
+      /* ===== NAV ===== */
       #navbar {
         position: fixed;
         top: 0;
@@ -83,15 +84,18 @@
         align-items: center;
         justify-content: space-between;
         height: 70px;
+        gap: 12px;
       }
       .logo {
         display: flex;
         align-items: center;
         flex-shrink: 0;
+        min-width: 0;
       }
       .logo img {
         height: 90px;
         width: auto;
+        max-width: 200px;
         display: block;
         object-fit: contain;
       }
@@ -101,6 +105,7 @@
         gap: 16px;
         margin-right: 20px;
         font-family: "Barlow", sans-serif;
+        flex-shrink: 0;
       }
       .nav-info a {
         display: inline-flex;
@@ -119,10 +124,19 @@
         color: rgba(201, 168, 76, 0.25);
         font-size: 12px;
       }
+      .nav-info .location-text {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: var(--w60);
+        white-space: nowrap;
+      }
       .nav-links {
         display: flex;
         list-style: none;
         gap: 0;
+        flex-shrink: 0;
       }
       .nav-links a {
         padding: 8px 13px;
@@ -133,6 +147,7 @@
         color: var(--w80);
         transition: color 0.2s;
         font-family: "Barlow Condensed", sans-serif;
+        white-space: nowrap;
       }
       .nav-links a:hover,
       .nav-links a.active {
@@ -214,7 +229,7 @@
         text-align: center;
       }
 
-      /* ─── HERO ─── */
+      /* ===== HERO ===== */
       .hero {
         position: relative;
         min-height: 100vh;
@@ -239,9 +254,9 @@
         inset: 0;
         background: linear-gradient(
           110deg,
-          rgba(10, 10, 10, 0.85) 40%,
-          rgba(10, 10, 10, 0.5) 70%,
-          rgba(10, 10, 10, 0.3) 100%
+          rgba(10, 10, 10, 0.85) 38%,
+          rgba(10, 10, 10, 0.55) 70%,
+          rgba(10, 10, 10, 0.35) 100%
         );
       }
       .hero-grid {
@@ -257,7 +272,7 @@
         z-index: 2;
         max-width: 1320px;
         margin: 0 auto;
-        padding: 80px 32px 60px;
+        padding: 80px 32px 80px;
         width: 100%;
       }
       .hero-eyebrow {
@@ -279,10 +294,11 @@
         width: 32px;
         height: 2px;
         background: var(--gold);
+        flex-shrink: 0;
       }
       .hero-h1 {
         font-family: "Barlow Condensed", sans-serif;
-        font-size: clamp(38px, 8vw, 100px);
+        font-size: clamp(40px, 8vw, 100px);
         font-weight: 900;
         text-transform: uppercase;
         line-height: 0.97;
@@ -291,11 +307,11 @@
       .hero-h1 .gold {
         color: var(--gold);
         display: block;
-        font-size: clamp(42px, 9vw, 112px);
+        font-size: clamp(44px, 9vw, 112px);
       }
       .hero-sub {
         max-width: 500px;
-        font-size: clamp(13px, 1.5vw, 16px);
+        font-size: clamp(14px, 1.5vw, 16px);
         color: var(--w60);
         line-height: 1.75;
         margin-bottom: 40px;
@@ -305,21 +321,22 @@
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
-        margin-bottom: 48px;
+        margin-bottom: 64px;
       }
       .btn {
         display: inline-flex;
         align-items: center;
         gap: 8px;
-        padding: 13px 26px;
+        padding: 14px 28px;
         font-family: "Barlow Condensed", sans-serif;
         font-size: 12px;
         font-weight: 800;
-        letter-spacing: 2px;
+        letter-spacing: 2.5px;
         text-transform: uppercase;
         cursor: pointer;
         border: none;
         transition: all 0.3s;
+        white-space: nowrap;
       }
       .btn-gold {
         background: linear-gradient(135deg, var(--gold), var(--gold-dark));
@@ -341,18 +358,18 @@
       }
       .hero-stats {
         display: flex;
-        gap: clamp(16px, 4vw, 60px);
+        gap: clamp(20px, 4vw, 60px);
         flex-wrap: wrap;
       }
       .stat-item .sn {
         font-family: "Barlow Condensed", sans-serif;
-        font-size: clamp(26px, 3.5vw, 44px);
+        font-size: clamp(28px, 3.5vw, 44px);
         font-weight: 900;
         color: var(--gold);
         line-height: 1;
       }
       .stat-item .sl {
-        font-size: 10px;
+        font-size: 11px;
         color: var(--w60);
         letter-spacing: 1.5px;
         text-transform: uppercase;
@@ -401,7 +418,7 @@
         }
       }
 
-      /* ─── SERVICE STRIP ─── */
+      /* ===== SERVICE STRIP ===== */
       .svc-strip {
         background: var(--black-2);
         border-top: 1px solid rgba(201, 168, 76, 0.12);
@@ -414,7 +431,7 @@
         grid-template-columns: repeat(5, 1fr);
       }
       .svc-card {
-        padding: 28px 16px;
+        padding: 28px 20px;
         border-right: 1px solid rgba(201, 168, 76, 0.1);
         text-align: center;
         transition: background 0.3s;
@@ -436,7 +453,7 @@
       }
       .svc-name {
         font-family: "Barlow Condensed", sans-serif;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 700;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -458,7 +475,7 @@
         color: var(--gold);
       }
 
-      /* ─── ABOUT ─── */
+      /* ===== ABOUT ===== */
       .about-sec {
         padding: clamp(60px, 9vw, 120px) 0;
         background: var(--black);
@@ -469,7 +486,7 @@
         padding: 0 32px;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: clamp(32px, 6vw, 100px);
+        gap: clamp(40px, 6vw, 100px);
         align-items: center;
       }
       .about-img-wrap {
@@ -525,7 +542,7 @@
       }
       .sec-h2 {
         font-family: "Barlow Condensed", sans-serif;
-        font-size: clamp(24px, 4vw, 48px);
+        font-size: clamp(26px, 4vw, 48px);
         font-weight: 900;
         text-transform: uppercase;
         line-height: 1.05;
@@ -564,7 +581,7 @@
         flex-shrink: 0;
       }
 
-      /* ─── CLIENTS ─── */
+      /* ===== CLIENTS ===== */
       .clients-bar {
         padding: 30px 0;
         background: var(--black-3);
@@ -587,22 +604,21 @@
         font-weight: 600;
       }
       .clients-track-wrap {
-        overflow: hidden;
-        width: 100%;
         -webkit-mask-image: linear-gradient(
           90deg,
           rgba(0, 0, 0, 0.2) 0%,
-          black 10%,
-          black 90%,
+          black 12%,
+          black 88%,
           rgba(0, 0, 0, 0.2) 100%
         );
         mask-image: linear-gradient(
           90deg,
           rgba(0, 0, 0, 0.2) 0%,
-          black 10%,
-          black 90%,
+          black 12%,
+          black 88%,
           rgba(0, 0, 0, 0.2) 100%
         );
+        overflow: hidden;
       }
       .clients-track {
         display: flex;
@@ -628,31 +644,35 @@
         align-items: center;
         gap: 10px;
         flex-shrink: 0;
-        opacity: 0.55;
+        opacity: 0.45;
         transition: opacity 0.3s;
         cursor: default;
       }
       .cli-item:hover {
-        opacity: 0.9;
+        opacity: 0.85;
       }
       .cli-item img {
         height: 28px;
         width: auto;
         max-width: 60px;
         object-fit: contain;
-        display: block;
+        opacity: 0.7;
+        transition: opacity 0.3s;
+      }
+      .cli-item:hover img {
+        opacity: 1;
       }
       .cli-item span {
         font-family: "Barlow Condensed", sans-serif;
         font-size: 14px;
         font-weight: 800;
         letter-spacing: 2px;
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.55);
         text-transform: uppercase;
         white-space: nowrap;
       }
 
-      /* ─── SERVICES FULL ─── */
+      /* ===== SERVICES FULL ===== */
       .services-sec {
         padding: clamp(60px, 9vw, 120px) 0;
         background: var(--black-2);
@@ -709,7 +729,7 @@
       }
       .srv-block {
         background: var(--black-3);
-        padding: 36px 28px;
+        padding: 40px 32px;
         position: relative;
         overflow: hidden;
         transition: transform 0.3s;
@@ -752,7 +772,7 @@
       }
       .srv-title {
         font-family: "Barlow Condensed", sans-serif;
-        font-size: 19px;
+        font-size: 20px;
         font-weight: 800;
         text-transform: uppercase;
         margin-bottom: 12px;
@@ -807,7 +827,7 @@
         gap: 11px;
       }
 
-      /* ─── STATS ─── */
+      /* ===== STATS ===== */
       .stats-bar {
         padding: clamp(40px, 6vw, 80px) 0;
         background: linear-gradient(135deg, var(--black-3), var(--black-2));
@@ -822,7 +842,7 @@
       }
       .stat-box {
         text-align: center;
-        padding: 32px 12px;
+        padding: 32px 16px;
         border-right: 1px solid rgba(201, 168, 76, 0.1);
       }
       .stat-box:last-child {
@@ -844,7 +864,7 @@
         font-weight: 600;
       }
 
-      /* ─── WHY US ─── */
+      /* ===== WHY US ===== */
       .why-sec {
         padding: clamp(60px, 9vw, 120px) 0;
         background: var(--black);
@@ -889,7 +909,7 @@
         margin-bottom: 7px;
       }
       .why-p {
-        font-size: 13px;
+        font-size: 13.5px;
         color: var(--w60);
         line-height: 1.7;
         font-weight: 300;
@@ -897,7 +917,7 @@
       .cta-block {
         background: linear-gradient(135deg, var(--black-3), var(--black-4));
         border: 1px solid rgba(201, 168, 76, 0.15);
-        padding: 40px 36px;
+        padding: 44px 40px;
         margin-top: 52px;
         display: flex;
         align-items: center;
@@ -907,7 +927,7 @@
       }
       .cta-block h3 {
         font-family: "Barlow Condensed", sans-serif;
-        font-size: 26px;
+        font-size: 28px;
         font-weight: 900;
         text-transform: uppercase;
         margin-bottom: 8px;
@@ -918,7 +938,7 @@
         font-weight: 300;
       }
 
-      /* ─── CHALLENGES ─── */
+      /* ===== CHALLENGES ===== */
       .challenges-sec {
         padding: clamp(60px, 9vw, 120px) 0;
         background: var(--black-2);
@@ -936,7 +956,7 @@
       }
       .ch-card {
         background: var(--black-3);
-        padding: 36px 28px;
+        padding: 36px 32px;
       }
       .ch-card.sol {
         background: rgba(201, 168, 76, 0.06);
@@ -964,7 +984,7 @@
         font-weight: 300;
       }
 
-      /* ─── CEO ─── */
+      /* ===== CEO ===== */
       .ceo-sec {
         padding: clamp(60px, 9vw, 120px) 0;
         background: var(--black);
@@ -974,8 +994,8 @@
         margin: 0 auto;
         padding: 0 32px;
         display: grid;
-        grid-template-columns: 360px 1fr;
-        gap: clamp(32px, 6vw, 80px);
+        grid-template-columns: 380px 1fr;
+        gap: clamp(40px, 6vw, 80px);
         align-items: center;
       }
       .ceo-img-wrap {
@@ -1044,7 +1064,7 @@
         color: var(--gold);
       }
       .ceo-body {
-        font-size: 14px;
+        font-size: 14.5px;
         color: var(--w60);
         line-height: 1.8;
         margin-bottom: 14px;
@@ -1066,7 +1086,7 @@
         margin-top: 22px;
       }
       .pillar {
-        padding: 7px 14px;
+        padding: 7px 16px;
         border: 1px solid rgba(201, 168, 76, 0.28);
         font-family: "Barlow Condensed", sans-serif;
         font-size: 11px;
@@ -1076,7 +1096,7 @@
         color: var(--gold);
       }
 
-      /* ─── CONTACT STRIP ─── */
+      /* ===== CONTACT STRIP ===== */
       .contact-strip {
         padding: clamp(40px, 6vw, 80px) 0;
         background: linear-gradient(135deg, var(--gold-dark), var(--gold));
@@ -1112,7 +1132,7 @@
       .btn-dark {
         background: var(--black);
         color: var(--white);
-        padding: 14px 28px;
+        padding: 14px 32px;
         font-family: "Barlow Condensed", sans-serif;
         font-size: 12px;
         font-weight: 800;
@@ -1131,7 +1151,7 @@
         background: transparent;
         color: var(--black);
         border: 2px solid var(--black);
-        padding: 12px 24px;
+        padding: 12px 28px;
         font-family: "Barlow Condensed", sans-serif;
         font-size: 12px;
         font-weight: 800;
@@ -1148,7 +1168,7 @@
         transform: translateY(-2px);
       }
 
-      /* ─── FOOTER ─── */
+      /* ===== FOOTER ===== */
       footer {
         background: var(--black-2);
         border-top: 1px solid rgba(201, 168, 76, 0.15);
@@ -1162,7 +1182,7 @@
       .footer-grid {
         display: grid;
         grid-template-columns: 1.5fr 1fr 1fr 1fr;
-        gap: clamp(20px, 4vw, 56px);
+        gap: clamp(24px, 4vw, 56px);
         margin-bottom: 44px;
       }
       .footer-brand p {
@@ -1189,6 +1209,14 @@
       .soc:hover {
         background: var(--gold);
         border-color: var(--gold);
+      }
+      .soc i {
+        font-size: 15px;
+        color: var(--w60);
+        transition: color 0.3s;
+      }
+      .soc:hover i {
+        color: var(--black);
       }
       .footer-col h4 {
         font-family: "Barlow Condensed", sans-serif;
@@ -1221,6 +1249,11 @@
         font-size: 13px;
         color: var(--w60);
       }
+      .fci i {
+        color: var(--gold);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
       .footer-bottom {
         border-top: 1px solid rgba(255, 255, 255, 0.06);
         padding: 18px 0;
@@ -1238,14 +1271,14 @@
         color: var(--gold);
       }
 
-      /* ─── WA FAB ─── */
+      /* ===== WA FAB ===== */
       .wa-fab {
         position: fixed;
-        bottom: 24px;
-        right: 24px;
+        bottom: 28px;
+        right: 28px;
         z-index: 999;
-        width: 54px;
-        height: 54px;
+        width: 56px;
+        height: 56px;
         background: #25d366;
         display: flex;
         align-items: center;
@@ -1259,79 +1292,47 @@
         transform: scale(1.1);
       }
       .wa-fab i {
-        font-size: 28px;
+        font-size: 32px;
         color: #fff;
       }
 
-      /* ─── HERO ANIMATIONS ─── */
-      .hero-content .hero-eyebrow,
-      .hero-content .hero-h1,
-      .hero-content .hero-sub,
-      .hero-content .hero-btns,
-      .hero-content .hero-stats {
-        opacity: 0;
-        transform: translateY(40px);
-        animation: fadeInUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
-      }
-      .hero-content .hero-eyebrow {
-        animation-delay: 0.1s;
-      }
-      .hero-content .hero-h1 {
-        animation-delay: 0.2s;
-      }
-      .hero-content .hero-sub {
-        animation-delay: 0.4s;
-      }
-      .hero-content .hero-btns {
-        animation-delay: 0.6s;
-      }
-      .hero-content .hero-stats {
-        animation-delay: 0.8s;
-      }
-      @keyframes fadeInUp {
-        0% {
-          opacity: 0;
-          transform: translateY(40px);
+      /* ===== DESKTOP HOVER EFFECTS ===== */
+      @media (min-width: 769px) {
+        .hero-bg-img {
+          transition: transform 8s ease-in-out;
         }
-        100% {
-          opacity: 1;
-          transform: translateY(0);
+        .hero:hover .hero-bg-img {
+          transform: scale(1.05);
+        }
+        .svc-card {
+          transition: all 0.4s ease;
+        }
+        .svc-card:hover {
+          transform: translateY(-8px);
+          background: rgba(201, 168, 76, 0.08);
+        }
+        .srv-block,
+        .why-card,
+        .stat-box {
+          transition:
+            transform 0.4s ease,
+            box-shadow 0.4s ease;
+        }
+        .stat-box:hover {
+          transform: translateY(-5px);
         }
       }
 
-      /* ─── PAGE HERO (other pages) ─── */
-      .page-hero .breadcrumb,
-      .page-hero .page-title,
-      .page-hero .page-subtitle,
-      .page-hero .print-btn {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
-      }
-      .page-hero .breadcrumb {
-        animation-delay: 0.1s;
-      }
-      .page-hero .page-title {
-        animation-delay: 0.2s;
-      }
-      .page-hero .page-subtitle {
-        animation-delay: 0.35s;
-      }
-      .page-hero .print-btn {
-        animation-delay: 0.5s;
-      }
-
-      /* ═══════════════════════════════════════
-         RESPONSIVE BREAKPOINTS — FULLY REBUILT
-      ═══════════════════════════════════════ */
-
-      /* ── 1100px ── */
+      /* ===========================
+         TABLET: 901px – 1100px
+      =========================== */
       @media (max-width: 1100px) {
         .nav-info {
           gap: 10px;
           margin-right: 12px;
         }
-        .nav-info a {
+        .nav-info a,
+        .nav-info .location-text {
           font-size: 10px;
         }
         .about-grid {
@@ -1342,7 +1343,7 @@
           max-width: 480px;
         }
         .ceo-grid {
-          grid-template-columns: 280px 1fr;
+          grid-template-columns: 300px 1fr;
         }
         .stats-inner {
           grid-template-columns: repeat(3, 1fr);
@@ -1358,7 +1359,9 @@
         }
       }
 
-      /* ── 900px ── */
+      /* ===========================
+         TABLET: up to 900px
+      =========================== */
       @media (max-width: 900px) {
         .nav-links,
         .nav-cta,
@@ -1370,6 +1373,7 @@
         }
         .svc-strip-inner {
           grid-template-columns: repeat(3, 1fr);
+          padding: 0 16px;
         }
         .svc-card:nth-child(3) {
           border-right: none;
@@ -1390,77 +1394,79 @@
           grid-template-columns: 1fr;
         }
         .ceo-img {
-          max-height: 420px;
-          object-fit: cover;
+          max-height: 400px;
         }
         .ceo-frame {
           display: none;
         }
-        .about-grid {
-          padding: 0 24px;
-        }
       }
 
-      /* ── 768px ── */
+      /* ===========================
+         MOBILE: up to 768px — FULL FIX
+      =========================== */
       @media (max-width: 768px) {
-        /* Logo */
-        .logo img {
-          height: 72px !important;
-        }
-
-        /* Nav */
+        /* --- NAV --- */
         .nav-wrap {
           padding: 0 16px;
-          height: 64px;
+          height: 65px;
+        }
+        .logo img {
+          height: 72px !important;
+          max-width: 160px;
         }
 
-        /* Hero */
+        /* --- HERO --- */
         .hero {
-          padding-top: 64px;
+          min-height: 100svh;
+          padding-top: 65px;
         }
         .hero-content {
-          padding: 48px 20px 40px;
+          padding: 50px 20px 70px;
         }
         .hero-h1 {
-          font-size: clamp(34px, 9vw, 56px);
+          font-size: clamp(36px, 11vw, 58px);
           line-height: 1;
         }
         .hero-h1 .gold {
-          font-size: clamp(38px, 10vw, 62px);
+          font-size: clamp(40px, 12vw, 64px);
         }
         .hero-sub {
           font-size: 14px;
           margin-bottom: 28px;
+          max-width: 100%;
         }
         .hero-btns {
           gap: 10px;
-          margin-bottom: 36px;
+          margin-bottom: 40px;
         }
-        .btn {
+        .hero-btns .btn {
           padding: 12px 20px;
           font-size: 11px;
           letter-spacing: 1.5px;
+          width: 100%;
+          justify-content: center;
         }
         .hero-stats {
-          gap: 16px;
+          gap: 18px;
         }
         .stat-item .sn {
-          font-size: 26px;
+          font-size: 28px;
         }
         .stat-item .sl {
-          font-size: 9px;
+          font-size: 10px;
+          letter-spacing: 1px;
+        }
+        .hero-scroll {
+          bottom: 16px;
         }
 
-        /* Service strip — 2 col */
+        /* --- SERVICE STRIP --- */
         .svc-strip-inner {
           grid-template-columns: 1fr 1fr !important;
           padding: 0 !important;
         }
         .svc-card {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-        .svc-card:nth-child(odd) {
+          padding: 20px 14px;
           border-right: 1px solid rgba(201, 168, 76, 0.1) !important;
         }
         .svc-card:nth-child(even) {
@@ -1469,56 +1475,106 @@
         .svc-card:nth-child(5) {
           grid-column: 1 / -1;
           border-right: none !important;
+          border-top: 1px solid rgba(201, 168, 76, 0.1);
+        }
+        .svc-name {
+          font-size: 12px;
+        }
+        .svc-desc {
+          font-size: 10px;
         }
 
-        /* About */
-        .about-sec {
-          padding: 60px 0 80px;
-        }
+        /* --- ABOUT --- */
         .about-grid {
-          padding: 0 20px !important;
-          gap: 48px;
+          padding: 0 20px;
           grid-template-columns: 1fr;
+          gap: 48px;
+        }
+        .about-img-wrap {
+          max-width: 100%;
+        }
+        .about-img {
+          aspect-ratio: 16/10;
         }
         .about-badge {
-          bottom: -14px;
+          bottom: -16px;
           right: -8px;
-          padding: 16px 20px;
+          padding: 16px 18px;
+          min-width: 90px;
         }
         .badge-num {
-          font-size: 30px;
+          font-size: 32px;
         }
         .about-vals {
           grid-template-columns: 1fr;
           gap: 8px;
         }
+        .sec-h2 {
+          font-size: clamp(24px, 7vw, 36px);
+        }
+        .body-p {
+          font-size: 14px;
+        }
 
-        /* Services */
+        /* --- CLIENTS --- */
+        .clients-inner {
+          padding: 0 20px;
+        }
+
+        /* --- SERVICES FULL --- */
         .sec-header {
           padding: 0 20px 36px;
+        }
+        .sec-header h2 {
+          font-size: clamp(24px, 7vw, 36px);
+        }
+        .sec-header p {
+          font-size: 14px;
         }
         .srv-grid {
           padding: 0 20px;
           grid-template-columns: 1fr;
+          gap: 3px;
+        }
+        .srv-block {
+          padding: 28px 22px;
+        }
+        .srv-num {
+          font-size: 48px;
+        }
+        .srv-title {
+          font-size: 18px;
+        }
+        .srv-text {
+          font-size: 13px;
         }
 
-        /* Stats */
+        /* --- STATS --- */
         .stats-inner {
-          grid-template-columns: 1fr 1fr !important;
           padding: 0 20px;
+          grid-template-columns: repeat(2, 1fr);
         }
         .stat-box {
+          padding: 24px 12px;
           border-right: 1px solid rgba(201, 168, 76, 0.1) !important;
-          padding: 24px 10px;
         }
         .stat-box:nth-child(even) {
           border-right: none !important;
         }
+        .stat-box:nth-child(5) {
+          grid-column: 1 / -1;
+          border-right: none !important;
+          border-top: 1px solid rgba(201, 168, 76, 0.1);
+        }
         .stat-big {
-          font-size: 32px;
+          font-size: 36px;
+        }
+        .stat-lbl {
+          font-size: 9px;
+          letter-spacing: 1px;
         }
 
-        /* Why */
+        /* --- WHY US --- */
         .why-inner {
           padding: 0 20px;
         }
@@ -1527,70 +1583,121 @@
           margin-top: 32px;
         }
         .why-item {
+          padding: 18px 0;
           border-right: none !important;
-          padding: 20px 0;
+          flex-wrap: nowrap;
+        }
+        .why-h3 {
+          font-size: 15px;
+        }
+        .why-p {
+          font-size: 13px;
         }
         .cta-block {
-          flex-direction: column;
-          text-align: center;
           padding: 28px 20px;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-top: 32px;
+        }
+        .cta-block h3 {
+          font-size: 22px;
+        }
+        .cta-block > div:last-child {
+          width: 100%;
+        }
+        .cta-block .btn {
+          width: 100%;
+          justify-content: center;
         }
 
-        /* Challenges */
+        /* --- CHALLENGES --- */
         .challenges-inner {
           padding: 0 20px;
         }
         .ch-grid {
           grid-template-columns: 1fr;
-          gap: 3px;
+          margin-top: 32px;
+        }
+        .ch-card {
+          padding: 26px 22px;
+        }
+        .ch-title {
+          font-size: 16px;
+        }
+        .ch-text {
+          font-size: 13px;
         }
 
-        /* CEO */
+        /* --- CEO --- */
         .ceo-grid {
           padding: 0 20px;
           grid-template-columns: 1fr;
           gap: 32px;
         }
-        .ceo-img {
-          max-height: 360px;
-          aspect-ratio: unset;
-          width: 100%;
-          object-fit: cover;
-          object-position: top;
+      .ceo-img {
+  aspect-ratio: 3/4;
+  object-position: top;
+  max-height: 480px;
+  width: 100%;
+}
+        .ceo-name {
+          font-size: clamp(26px, 8vw, 40px);
         }
-        .ceo-frame {
-          display: none;
+        .ceo-body {
+          font-size: 14px;
+        }
+        .ceo-quote {
+          font-size: 14px;
+          padding-left: 16px;
+          margin: 18px 0;
+        }
+        .pillars {
+          gap: 6px;
+        }
+        .pillar {
+          padding: 6px 12px;
+          font-size: 10px;
         }
 
-        /* Contact strip */
+        /* --- CONTACT STRIP --- */
         .cs-inner {
-          flex-direction: column;
-          text-align: center;
           padding: 0 20px;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .cs-text h2 {
+          font-size: clamp(20px, 7vw, 32px);
         }
         .cs-btns {
+          width: 100%;
+        }
+        .btn-dark,
+        .btn-blk-out {
+          flex: 1;
           justify-content: center;
+          padding: 13px 16px;
         }
 
-        /* Footer */
+        /* --- FOOTER --- */
         .footer-inner {
           padding: 0 20px;
         }
         .footer-grid {
           display: flex !important;
           flex-wrap: wrap !important;
-          gap: 24px !important;
+          gap: 28px !important;
+          margin-bottom: 32px;
         }
         .footer-grid .footer-brand {
           width: 100% !important;
           order: 1 !important;
         }
         .footer-grid .footer-col:nth-child(2) {
-          width: calc(50% - 12px) !important;
+          width: calc(50% - 14px) !important;
           order: 2 !important;
         }
         .footer-grid .footer-col:nth-child(3) {
-          width: calc(50% - 12px) !important;
+          width: calc(50% - 14px) !important;
           order: 3 !important;
         }
         .footer-grid .footer-col:nth-child(4) {
@@ -1601,166 +1708,146 @@
         }
         .footer-bottom {
           flex-direction: column;
+          align-items: center;
           text-align: center;
           gap: 8px;
         }
 
-        /* Mobile scroll reveal */
-        .svc-card,
-        .srv-block,
-        .why-item,
-        .ch-card,
-        .stat-box {
+        /* --- WA FAB --- */
+        .wa-fab {
+          bottom: 20px;
+          right: 16px;
+          width: 50px;
+          height: 50px;
+        }
+        .wa-fab i {
+          font-size: 26px;
+        }
+
+        /* --- DISABLE hover effects on mobile --- */
+        .hero:hover .hero-bg-img {
+          transform: none;
+        }
+        .svc-card:hover {
+          transform: none;
+          background: none;
+        }
+        .srv-block:hover {
+          transform: none;
+        }
+        .stat-box:hover {
+          transform: none;
+        }
+      }
+
+      /* ===========================
+         SMALL MOBILE: up to 480px
+      =========================== */
+      @media (max-width: 480px) {
+        .nav-wrap {
+          padding: 0 14px;
+        }
+        .logo img {
+          height: 64px !important;
+          max-width: 140px;
+        }
+        .hero-content {
+          padding: 44px 16px 60px;
+        }
+        .hero-h1 {
+          font-size: clamp(32px, 10vw, 48px);
+        }
+        .hero-h1 .gold {
+          font-size: clamp(36px, 11vw, 54px);
+        }
+        .hero-eyebrow {
+          font-size: 9px;
+          letter-spacing: 3px;
+        }
+        .hero-btns .btn {
+          font-size: 10px;
+          padding: 11px 16px;
+        }
+        .about-grid,
+        .challenges-inner,
+        .why-inner,
+        .ceo-grid,
+        .cs-inner,
+        .footer-inner {
+          padding: 0 16px;
+        }
+        .sec-header {
+          padding: 0 16px 28px;
+        }
+        .srv-grid {
+          padding: 0 16px;
+        }
+        .stats-inner {
+          padding: 0 16px;
+        }
+        .cta-block {
+          padding: 24px 16px;
+        }
+      }
+
+      /* ===========================
+         VERY SMALL: up to 380px
+      =========================== */
+      @media (max-width: 380px) {
+        .logo img {
+          height: 58px !important;
+          max-width: 130px;
+        }
+        .hero-h1 {
+          font-size: clamp(28px, 9vw, 40px);
+        }
+        .hero-h1 .gold {
+          font-size: clamp(32px, 10vw, 46px);
+        }
+        .hero-btns .btn {
+          padding: 10px 14px;
+          font-size: 10px;
+        }
+        .footer-grid .footer-col:nth-child(2),
+        .footer-grid .footer-col:nth-child(3) {
+          width: 100% !important;
+        }
+        .svc-strip-inner {
+          grid-template-columns: 1fr !important;
+        }
+        .svc-card {
+          border-right: none !important;
+          border-bottom: 1px solid rgba(201, 168, 76, 0.1) !important;
+        }
+        .svc-card:nth-child(5) {
+          grid-column: auto;
+          border-top: none;
+        }
+        .cs-btns {
+          flex-direction: column;
+        }
+        .btn-dark,
+        .btn-blk-out {
+          width: 100%;
+        }
+      }
+
+      /* ===== SCROLL REVEAL (desktop only) ===== */
+      @media (min-width: 769px) {
+        .reveal-el {
           opacity: 0;
           transform: translateY(24px);
           transition:
             opacity 0.6s ease,
             transform 0.6s ease;
         }
-        .svc-card.visible,
-        .srv-block.visible,
-        .why-item.visible,
-        .ch-card.visible,
-        .stat-box.visible {
+        .reveal-el.visible {
           opacity: 1;
           transform: translateY(0);
         }
-
-        /* Desktop hover off */
-        .svc-card:hover,
-        .srv-block:hover,
-        .stat-box:hover {
-          transform: none;
-          box-shadow: none;
-        }
       }
 
-      /* ── 480px ── */
-      @media (max-width: 480px) {
-        .logo img {
-          height: 60px !important;
-        }
-        .nav-wrap {
-          height: 60px;
-        }
-        .hero {
-          padding-top: 60px;
-        }
-        .hero-content {
-          padding: 40px 16px 32px;
-        }
-        .hero-h1 {
-          font-size: clamp(30px, 10vw, 46px);
-        }
-        .hero-h1 .gold {
-          font-size: clamp(34px, 11vw, 52px);
-        }
-        .hero-btns {
-          flex-direction: column;
-        }
-        .btn {
-          width: 100%;
-          justify-content: center;
-        }
-        .hero-stats {
-          gap: 12px;
-        }
-        .stat-item {
-          min-width: 60px;
-        }
-
-        .about-grid,
-        .srv-grid,
-        .sec-header,
-        .why-inner,
-        .challenges-inner,
-        .ceo-grid,
-        .cs-inner,
-        .footer-inner {
-          padding-left: 16px !important;
-          padding-right: 16px !important;
-        }
-
-        .srv-grid {
-          grid-template-columns: 1fr;
-        }
-        .stats-inner {
-          padding: 0 16px;
-        }
-
-        .ch-card {
-          padding: 28px 20px;
-        }
-        .cta-block {
-          padding: 24px 16px;
-        }
-
-        .footer-grid .footer-col:nth-child(2),
-        .footer-grid .footer-col:nth-child(3) {
-          width: 100% !important;
-        }
-
-        .wa-fab {
-          bottom: 16px;
-          right: 16px;
-          width: 48px;
-          height: 48px;
-        }
-        .wa-fab i {
-          font-size: 24px;
-        }
-      }
-
-      /* ── 360px ── */
-      @media (max-width: 360px) {
-        .logo img {
-          height: 52px !important;
-        }
-        .hero-h1 {
-          font-size: 28px;
-        }
-        .hero-h1 .gold {
-          font-size: 32px;
-        }
-        .stat-item .sn {
-          font-size: 22px;
-        }
-        .sec-h2 {
-          font-size: 24px;
-        }
-      }
-
-      /* ─── DESKTOP HOVER EFFECTS ─── */
-      @media (min-width: 769px) {
-        .hero-bg-img {
-          transition: transform 8s ease-in-out;
-        }
-        .hero:hover .hero-bg-img {
-          transform: scale(1.05);
-        }
-        .svc-card {
-          transition: all 0.4s ease;
-        }
-        .svc-card:hover {
-          transform: translateY(-6px);
-          background: rgba(201, 168, 76, 0.08);
-        }
-        .srv-block,
-        .stat-box {
-          transition:
-            transform 0.4s ease,
-            box-shadow 0.4s ease;
-        }
-        .srv-block:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-        .stat-box:hover {
-          transform: translateY(-4px);
-        }
-      }
-
-      /* ─── GLOW ON LOAD ─── */
+      /* Glow on hero CTA */
       .hero-btns .btn-gold {
         animation: subtleGlow 1.5s ease-in-out 0.6s both;
       }
@@ -1795,7 +1882,7 @@
           >
           <span>|</span>
           <span style="color: var(--w60)"
-            ><i class="fas fa-map-marker-alt" style="margin-right: 4px"></i
+            ><i class="fas fa-map-marker-alt" style="margin-right: 5px"></i
             >Lagos, Nigeria</span
           >
         </div>
@@ -1890,7 +1977,7 @@
             ><i class="fas fa-calculator"></i> Get A Quote →</a
           >
           <a href="services.html" class="btn btn-outline"
-            ><i class="fas fa-globe"></i> Explore Services</a
+            ><i class="fas fa-globe"></i> Explore Our Services</a
           >
           <a href="contact.html" class="btn btn-outline"
             ><i class="fas fa-handshake"></i> Partner With Us</a
@@ -1905,7 +1992,9 @@
           </div>
           <div class="stat-item">
             <div class="sn" data-target="250">250+</div>
-            <div class="sl"><i class="fas fa-hard-hat"></i> Projects Done</div>
+            <div class="sl">
+              <i class="fas fa-hard-hat"></i> Projects Completed
+            </div>
           </div>
           <div class="stat-item">
             <div class="sn" data-target="100">100+</div>
@@ -1913,11 +2002,15 @@
           </div>
           <div class="stat-item">
             <div class="sn" data-target="5">5+</div>
-            <div class="sl"><i class="fas fa-chart-pie"></i> Sectors</div>
+            <div class="sl">
+              <i class="fas fa-chart-pie"></i> Business Sectors
+            </div>
           </div>
           <div class="stat-item">
             <div class="sn" data-target="50">50+</div>
-            <div class="sl"><i class="fas fa-user-tie"></i> Professionals</div>
+            <div class="sl">
+              <i class="fas fa-user-tie"></i> Expert Professionals
+            </div>
           </div>
         </div>
       </div>
@@ -2058,7 +2151,7 @@
               Solutions
             </div>
           </div>
-          <a href="about.html" class="btn btn-gold" style="margin-top: 8px"
+          <a href="about.html" class="btn btn-gold"
             ><i class="fas fa-arrow-right"></i> Discover More About Us →</a
           >
         </div>
@@ -2126,7 +2219,7 @@
       </div>
     </div>
 
-    <!-- SERVICES -->
+    <!-- SERVICES FULL -->
     <section class="services-sec" id="services">
       <div class="sec-header">
         <div class="sec-label"><i class="fas fa-cogs"></i> What We Do</div>
@@ -2137,7 +2230,7 @@
         </p>
       </div>
       <div class="srv-grid">
-        <div class="srv-block">
+        <div class="srv-block reveal-el">
           <div class="srv-num">01</div>
           <div class="srv-ico">
             <i
@@ -2159,7 +2252,7 @@
             >See More <i class="fas fa-arrow-right"></i
           ></a>
         </div>
-        <div class="srv-block">
+        <div class="srv-block reveal-el">
           <div class="srv-num">02</div>
           <div class="srv-ico">
             <i
@@ -2181,7 +2274,7 @@
             >See More <i class="fas fa-arrow-right"></i
           ></a>
         </div>
-        <div class="srv-block">
+        <div class="srv-block reveal-el">
           <div class="srv-num">03</div>
           <div class="srv-ico">
             <i
@@ -2203,7 +2296,7 @@
             >See More <i class="fas fa-arrow-right"></i
           ></a>
         </div>
-        <div class="srv-block">
+        <div class="srv-block reveal-el">
           <div class="srv-num">04</div>
           <div class="srv-ico">
             <i
@@ -2225,7 +2318,7 @@
             >See More <i class="fas fa-arrow-right"></i
           ></a>
         </div>
-        <div class="srv-block">
+        <div class="srv-block reveal-el">
           <div class="srv-num">05</div>
           <div class="srv-ico">
             <i
@@ -2252,29 +2345,29 @@
     <!-- STATS -->
     <div class="stats-bar" id="stats">
       <div class="stats-inner">
-        <div class="stat-box">
+        <div class="stat-box reveal-el">
           <div class="stat-big" data-target="15">0+</div>
           <div class="stat-lbl">
             <i class="fas fa-trophy"></i> Years of Excellence
           </div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box reveal-el">
           <div class="stat-big" data-target="250">0+</div>
           <div class="stat-lbl">
             <i class="fas fa-draw-polygon"></i> Projects Completed
           </div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box reveal-el">
           <div class="stat-big" data-target="100">0+</div>
           <div class="stat-lbl"><i class="fas fa-users"></i> Happy Clients</div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box reveal-el">
           <div class="stat-big" data-target="5">0+</div>
           <div class="stat-lbl">
             <i class="fas fa-chart-line"></i> Business Sectors
           </div>
         </div>
-        <div class="stat-box">
+        <div class="stat-box reveal-el">
           <div class="stat-big" data-target="50">0+</div>
           <div class="stat-lbl">
             <i class="fas fa-user-graduate"></i> Expert Professionals
@@ -2289,7 +2382,7 @@
         <div class="sec-eyebrow">Why Choose Us</div>
         <h2 class="sec-h2">The Road Rock <span>Advantage</span></h2>
         <div class="why-grid">
-          <div class="why-item">
+          <div class="why-item reveal-el">
             <div class="why-ico">
               <i
                 class="fas fa-medal"
@@ -2304,7 +2397,7 @@
               </p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item reveal-el">
             <div class="why-ico">
               <i
                 class="fas fa-microchip"
@@ -2320,7 +2413,7 @@
               </p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item reveal-el">
             <div class="why-ico">
               <i
                 class="fas fa-leaf"
@@ -2335,7 +2428,7 @@
               </p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item reveal-el">
             <div class="why-ico">
               <i
                 class="fas fa-clock"
@@ -2350,7 +2443,7 @@
               </p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item reveal-el">
             <div class="why-ico">
               <i
                 class="fas fa-chalkboard-user"
@@ -2365,7 +2458,7 @@
               </p>
             </div>
           </div>
-          <div class="why-item">
+          <div class="why-item reveal-el">
             <div class="why-ico">
               <i
                 class="fas fa-robot"
@@ -2406,7 +2499,7 @@
         <div class="sec-eyebrow">Problems We Solve</div>
         <h2 class="sec-h2">Challenges &amp; <span>Our Solutions</span></h2>
         <div class="ch-grid">
-          <div class="ch-card">
+          <div class="ch-card reveal-el">
             <div class="ch-icon"><i class="fas fa-road"></i></div>
             <div class="ch-title">Infrastructure Challenges</div>
             <p class="ch-text">
@@ -2415,7 +2508,7 @@
               communities underserved and disconnected.
             </p>
           </div>
-          <div class="ch-card sol">
+          <div class="ch-card sol reveal-el">
             <div class="ch-icon">
               <i class="fas fa-check-circle" style="color: var(--gold)"></i>
             </div>
@@ -2426,7 +2519,7 @@
               construction standards to build lasting roads and bridges.
             </p>
           </div>
-          <div class="ch-card">
+          <div class="ch-card reveal-el">
             <div class="ch-icon"><i class="fas fa-bolt"></i></div>
             <div class="ch-title">Energy Challenges</div>
             <p class="ch-text">
@@ -2435,7 +2528,7 @@
               life across Nigeria.
             </p>
           </div>
-          <div class="ch-card sol">
+          <div class="ch-card sol reveal-el">
             <div class="ch-icon">
               <i class="fas fa-check-circle" style="color: var(--gold)"></i>
             </div>
@@ -2446,7 +2539,7 @@
               reliable, cost-effective power independence.
             </p>
           </div>
-          <div class="ch-card">
+          <div class="ch-card reveal-el">
             <div class="ch-icon"><i class="fas fa-laptop-code"></i></div>
             <div class="ch-title">Technology Challenges</div>
             <p class="ch-text">
@@ -2454,7 +2547,7 @@
               to compete effectively in a rapidly evolving global economy.
             </p>
           </div>
-          <div class="ch-card sol">
+          <div class="ch-card sol reveal-el">
             <div class="ch-icon">
               <i class="fas fa-check-circle" style="color: var(--gold)"></i>
             </div>
@@ -2510,8 +2603,8 @@
             <i
               class="fas fa-quote-left"
               style="margin-right: 8px; color: var(--gold)"
-            ></i
-            >"Our goal is to build a future where infrastructure, energy,
+            ></i>
+            "Our goal is to build a future where infrastructure, energy,
             technology, and smart living solutions work together to improve
             lives, empower businesses, and shape modern societies."
           </blockquote>
@@ -2575,28 +2668,16 @@
             </p>
             <div class="socials">
               <a href="#" class="soc" aria-label="Facebook"
-                ><i
-                  class="fab fa-facebook-f"
-                  style="font-size: 15px; color: var(--w60)"
-                ></i
+                ><i class="fab fa-facebook-f"></i
               ></a>
               <a href="#" class="soc" aria-label="Instagram"
-                ><i
-                  class="fab fa-instagram"
-                  style="font-size: 15px; color: var(--w60)"
-                ></i
+                ><i class="fab fa-instagram"></i
               ></a>
               <a href="#" class="soc" aria-label="LinkedIn"
-                ><i
-                  class="fab fa-linkedin-in"
-                  style="font-size: 15px; color: var(--w60)"
-                ></i
+                ><i class="fab fa-linkedin-in"></i
               ></a>
               <a href="#" class="soc" aria-label="YouTube"
-                ><i
-                  class="fab fa-youtube"
-                  style="font-size: 15px; color: var(--w60)"
-                ></i
+                ><i class="fab fa-youtube"></i
               ></a>
             </div>
           </div>
@@ -2627,17 +2708,10 @@
           <div class="footer-col">
             <h4>Contact Us</h4>
             <div class="fci">
-              <i
-                class="fas fa-map-pin"
-                style="color: var(--gold); margin-top: 2px"
-              ></i
-              ><span>Lagos, Nigeria</span>
+              <i class="fas fa-map-pin"></i><span>Lagos, Nigeria</span>
             </div>
             <div class="fci">
-              <i
-                class="fas fa-phone-alt"
-                style="color: var(--gold); margin-top: 2px"
-              ></i>
+              <i class="fas fa-phone-alt"></i>
               <div>
                 <a
                   href="tel:+2348082363104"
@@ -2652,10 +2726,7 @@
               </div>
             </div>
             <div class="fci">
-              <i
-                class="far fa-envelope"
-                style="color: var(--gold); margin-top: 2px"
-              ></i
+              <i class="far fa-envelope"></i
               ><a
                 href="mailto:info@roadrockholdings.com"
                 style="color: var(--w60)"
@@ -2668,7 +2739,6 @@
           <p>
             &copy; 2026 <span>Road Rock Holdings</span>. All Rights Reserved.
           </p>
-          <p>Lagos, Nigeria</p>
         </div>
       </div>
     </footer>
@@ -2685,7 +2755,7 @@
     </a>
 
     <script>
-      // Mobile menu
+      // Mobile menu toggle
       const hamburger = document.getElementById("hamburger");
       const mobMenu = document.getElementById("mobMenu");
       hamburger.addEventListener("click", () => {
@@ -2741,42 +2811,29 @@
         .querySelectorAll("[data-target]")
         .forEach((el) => countObserver.observe(el));
 
-      // Universal scroll reveal
-      const revealEls = document.querySelectorAll(
-        ".srv-block, .why-item, .ch-card, .stat-box, .svc-card",
-      );
-      const revealObs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              // Also force inline for desktop
-              e.target.style.opacity = "1";
-              e.target.style.transform = "translateY(0)";
-              revealObs.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      revealEls.forEach((el) => {
-        el.style.opacity = "0";
-        el.style.transform = "translateY(24px)";
-        el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-        revealObs.observe(el);
-      });
-
-      // Service strip cards — never hide on mobile
-      function fixSvcCards() {
-        if (window.innerWidth <= 768) {
-          document.querySelectorAll(".svc-card").forEach((el) => {
-            el.style.opacity = "1";
-            el.style.transform = "none";
-          });
-        }
+      // Scroll reveal (desktop only)
+      if (window.innerWidth > 768) {
+        const revealObs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("visible");
+                revealObs.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        document
+          .querySelectorAll(".reveal-el")
+          .forEach((el) => revealObs.observe(el));
+      } else {
+        // On mobile, just show everything (no hidden state)
+        document.querySelectorAll(".reveal-el").forEach((el) => {
+          el.style.opacity = "1";
+          el.style.transform = "none";
+        });
       }
-      fixSvcCards();
-      window.addEventListener("resize", fixSvcCards);
     </script>
     <script src="js/ai.js"></script>
     <script src="js/content-loader.js"></script>

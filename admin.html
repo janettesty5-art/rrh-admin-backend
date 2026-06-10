@@ -72,6 +72,38 @@
         cursor: pointer;
       }
 
+      /* ── PASSWORD TOGGLE WRAPPER ── */
+      .pass-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+      .pass-wrap .f-input,
+      .pass-wrap input {
+        width: 100%;
+        padding-right: 44px !important;
+      }
+      .pass-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 44px;
+        background: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--w30);
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 0.2s;
+        z-index: 2;
+      }
+      .pass-toggle:hover {
+        color: var(--gold);
+      }
+
       /* ── AUTH ── */
       #auth-screen {
         position: fixed;
@@ -234,6 +266,11 @@
         display: none;
         min-height: 100vh;
       }
+
+      #admin-app {
+        width: 100%;
+        overflow-x: hidden;
+      }
       #admin-app.visible {
         display: flex;
       }
@@ -387,6 +424,8 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
+        width: 100%; /* ADD THIS */
+        overflow-x: hidden; /* ADD THIS */
       }
       .main.expanded {
         margin-left: 0;
@@ -457,7 +496,10 @@
       .content {
         flex: 1;
         padding: 28px;
+        width: 100%; /* ADD THIS */
         max-width: 1200px;
+        overflow-x: hidden; /* ADD THIS */
+        box-sizing: border-box; /* ADD THIS */
       }
       .panel {
         display: none;
@@ -709,6 +751,10 @@
       .f-row select option {
         background: var(--b4);
       }
+      /* password inputs inside .f-row with .pass-wrap need right padding */
+      .f-row .pass-wrap input {
+        padding-right: 44px !important;
+      }
 
       /* modal */
       .modal-overlay {
@@ -953,7 +999,7 @@
         }
       }
 
-      /* loading spinner */
+      /* spinner */
       .spinner {
         display: inline-block;
         width: 16px;
@@ -985,66 +1031,146 @@
       }
 
       /* SIDEBAR MOBILE CLOSE BUTTON */
-.sidebar-close {
-  display: none;
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  background: rgba(201, 168, 76, 0.1);
-  border: 1px solid rgba(201, 168, 76, 0.3);
-  border-radius: 50%;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  z-index: 10;
-}
-.sidebar-close:hover {
-  background: var(--gold);
-  transform: rotate(90deg);
-}
-.sidebar-close i {
-  color: var(--gold);
-  font-size: 14px;
-  transition: color 0.2s;
-}
-.sidebar-close:hover i {
-  color: var(--black);
-}
+      .sidebar-close {
+        display: none;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 32px;
+        height: 32px;
+        background: rgba(201, 168, 76, 0.1);
+        border: 1px solid rgba(201, 168, 76, 0.3);
+        border-radius: 50%;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+      .sidebar-close:hover {
+        background: var(--gold);
+        transform: rotate(90deg);
+      }
+      .sidebar-close i {
+        color: var(--gold);
+        font-size: 14px;
+        transition: color 0.2s;
+      }
+      .sidebar-close:hover i {
+        color: var(--black);
+      }
+      @media (max-width: 900px) {
+        .sidebar {
+          position: fixed;
+          transform: translateX(-100%);
+          transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+          z-index: 1000;
+        }
+        .sidebar.mobile-open {
+          transform: translateX(0);
+        }
+        .sidebar-close {
+          display: flex;
+        }
+        .overlay-backdrop {
+          position: fixed;
+          inset: 0;
+          background: rgba(0, 0, 0, 0.7);
+          z-index: 999;
+          display: none;
+          backdrop-filter: blur(4px);
+          transition: opacity 0.3s ease;
+        }
+        .overlay-backdrop.active {
+          display: block;
+        }
+      }
+
+      /* ── MOBILE CONTENT FIX ── */
+/* ── MOBILE CONTENT FIX ── */
 @media (max-width: 900px) {
-  .sidebar {
-    position: fixed;
-    transform: translateX(-100%);
-    transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-    z-index: 1000;
+  .content {
+    padding: 16px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
   }
-  .sidebar.mobile-open {
-    transform: translateX(0);
+
+  .stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
-  .sidebar-close {
-    display: flex;
+
+  .topbar {
+    padding: 0 16px;
   }
-  .overlay-backdrop {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
+
+  .topbar-title {
+    font-size: 14px;
+  }
+
+  .submit-change-form {
+    padding: 16px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .change-item {
+    padding: 12px 14px;
+  }
+
+  .change-actions {
+    flex-wrap: wrap;
+  }
+
+  /* ── THE KEY FIX: admins table ── */
+  #panel-admins .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+
+  #panel-admins table {
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  #panel-admins th,
+  #panel-admins td {
+    padding: 8px 6px;
+    font-size: 11px;
+    word-break: break-word;
+    overflow: hidden;
+  }
+
+  /* Hide Email (col 2) and Last Login (col 5) on mobile */
+  #panel-admins thead th:nth-child(2),
+  #panel-admins thead th:nth-child(5),
+  #panel-admins tbody td:nth-child(2),
+  #panel-admins tbody td:nth-child(5) {
     display: none;
-    backdrop-filter: blur(4px);
-    transition: opacity 0.3s ease;
   }
-  .overlay-backdrop.active {
-    display: block;
+
+  #panel-admins .badge {
+    font-size: 9px;
+    padding: 2px 5px;
+    letter-spacing: 0.5px;
+  }
+
+  #panel-admins .btn-sm {
+    padding: 4px 7px;
+    font-size: 9px;
+    letter-spacing: 0.5px;
   }
 }
     </style>
   </head>
   <body>
-    <!-- ═══════════════════════════════════════════════════════════
-     AUTH SCREEN
-═══════════════════════════════════════════════════════════ -->
+    <!-- AUTH SCREEN -->
     <div id="auth-screen">
       <div class="auth-box">
         <div class="auth-logo">Road <span>Rock</span> Holdings</div>
@@ -1067,18 +1193,29 @@
               class="f-input"
               type="email"
               id="login-email"
-              placeholder="admin email.com"
+              placeholder="admin@email.com"
             />
           </div>
           <div class="f-group">
             <label class="f-label">Password</label>
-            <input
-              class="f-input"
-              type="password"
-              id="login-password"
-              placeholder="••••••••"
-              onkeydown="if (event.key === 'Enter') doLogin();"
-            />
+            <div class="pass-wrap">
+              <input
+                class="f-input"
+                type="password"
+                id="login-password"
+                placeholder="••••••••"
+                onkeydown="if (event.key === 'Enter') doLogin();"
+              />
+              <button
+                type="button"
+                class="pass-toggle"
+                onclick="togglePass('login-password', this)"
+                tabindex="-1"
+                aria-label="Toggle password visibility"
+              >
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
           </div>
           <div id="login-err" class="auth-err" style="display: none"></div>
           <button class="btn-auth" id="login-btn" onclick="doLogin()">
@@ -1089,8 +1226,8 @@
         <!-- Step: Forgot — enter email -->
         <div class="auth-step" id="step-forgot">
           <p class="otp-hint">
-            Enter your admin email and we'll send you an OTP code to reset
-            your password.
+            Enter your admin email and we'll send you an OTP code to reset your
+            password.
           </p>
           <div class="f-group">
             <label class="f-label">Admin Email</label>
@@ -1141,21 +1278,43 @@
         <div class="auth-step" id="step-newpass">
           <div class="f-group">
             <label class="f-label">New Password</label>
-            <input
-              class="f-input"
-              type="password"
-              id="new-pass"
-              placeholder="Min 8 characters"
-            />
+            <div class="pass-wrap">
+              <input
+                class="f-input"
+                type="password"
+                id="new-pass"
+                placeholder="Min 8 characters"
+              />
+              <button
+                type="button"
+                class="pass-toggle"
+                onclick="togglePass('new-pass', this)"
+                tabindex="-1"
+                aria-label="Toggle password visibility"
+              >
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
           </div>
           <div class="f-group">
             <label class="f-label">Confirm Password</label>
-            <input
-              class="f-input"
-              type="password"
-              id="conf-pass"
-              placeholder="Repeat new password"
-            />
+            <div class="pass-wrap">
+              <input
+                class="f-input"
+                type="password"
+                id="conf-pass"
+                placeholder="Repeat new password"
+              />
+              <button
+                type="button"
+                class="pass-toggle"
+                onclick="togglePass('conf-pass', this)"
+                tabindex="-1"
+                aria-label="Toggle password visibility"
+              >
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
           </div>
           <div id="newpass-err" class="auth-err" style="display: none"></div>
           <button class="btn-auth" id="newpass-btn" onclick="doResetPassword()">
@@ -1165,15 +1324,12 @@
       </div>
     </div>
 
-    <!-- ═══════════════════════════════════════════════════════════
-     ADMIN APP
-═══════════════════════════════════════════════════════════ -->
+    <!-- ADMIN APP -->
     <div id="admin-app">
       <aside class="sidebar" id="sidebar">
-         <button class="sidebar-close" id="sidebarCloseBtn">
-    <i class="fas fa-times"></i>
-  </button>
-
+        <button class="sidebar-close" id="sidebarCloseBtn">
+          <i class="fas fa-times"></i>
+        </button>
         <div class="sidebar-logo">
           <div class="sidebar-logo-name">Road <span>Rock</span></div>
           <div class="sidebar-logo-sub">Admin Panel</div>
@@ -1284,9 +1440,7 @@
                 You're logged into the
                 <strong style="color: var(--white)">Road Rock Holdings</strong>
                 Admin Panel. Your role:
-                <strong style="color: var(--gold)" id="dash-role-desc"
-                  >—</strong
-                >
+                <strong style="color: var(--gold)" id="dash-role-desc">—</strong>
               </p>
               <div
                 style="
@@ -1298,12 +1452,6 @@
                   line-height: 1.7;
                 "
               >
-                <strong style="color: var(--gold)"
-                  ><i class="fas fa-server"></i> Live Backend Connected</strong
-                ><br />
-                All actions — login, OTP, admin management, and change workflow
-                — run through a real Node.js + PostgreSQL backend on Render.
-                Nothing is simulated.
               </div>
             </div>
             <div class="sec-title">
@@ -1321,8 +1469,6 @@
               <div class="sec-title-bar"></div>
               Pending <span>Changes</span>
             </div>
-
-            <!-- Submit new change (writers + above) -->
             <div class="submit-change-form" id="submit-change-section">
               <h3><i class="fas fa-edit"></i> Submit a Change</h3>
               <div class="form-grid" style="margin-bottom: 14px">
@@ -1383,8 +1529,6 @@
                 </button>
               </div>
             </div>
-
-            <!-- Pending changes list (executors/super see this) -->
             <div id="pending-section">
               <div class="sec-title" style="margin-top: 8px">
                 <div class="sec-title-bar"></div>
@@ -1394,8 +1538,6 @@
                 <p style="color: var(--w60)">Loading...</p>
               </div>
             </div>
-
-            <!-- All changes history -->
             <div class="sec-title" style="margin-top: 8px">
               <div class="sec-title-bar"></div>
               Change <span>History</span>
@@ -1499,28 +1641,61 @@
                 "
               >
                 <div class="f-row">
-                  <label>Current Password</label
-                  ><input
-                    type="password"
-                    id="cur-pass"
-                    placeholder="Current password"
-                  />
+                  <label>Current Password</label>
+                  <div class="pass-wrap">
+                    <input
+                      type="password"
+                      id="cur-pass"
+                      placeholder="Current password"
+                    />
+                    <button
+                      type="button"
+                      class="pass-toggle"
+                      onclick="togglePass('cur-pass', this)"
+                      tabindex="-1"
+                      aria-label="Toggle password visibility"
+                    >
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
                 </div>
                 <div class="f-row">
-                  <label>New Password</label
-                  ><input
-                    type="password"
-                    id="new-pass-settings"
-                    placeholder="Min 8 characters"
-                  />
+                  <label>New Password</label>
+                  <div class="pass-wrap">
+                    <input
+                      type="password"
+                      id="new-pass-settings"
+                      placeholder="Min 8 characters"
+                    />
+                    <button
+                      type="button"
+                      class="pass-toggle"
+                      onclick="togglePass('new-pass-settings', this)"
+                      tabindex="-1"
+                      aria-label="Toggle password visibility"
+                    >
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
                 </div>
                 <div class="f-row">
-                  <label>Confirm New Password</label
-                  ><input
-                    type="password"
-                    id="conf-pass-settings"
-                    placeholder="Repeat new password"
-                  />
+                  <label>Confirm New Password</label>
+                  <div class="pass-wrap">
+                    <input
+                      type="password"
+                      id="conf-pass-settings"
+                      placeholder="Repeat new password"
+                    />
+                    <button
+                      type="button"
+                      class="pass-toggle"
+                      onclick="togglePass('conf-pass-settings', this)"
+                      tabindex="-1"
+                      aria-label="Toggle password visibility"
+                    >
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </div>
                 </div>
                 <div>
                   <button
@@ -1560,24 +1735,35 @@
         <div class="modal-body">
           <div class="form-grid" style="margin-bottom: 16px">
             <div class="f-row">
-              <label>Full Name</label
-              ><input type="text" id="new-admin-name" placeholder="Full name" />
+              <label>Full Name</label>
+              <input type="text" id="new-admin-name" placeholder="Full name" />
             </div>
             <div class="f-row">
-              <label>Email</label
-              ><input
+              <label>Email</label>
+              <input
                 type="email"
                 id="new-admin-email"
                 placeholder="admin@company.com"
               />
             </div>
             <div class="f-row">
-              <label>Password</label
-              ><input
-                type="password"
-                id="new-admin-pass"
-                placeholder="Min 8 characters"
-              />
+              <label>Password</label>
+              <div class="pass-wrap">
+                <input
+                  type="password"
+                  id="new-admin-pass"
+                  placeholder="Min 8 characters"
+                />
+                <button
+                  type="button"
+                  class="pass-toggle"
+                  onclick="togglePass('new-admin-pass', this)"
+                  tabindex="-1"
+                  aria-label="Toggle password visibility"
+                >
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
             </div>
             <div class="f-row">
               <label>Role</label>
@@ -1616,18 +1802,36 @@
 
     <script>
       // ══════════════════════════════════════════════════════════════
-      // CONFIGURATION — set this to your Render backend URL
+      // CONFIGURATION
       // ══════════════════════════════════════════════════════════════
-      const API = 'https://rrh-admin-backend.onrender.com/api';
-      // ↑ Change this after you deploy to Render!
-      // Example: const API = 'https://rrh-admin-backend.onrender.com/api';
+      const API = "https://rrh-admin-backend.onrender.com/api";
+
+      // ══════════════════════════════════════════════════════════════
+      // PASSWORD VISIBILITY TOGGLE
+      // ══════════════════════════════════════════════════════════════
+      function togglePass(inputId, btn) {
+        const input = document.getElementById(inputId);
+        const icon = btn.querySelector("i");
+        if (input.type === "password") {
+          input.type = "text";
+          icon.classList.remove("fa-eye");
+          icon.classList.add("fa-eye-slash");
+          btn.style.color = "var(--gold)";
+        } else {
+          input.type = "password";
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye");
+          btn.style.color = "";
+        }
+        input.focus();
+      }
 
       // ══════════════════════════════════════════════════════════════
       // STATE
       // ══════════════════════════════════════════════════════════════
       let token = sessionStorage.getItem("rrh_token") || null;
       let currentUser = null;
-      let resetToken = null; // stored between OTP verify and password reset
+      let resetToken = null;
 
       const ROLES = {
         super: {
@@ -1695,14 +1899,12 @@
           );
         showStep(tab === "login" ? "step-login" : "step-forgot");
       }
-
       function showStep(stepId) {
         document
           .querySelectorAll(".auth-step")
           .forEach((s) => s.classList.remove("active"));
         document.getElementById(stepId).classList.add("active");
       }
-
       function showAuthErr(id, msg) {
         const el = document.getElementById(id);
         el.textContent = msg;
@@ -1752,7 +1954,6 @@
           const data = await api("POST", "/auth/forgot-password", { email });
           document.getElementById("forgot-msg").textContent = data.message;
           document.getElementById("forgot-msg").style.display = "block";
-          // Store email for OTP step
           document.getElementById("otp-input").dataset.email = email;
           setTimeout(() => showStep("step-otp"), 1500);
         } catch (err) {
@@ -1833,7 +2034,7 @@
       }
 
       // ══════════════════════════════════════════════════════════════
-      // ENTER APP — called after successful login
+      // ENTER APP
       // ══════════════════════════════════════════════════════════════
       function enterApp() {
         document.getElementById("auth-screen").style.display = "none";
@@ -1858,22 +2059,14 @@
           : r.can_write
             ? "Read & Write (changes need approval to publish)"
             : "Read Only";
-
-        // Show/hide nav items based on role
         document.getElementById("nav-admins").style.display =
           r.can_manage_admins ? "" : "none";
-
-        // Show/hide publish-directly button in changes form
-        if (document.getElementById("publish-direct-btn")) {
+        if (document.getElementById("publish-direct-btn"))
           document.getElementById("publish-direct-btn").style.display =
             r.can_publish ? "" : "none";
-        }
-
-        // If reader: hide submit form
-        if (!r.can_write && document.getElementById("submit-change-section")) {
+        if (!r.can_write && document.getElementById("submit-change-section"))
           document.getElementById("submit-change-section").style.display =
             "none";
-        }
       }
 
       // ══════════════════════════════════════════════════════════════
@@ -1903,7 +2096,6 @@
         if (name === "roles") renderRoles();
       }
 
-
       // ══════════════════════════════════════════════════════════════
       // DASHBOARD
       // ══════════════════════════════════════════════════════════════
@@ -1913,22 +2105,17 @@
             api("GET", "/changes?status=all"),
             api("GET", "/activity?limit=6"),
           ]);
-
           const all = changesData.changes || [];
-          const pending = all.filter((c) => c.status === "pending").length;
-          const approved = all.filter((c) => c.status === "approved").length;
-
-          document.getElementById("dash-pending-count").textContent = pending;
-          document.getElementById("dash-approved-count").textContent = approved;
-
+          document.getElementById("dash-pending-count").textContent =
+            all.filter((c) => c.status === "pending").length;
+          document.getElementById("dash-approved-count").textContent =
+            all.filter((c) => c.status === "approved").length;
           updatePendingBadge(changesData.pendingCount);
-
-          // Admin count (only super can see it)
           if (currentUser.role === "super") {
             try {
-              const adminsData = await api("GET", "/admins");
+              const d = await api("GET", "/admins");
               document.getElementById("dash-admin-count").textContent = (
-                adminsData.admins || []
+                d.admins || []
               ).length;
             } catch (e) {
               document.getElementById("dash-admin-count").textContent = "—";
@@ -1936,8 +2123,6 @@
           } else {
             document.getElementById("dash-admin-count").textContent = "—";
           }
-
-          // Recent activity
           const log = activityData.activity || [];
           const actEl = document.getElementById("dash-activity");
           if (!log.length) {
@@ -1948,11 +2133,11 @@
           actEl.innerHTML = log
             .map(
               (a) => `
-      <div class="activity-item">
-        <div class="activity-icon"><i class="fas fa-circle-dot"></i></div>
-        <div class="activity-text"><strong>${esc(a.admin_name || "System")}</strong> — ${esc(a.description)}</div>
-        <div class="activity-time">${formatDate(a.created_at)}</div>
-      </div>`,
+            <div class="activity-item">
+              <div class="activity-icon"><i class="fas fa-circle-dot"></i></div>
+              <div class="activity-text"><strong>${esc(a.admin_name || "System")}</strong> — ${esc(a.description)}</div>
+              <div class="activity-time">${formatDate(a.created_at)}</div>
+            </div>`,
             )
             .join("");
         } catch (err) {
@@ -1968,11 +2153,7 @@
           const data = await api("GET", "/changes?status=all");
           const all = data.changes || [];
           updatePendingBadge(data.pendingCount);
-
           const pending = all.filter((c) => c.status === "pending");
-          const history = all.filter((c) => c.status !== "pending");
-
-          // Pending list (for executors/super)
           const r = ROLES[currentUser.role];
           const pendingSection = document.getElementById("pending-section");
           if (r.can_publish) {
@@ -1985,28 +2166,26 @@
               listEl.innerHTML = pending
                 .map(
                   (c) => `
-          <div class="change-item">
-            <div class="change-meta">
-              <span class="change-page"><i class="fas fa-file-alt"></i> ${esc(c.page)}</span>
-              <span style="font-size:12px;color:var(--w60)">by ${esc(c.author_name)}</span>
-              <span style="font-size:12px;color:var(--w60)">• ${formatDate(c.submitted_at)}</span>
-              ${c.section ? `<span class="badge amber">${esc(c.section)}</span>` : ""}
-            </div>
-            <div class="change-preview">${esc(c.new_value)}</div>
-            ${c.note ? `<div style="font-size:12px;color:var(--w60);margin-bottom:10px;padding:8px 12px;background:var(--b4);"><strong>Note:</strong> ${esc(c.note)}</div>` : ""}
-            <div class="change-actions">
-              <button class="btn-sm btn-approve" onclick="reviewChange('${c.id}','approve')"><i class="fas fa-check"></i> Approve & Publish</button>
-              <button class="btn-sm btn-reject"  onclick="reviewChange('${c.id}','reject')"><i class="fas fa-times"></i> Reject</button>
-            </div>
-          </div>`,
+              <div class="change-item">
+                <div class="change-meta">
+                  <span class="change-page"><i class="fas fa-file-alt"></i> ${esc(c.page)}</span>
+                  <span style="font-size:12px;color:var(--w60)">by ${esc(c.author_name)}</span>
+                  <span style="font-size:12px;color:var(--w60)">• ${formatDate(c.submitted_at)}</span>
+                  ${c.section ? `<span class="badge amber">${esc(c.section)}</span>` : ""}
+                </div>
+                <div class="change-preview">${esc(c.new_value)}</div>
+                ${c.note ? `<div style="font-size:12px;color:var(--w60);margin-bottom:10px;padding:8px 12px;background:var(--b4);"><strong>Note:</strong> ${esc(c.note)}</div>` : ""}
+                <div class="change-actions">
+                  <button class="btn-sm btn-approve" onclick="reviewChange('${c.id}','approve')"><i class="fas fa-check"></i> Approve & Publish</button>
+                  <button class="btn-sm btn-reject"  onclick="reviewChange('${c.id}','reject')"><i class="fas fa-times"></i> Reject</button>
+                </div>
+              </div>`,
                 )
                 .join("");
             }
           } else {
             pendingSection.style.display = "none";
           }
-
-          // History
           const histEl = document.getElementById("all-changes-list");
           if (!all.length) {
             histEl.innerHTML =
@@ -2017,13 +2196,13 @@
               all
                 .map(
                   (c) => `<tr>
-          <td>${esc(c.page)}</td>
-          <td style="color:var(--w60)">${esc(c.section || "—")}</td>
-          <td>${esc(c.author_name)}</td>
-          <td><span class="badge ${c.status === "approved" ? "green" : c.status === "rejected" ? "red" : "amber"}">${c.status}</span></td>
-          <td style="color:var(--w60)">${formatDate(c.submitted_at)}</td>
-          <td style="color:var(--w60)">${esc(c.reviewer_name || "—")}</td>
-        </tr>`,
+              <td>${esc(c.page)}</td>
+              <td style="color:var(--w60)">${esc(c.section || "—")}</td>
+              <td>${esc(c.author_name)}</td>
+              <td><span class="badge ${c.status === "approved" ? "green" : c.status === "rejected" ? "red" : "amber"}">${c.status}</span></td>
+              <td style="color:var(--w60)">${formatDate(c.submitted_at)}</td>
+              <td style="color:var(--w60)">${esc(c.reviewer_name || "—")}</td>
+            </tr>`,
                 )
                 .join("") +
               "</tbody></table></div>";
@@ -2038,12 +2217,10 @@
         const section = document.getElementById("change-section").value.trim();
         const newVal = document.getElementById("change-value").value.trim();
         const note = document.getElementById("change-note").value.trim();
-
         if (!newVal) {
           showToast("Please describe what needs to change.", "error");
           return;
         }
-
         try {
           const data = await api("POST", "/changes", {
             page,
@@ -2053,7 +2230,6 @@
             publish_directly: publishDirectly,
           });
           showToast(data.message, "success");
-          // Clear form
           document.getElementById("change-section").value = "";
           document.getElementById("change-value").value = "";
           document.getElementById("change-note").value = "";
@@ -2088,29 +2264,28 @@
         try {
           const data = await api("GET", "/admins");
           const admins = data.admins || [];
-          const tbody = document.getElementById("admins-tbody");
-          tbody.innerHTML = admins
+          document.getElementById("admins-tbody").innerHTML = admins
             .map((a) => {
               const r = ROLES[a.role] || ROLES.reader;
               const isSelf = a.id === currentUser.id;
               return `<tr>
-        <td><strong>${esc(a.name)}</strong>${isSelf ? ' <span class="badge gold">You</span>' : ""}</td>
-        <td>${esc(a.email)}</td>
-        <td><span class="badge ${r.color}">${r.label}</span></td>
-        <td><span class="badge ${a.status === "active" ? "green" : "red"}">${a.status}</span></td>
-        <td style="color:var(--w60)">${a.last_login ? formatDate(a.last_login) : "Never"}</td>
-        <td>${
-          !isSelf && a.role !== "super"
-            ? `
-          <button class="btn-sm btn-edit" onclick="toggleStatus('${a.id}','${a.status === "active" ? "inactive" : "active"}')">
-            <i class="fas fa-${a.status === "active" ? "ban" : "check"}"></i>
-          </button>
-          <button class="btn-sm btn-delete" onclick="deleteAdmin('${a.id}','${esc(a.name)}')">
-            <i class="fas fa-trash"></i>
-          </button>`
-            : "—"
-        }</td>
-      </tr>`;
+              <td><strong>${esc(a.name)}</strong>${isSelf ? ' <span class="badge gold">You</span>' : ""}</td>
+              <td>${esc(a.email)}</td>
+              <td><span class="badge ${r.color}">${r.label}</span></td>
+              <td><span class="badge ${a.status === "active" ? "green" : "red"}">${a.status}</span></td>
+              <td style="color:var(--w60)">${a.last_login ? formatDate(a.last_login) : "Never"}</td>
+              <td>${
+                !isSelf && a.role !== "super"
+                  ? `
+                <button class="btn-sm btn-edit" onclick="toggleStatus('${a.id}','${a.status === "active" ? "inactive" : "active"}')" title="${a.status === "active" ? "Deactivate" : "Activate"}">
+                  <i class="fas fa-${a.status === "active" ? "ban" : "check"}"></i>
+                </button>
+                <button class="btn-sm btn-delete" onclick="deleteAdmin('${a.id}','${esc(a.name)}')" title="Delete">
+                  <i class="fas fa-trash"></i>
+                </button>`
+                  : "—"
+              }</td>
+            </tr>`;
             })
             .join("");
         } catch (err) {
@@ -2123,6 +2298,15 @@
         document.getElementById("new-admin-name").value = "";
         document.getElementById("new-admin-email").value = "";
         document.getElementById("new-admin-pass").value = "";
+        // Reset password toggle state
+        const passInput = document.getElementById("new-admin-pass");
+        passInput.type = "password";
+        const toggleBtn =
+          passInput.parentElement.querySelector(".pass-toggle i");
+        if (toggleBtn) {
+          toggleBtn.classList.remove("fa-eye-slash");
+          toggleBtn.classList.add("fa-eye");
+        }
         document.getElementById("add-admin-modal").classList.add("open");
       }
 
@@ -2185,28 +2369,20 @@
         document.getElementById("roles-list").innerHTML = Object.entries(ROLES)
           .map(
             ([key, r]) => `
-    <div class="role-card">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-        <span class="badge ${r.color}" style="font-size:12px">${r.label}</span>
-      </div>
-      <div class="perms-list">
-        <span class="perm ${r.can_read ? "yes" : "no"}"><i class="fas fa-eye"></i> Read</span>
-        <span class="perm ${r.can_write ? "yes" : "no"}"><i class="fas fa-edit"></i> Write / Submit</span>
-        <span class="perm ${r.can_publish ? "yes" : "no"}"><i class="fas fa-upload"></i> Approve & Publish</span>
-        <span class="perm ${r.can_manage_admins ? "yes" : "no"}"><i class="fas fa-users-cog"></i> Manage Admins</span>
-      </div>
-      <p style="font-size:12.5px;color:var(--w60);margin-top:12px;line-height:1.6;">
-        ${
-          key === "super"
-            ? "Full control over everything — admins, changes, publishing, and settings."
-            : key === "executor"
-              ? "Can read, write, and directly approve & publish changes. Cannot manage other admins."
-              : key === "writer"
-                ? "Can read and submit change requests. Changes must be approved by an Executor or Super Admin before they go live."
-                : "Can view all content and change history but cannot submit, approve, or change anything."
-        }
-      </p>
-    </div>`,
+          <div class="role-card">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
+              <span class="badge ${r.color}" style="font-size:12px">${r.label}</span>
+            </div>
+            <div class="perms-list">
+              <span class="perm ${r.can_read ? "yes" : "no"}"><i class="fas fa-eye"></i> Read</span>
+              <span class="perm ${r.can_write ? "yes" : "no"}"><i class="fas fa-edit"></i> Write / Submit</span>
+              <span class="perm ${r.can_publish ? "yes" : "no"}"><i class="fas fa-upload"></i> Approve & Publish</span>
+              <span class="perm ${r.can_manage_admins ? "yes" : "no"}"><i class="fas fa-users-cog"></i> Manage Admins</span>
+            </div>
+            <p style="font-size:12.5px;color:var(--w60);margin-top:12px;line-height:1.6;">
+              ${key === "super" ? "Full control over everything — admins, changes, publishing, and settings." : key === "executor" ? "Can read, write, and directly approve & publish changes. Cannot manage other admins." : key === "writer" ? "Can read and submit change requests. Changes must be approved by an Executor or Super Admin before they go live." : "Can view all content and change history but cannot submit, approve, or change anything."}
+            </p>
+          </div>`,
           )
           .join("");
       }
@@ -2227,11 +2403,11 @@
           el.innerHTML = log
             .map(
               (a) => `
-      <div class="activity-item">
-        <div class="activity-icon"><i class="fas fa-circle-dot"></i></div>
-        <div class="activity-text"><strong>${esc(a.admin_name || "System")}</strong> — ${esc(a.description)}</div>
-        <div class="activity-time">${formatDate(a.created_at)}</div>
-      </div>`,
+            <div class="activity-item">
+              <div class="activity-icon"><i class="fas fa-circle-dot"></i></div>
+              <div class="activity-text"><strong>${esc(a.admin_name || "System")}</strong> — ${esc(a.description)}</div>
+              <div class="activity-time">${formatDate(a.created_at)}</div>
+            </div>`,
             )
             .join("");
         } catch (err) {
@@ -2287,7 +2463,6 @@
         badge.textContent = count;
         badge.style.display = count > 0 ? "" : "none";
       }
-
       function esc(str) {
         return String(str || "")
           .replace(/&/g, "&amp;")
@@ -2295,7 +2470,6 @@
           .replace(/>/g, "&gt;")
           .replace(/"/g, "&quot;");
       }
-
       function formatDate(iso) {
         if (!iso) return "—";
         try {
@@ -2304,7 +2478,6 @@
           return iso;
         }
       }
-
       function showToast(msg, type = "info") {
         const icons = {
           success: "fas fa-check-circle",
@@ -2317,7 +2490,6 @@
         document.getElementById("toast-container").appendChild(t);
         setTimeout(() => t.remove(), 4500);
       }
-
       function closeModal(id) {
         document.getElementById(id).classList.remove("open");
       }
@@ -2328,7 +2500,7 @@
       });
 
       // ══════════════════════════════════════════════════════════════
-      // AUTO-LOGIN — if token still valid from session storage
+      // AUTO-LOGIN
       // ══════════════════════════════════════════════════════════════
       (async function () {
         if (!token) return;
@@ -2342,54 +2514,49 @@
         }
       })();
 
-     // ══════════════════════════════════════════════════════════════
+      // ══════════════════════════════════════════════════════════════
       // SIDEBAR
       // ══════════════════════════════════════════════════════════════
-      const sidebar = document.getElementById('sidebar');
-      const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
-
-      const backdrop = document.createElement('div');
-      backdrop.className = 'overlay-backdrop';
+      const sidebar = document.getElementById("sidebar");
+      const sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+      const backdrop = document.createElement("div");
+      backdrop.className = "overlay-backdrop";
       document.body.appendChild(backdrop);
 
       function openSidebar() {
-        sidebar.classList.add('mobile-open');
-        backdrop.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        sidebar.classList.add("mobile-open");
+        backdrop.classList.add("active");
+        document.body.style.overflow = "hidden";
       }
-
       function closeSidebar() {
-        sidebar.classList.remove('mobile-open');
-        backdrop.classList.remove('active');
-        document.body.style.overflow = '';
+        sidebar.classList.remove("mobile-open");
+        backdrop.classList.remove("active");
+        document.body.style.overflow = "";
       }
-
       function toggleSidebar() {
         if (window.innerWidth <= 900) {
-          sidebar.classList.contains('mobile-open') ? closeSidebar() : openSidebar();
+          sidebar.classList.contains("mobile-open")
+            ? closeSidebar()
+            : openSidebar();
         } else {
-          sidebar.classList.toggle('collapsed');
-          document.getElementById('main').classList.toggle('expanded');
+          sidebar.classList.toggle("collapsed");
+          document.getElementById("main").classList.toggle("expanded");
         }
       }
-
-      sidebarCloseBtn.addEventListener('click', closeSidebar);
-      backdrop.addEventListener('click', closeSidebar);
-
-      document.querySelectorAll('.nav-item').forEach(item => {
-        item.addEventListener('click', () => {
+      sidebarCloseBtn.addEventListener("click", closeSidebar);
+      backdrop.addEventListener("click", closeSidebar);
+      document.querySelectorAll(".nav-item").forEach((item) => {
+        item.addEventListener("click", () => {
           if (window.innerWidth <= 900) closeSidebar();
         });
       });
-
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeSidebar();
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeSidebar();
       });
-
-      window.addEventListener('resize', () => {
+      window.addEventListener("resize", () => {
         if (window.innerWidth > 900) {
           closeSidebar();
-          document.body.style.overflow = '';
+          document.body.style.overflow = "";
         }
       });
     </script>
