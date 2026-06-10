@@ -1,46 +1,15 @@
 // utils/email.js
-// Sends emails via Brevo SMTP using Nodemailer
+const { Resend } = require('resend');
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const nodemailer = require('nodemailer');
-
-// Create reusable transporter using Brevo SMTP
-const transporter = nodemailer.createTransport({
-  host:   process.env.BREVO_SMTP_HOST || 'smtp-relay.brevo.com',
-  port:   parseInt(process.env.BREVO_SMTP_PORT || '587'),
-  secure: false, // Brevo uses STARTTLS on port 587
-  auth: {
-    user: process.env.BREVO_SMTP_USER,
-    pass: process.env.BREVO_SMTP_PASS,
-  },
-});
-
-/**
- * Send an OTP email to an admin
- * @param {string} toEmail   - recipient email address
- * @param {string} toName    - recipient name
- * @param {string} otpCode   - the plain-text 6-digit OTP
- */
 async function sendOTPEmail(toEmail, toName, otpCode) {
   const fromName  = process.env.EMAIL_FROM_NAME || 'Road Rock Holdings Admin';
-  const fromEmail = process.env.EMAIL_FROM || 'noreply@roadrockholdings.com';
+  const fromEmail = process.env.EMAIL_FROM || 'onboarding@resend.dev';
 
-  const mailOptions = {
-    from: `"${fromName}" <${fromEmail}>`,
-    to:   `"${toName}" <${toEmail}>`,
+  const { error } = await resend.emails.send({
+    from: `${fromName} <${fromEmail}>`,
+    to:   [toEmail],
     subject: 'Your Road Rock Holdings Admin OTP Code',
-    text: `
-Hello ${toName},
-
-Your one-time password (OTP) for the Road Rock Holdings Admin Panel is:
-
-${otpCode}
-
-This code expires in 10 minutes and can only be used once.
-
-If you did not request this, please ignore this email and contact your system administrator immediately.
-
-— Road Rock Holdings Security Team
-    `.trim(),
     html: `
 <!DOCTYPE html>
 <html>
@@ -82,25 +51,23 @@ If you did not request this, please ignore this email and contact your system ad
     </div>
   </div>
 </body>
-</html>
-    `.trim(),
-  };
+</html>`,
+  });
 
-  await transporter.sendMail(mailOptions);
+  if (error) {
+    console.error('Resend error:', error);
+    throw new Error(error.message);
+  }
   console.log(`📧 OTP email sent to ${toEmail}`);
 }
 
-/**
- * Send a notification to all executors/super admins
- * that a writer has submitted changes for review
- */
 async function sendPendingNotification(toEmail, toName, authorName, page) {
   const fromName  = process.env.EMAIL_FROM_NAME || 'Road Rock Holdings Admin';
-  const fromEmail = process.env.EMAIL_FROM || 'noreply@roadrockholdings.com';
+  const fromEmail = process.env.EMAIL_FROM || 'onboarding@resend.dev';
 
-  await transporter.sendMail({
-    from: `"${fromName}" <${fromEmail}>`,
-    to:   `"${toName}" <${toEmail}>`,
+  await resend.emails.send({
+    from: `${fromName} <${fromEmail}>`,
+    to:   [toEmail],
     subject: `Action Required: ${authorName} submitted changes for approval`,
     html: `
 <!DOCTYPE html>
@@ -132,8 +99,7 @@ async function sendPendingNotification(toEmail, toName, authorName, page) {
     <div class="footer">&copy; ${new Date().getFullYear()} Road Rock Holdings Admin System</div>
   </div>
 </body>
-</html>
-    `,
+</html>`,
   });
 }
 
