@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <title>Admin Panel | Road Rock Holdings</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/RRH-LOGO.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/img/RRH-LOGO.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -126,6 +129,50 @@
         max-width: 420px;
         box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
       }
+      #auth-screen {
+  position: fixed;
+
+}
+.auth-bg-logo {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/RRH-LOGO.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 480px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.auth-box {
+  position: relative;
+  z-index: 1;
+}
+.auth-corner-logo {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 48px;
+  height: 48px;
+  opacity: 0.35;
+  object-fit: contain;
+  pointer-events: none;
+}
+.sidebar-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sidebar-logo img {
+  width: 28px;
+  height: 28px;
+  opacity: 0.5;
+  object-fit: contain;
+  flex-shrink: 0;
+}
       .auth-logo {
         font-family: "Barlow Condensed", sans-serif;
         font-size: 22px;
@@ -1087,93 +1134,95 @@
       }
 
       /* ── MOBILE CONTENT FIX ── */
-/* ── MOBILE CONTENT FIX ── */
-@media (max-width: 900px) {
-  .content {
-    padding: 16px;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    box-sizing: border-box;
-  }
+      /* ── MOBILE CONTENT FIX ── */
+      @media (max-width: 900px) {
+        .content {
+          padding: 16px;
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+          box-sizing: border-box;
+        }
 
-  .stats-row {
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
+        .stats-row {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
 
-  .topbar {
-    padding: 0 16px;
-  }
+        .topbar {
+          padding: 0 16px;
+        }
 
-  .topbar-title {
-    font-size: 14px;
-  }
+        .topbar-title {
+          font-size: 14px;
+        }
 
-  .submit-change-form {
-    padding: 16px;
-  }
+        .submit-change-form {
+          padding: 16px;
+        }
 
-  .card {
-    padding: 16px;
-  }
+        .card {
+          padding: 16px;
+        }
 
-  .change-item {
-    padding: 12px 14px;
-  }
+        .change-item {
+          padding: 12px 14px;
+        }
 
-  .change-actions {
-    flex-wrap: wrap;
-  }
+        .change-actions {
+          flex-wrap: wrap;
+        }
 
-  /* ── THE KEY FIX: admins table ── */
-  #panel-admins .table-wrap {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-  }
+        /* ── THE KEY FIX: admins table ── */
+        #panel-admins .table-wrap {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          width: 100%;
+        }
 
-  #panel-admins table {
-    min-width: 0;
-    width: 100%;
-    table-layout: fixed;
-  }
+        #panel-admins table {
+          min-width: 0;
+          width: 100%;
+          table-layout: fixed;
+        }
 
-  #panel-admins th,
-  #panel-admins td {
-    padding: 8px 6px;
-    font-size: 11px;
-    word-break: break-word;
-    overflow: hidden;
-  }
+        #panel-admins th,
+        #panel-admins td {
+          padding: 8px 6px;
+          font-size: 11px;
+          word-break: break-word;
+          overflow: hidden;
+        }
 
-  /* Hide Email (col 2) and Last Login (col 5) on mobile */
-  #panel-admins thead th:nth-child(2),
-  #panel-admins thead th:nth-child(5),
-  #panel-admins tbody td:nth-child(2),
-  #panel-admins tbody td:nth-child(5) {
-    display: none;
-  }
+        /* Hide Email (col 2) and Last Login (col 5) on mobile */
+        #panel-admins thead th:nth-child(2),
+        #panel-admins thead th:nth-child(5),
+        #panel-admins tbody td:nth-child(2),
+        #panel-admins tbody td:nth-child(5) {
+          display: none;
+        }
 
-  #panel-admins .badge {
-    font-size: 9px;
-    padding: 2px 5px;
-    letter-spacing: 0.5px;
-  }
+        #panel-admins .badge {
+          font-size: 9px;
+          padding: 2px 5px;
+          letter-spacing: 0.5px;
+        }
 
-  #panel-admins .btn-sm {
-    padding: 4px 7px;
-    font-size: 9px;
-    letter-spacing: 0.5px;
-  }
-}
+        #panel-admins .btn-sm {
+          padding: 4px 7px;
+          font-size: 9px;
+          letter-spacing: 0.5px;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- AUTH SCREEN -->
     <div id="auth-screen">
-      <div class="auth-box">
-        <div class="auth-logo">Road <span>Rock</span> Holdings</div>
+  <div class="auth-bg-logo"></div>
+  <div class="auth-box">
+    <img src="/img/RRH-LOGO.png" alt="" class="auth-corner-logo" />
+    <div class="auth-logo">Road <span>Rock</span> Holdings</div>
         <div class="auth-sub">Admin Panel — Secure Access</div>
 
         <div class="auth-tabs">
@@ -1331,9 +1380,12 @@
           <i class="fas fa-times"></i>
         </button>
         <div class="sidebar-logo">
-          <div class="sidebar-logo-name">Road <span>Rock</span></div>
-          <div class="sidebar-logo-sub">Admin Panel</div>
-        </div>
+  <img src="/img/RRH-LOGO.png" alt="" />
+  <div>
+    <div class="sidebar-logo-name">Road <span>Rock</span></div>
+    <div class="sidebar-logo-sub">Admin Panel</div>
+  </div>
+</div>
         <div class="sidebar-user">
           <div class="s-user-avatar" id="s-avatar">A</div>
           <div>
@@ -1426,7 +1478,7 @@
             </div>
             <div class="sec-title">
               <div class="sec-title-bar"></div>
-              Welcome, <span id="dash-welcome">Admin</span>
+              Roles &amp; <span>Permissions</span>
             </div>
             <div class="card">
               <p
@@ -1440,7 +1492,9 @@
                 You're logged into the
                 <strong style="color: var(--white)">Road Rock Holdings</strong>
                 Admin Panel. Your role:
-                <strong style="color: var(--gold)" id="dash-role-desc">—</strong>
+                <strong style="color: var(--gold)" id="dash-role-desc"
+                  >—</strong
+                >
               </p>
               <div
                 style="
@@ -1451,8 +1505,7 @@
                   color: var(--w60);
                   line-height: 1.7;
                 "
-              >
-              </div>
+              ></div>
             </div>
             <div class="sec-title">
               <div class="sec-title-bar"></div>

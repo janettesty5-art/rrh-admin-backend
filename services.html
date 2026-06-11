@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Services | Road Rock Holdings</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/RRH-LOGO.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/img/RRH-LOGO.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -219,11 +222,11 @@
         position: absolute;
         inset: 0;
         background: linear-gradient(
-    110deg,
-    rgba(10, 10, 10, 0.75) 38%,
-    rgba(10, 10, 10, 0.45) 70%,
-    rgba(10, 10, 10, 0.25) 100%
-  );
+          110deg,
+          rgba(10, 10, 10, 0.75) 38%,
+          rgba(10, 10, 10, 0.45) 70%,
+          rgba(10, 10, 10, 0.25) 100%
+        );
       }
       .page-hero-grid {
         position: absolute;
@@ -1242,238 +1245,239 @@
         }
       }
 
-
       /* ── SERVICES PAGE MOBILE FIXES ── */
-@media (max-width: 640px) {
+      @media (max-width: 640px) {
+        /* Section header: stack number + text */
+        .svc-section-header {
+          flex-direction: column;
+          gap: 4px;
+          margin-bottom: 32px;
+        }
+        .svc-number {
+          font-size: 48px;
+          line-height: 1;
+          margin-top: 0;
+        }
 
-  /* Section header: stack number + text */
-  .svc-section-header {
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 32px;
-  }
-  .svc-number {
-    font-size: 48px;
-    line-height: 1;
-    margin-top: 0;
-  }
+        /* Gallery: force 16:10 on small screens (taller = better thumb browsing) */
+        .gallery-stage {
+          aspect-ratio: 4/3;
+        }
 
-  /* Gallery: force 16:10 on small screens (taller = better thumb browsing) */
-  .gallery-stage {
-    aspect-ratio: 4/3;
-  }
+        /* Filmstrip thumbs: smaller on mobile */
+        .film-thumb {
+          width: 56px;
+          height: 38px;
+        }
 
-  /* Filmstrip thumbs: smaller on mobile */
-  .film-thumb {
-    width: 56px;
-    height: 38px;
-  }
+        /* Mosaic: 3 columns max */
+        .gallery-mosaic {
+          grid-template-columns: repeat(3, 1fr);
+        }
 
-  /* Mosaic: 3 columns max */
-  .gallery-mosaic {
-    grid-template-columns: repeat(3, 1fr);
-  }
+        /* Service items: single column */
+        .svc-services-list {
+          grid-template-columns: 1fr;
+        }
 
-  /* Service items: single column */
-  .svc-services-list {
-    grid-template-columns: 1fr;
-  }
+        /* Process steps: single column, no arrows */
+        .process-steps {
+          grid-template-columns: 1fr;
+        }
+        .process-step::after {
+          display: none;
+        }
 
-  /* Process steps: single column, no arrows */
-  .process-steps {
-    grid-template-columns: 1fr;
-  }
-  .process-step::after {
-    display: none;
-  }
+        /* Reverse grid: reset direction */
+        .svc-content-grid.reverse {
+          direction: ltr;
+        }
 
-  /* Reverse grid: reset direction */
-  .svc-content-grid.reverse {
-    direction: ltr;
-  }
+        /* CTA buttons: stack */
+        .svc-cta-btns {
+          flex-direction: column;
+        }
+        .svc-cta-btns .btn {
+          width: 100%;
+          justify-content: center;
+        }
 
-  /* CTA buttons: stack */
-  .svc-cta-btns {
-    flex-direction: column;
-  }
-  .svc-cta-btns .btn {
-    width: 100%;
-    justify-content: center;
-  }
+        /* Tab bar: smaller text, more compact */
+        .tab-link {
+          padding: 12px 10px;
+          font-size: 9px;
+          letter-spacing: 1px;
+          gap: 4px;
+        }
+        .tab-link i {
+          font-size: 11px;
+        }
+      }
 
-  /* Tab bar: smaller text, more compact */
-  .tab-link {
-    padding: 12px 10px;
-    font-size: 9px;
-    letter-spacing: 1px;
-    gap: 4px;
-  }
-  .tab-link i {
-    font-size: 11px;
-  }
-}
+      /* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
+      @media (max-width: 768px) {
+        .logo img {
+          height: 80px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .logo {
+          max-width: 180px;
+        }
+        .logo img {
+          height: 72px !important;
+        }
+      }
+      @media (max-width: 380px) {
+        .logo {
+          max-width: 160px;
+        }
+        .logo img {
+          height: 65px !important;
+        }
+      }
 
-/* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
-@media (max-width: 768px) {
-  .logo img {
-    height: 80px !important;
-  }
-}
-@media (max-width: 480px) {
-  .logo {
-    max-width: 180px;
-  }
-  .logo img {
-    height: 72px !important;
-  }
-}
-@media (max-width: 380px) {
-  .logo {
-    max-width: 160px;
-  }
-  .logo img {
-    height: 65px !important;
-  }
-}
+      /* ── COMPLETE MOBILE OVERFLOW FIX ── */
+      @media (max-width: 768px) {
+        /* Prevent any horizontal overflow */
+        .service-section,
+        .svc-section-header,
+        .svc-content-grid,
+        .svc-details,
+        .svc-gallery,
+        .svc-process,
+        .process-steps,
+        .svc-services-list,
+        .svc-why,
+        .svc-cta-btns {
+          max-width: 100%;
+          overflow-x: hidden;
+        }
 
-/* ── COMPLETE MOBILE OVERFLOW FIX ── */
-@media (max-width: 768px) {
+        /* Content grid: always single column */
+        .svc-content-grid,
+        .svc-content-grid.reverse {
+          grid-template-columns: 1fr;
+          direction: ltr;
+          gap: 24px;
+        }
 
-  /* Prevent any horizontal overflow */
-  .service-section,
-  .svc-section-header,
-  .svc-content-grid,
-  .svc-details,
-  .svc-gallery,
-  .svc-process,
-  .process-steps,
-  .svc-services-list,
-  .svc-why,
-  .svc-cta-btns {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
+        /* Section header: stack vertically */
+        .svc-section-header {
+          flex-direction: column;
+          gap: 8px;
+          margin-bottom: 28px;
+        }
+        .svc-number {
+          font-size: 52px;
+          margin-top: 0;
+        }
 
-  /* Content grid: always single column */
-  .svc-content-grid,
-  .svc-content-grid.reverse {
-    grid-template-columns: 1fr;
-    direction: ltr;
-    gap: 24px;
-  }
+        /* Gallery stage: better aspect ratio */
+        .gallery-stage {
+          aspect-ratio: 4/3;
+        }
 
-  /* Section header: stack vertically */
-  .svc-section-header {
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 28px;
-  }
-  .svc-number {
-    font-size: 52px;
-    margin-top: 0;
-  }
+        /* Service items: single column */
+        .svc-services-list {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
 
-  /* Gallery stage: better aspect ratio */
-  .gallery-stage {
-    aspect-ratio: 4/3;
-  }
+        /* Process steps: single column */
+        .process-steps {
+          grid-template-columns: 1fr;
+          gap: 3px;
+        }
+        .process-step::after {
+          display: none;
+        }
 
-  /* Service items: single column */
-  .svc-services-list {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
+        /* CTA buttons: full width stacked */
+        .svc-cta-btns {
+          flex-direction: column;
+        }
+        .svc-cta-btns .btn {
+          width: 100%;
+          justify-content: center;
+          text-align: center;
+        }
 
-  /* Process steps: single column */
-  .process-steps {
-    grid-template-columns: 1fr;
-    gap: 3px;
-  }
-  .process-step::after {
-    display: none;
-  }
+        /* Why box: full width */
+        .svc-why {
+          padding: 18px 16px;
+        }
 
-  /* CTA buttons: full width stacked */
-  .svc-cta-btns {
-    flex-direction: column;
-  }
-  .svc-cta-btns .btn {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-  }
+        /* Container padding */
+        .container {
+          padding: 0 16px;
+        }
 
-  /* Why box: full width */
-  .svc-why {
-    padding: 18px 16px;
-  }
+        /* Tab bar */
+        .svc-tabs-inner {
+          padding: 0 8px;
+        }
+        .tab-link {
+          padding: 12px 8px;
+          font-size: 9px;
+          letter-spacing: 1px;
+          gap: 4px;
+        }
+        .tab-link i {
+          font-size: 11px;
+        }
 
-  /* Container padding */
-  .container {
-    padding: 0 16px;
-  }
+        /* Page hero */
+        .page-hero {
+          padding: 110px 16px 56px;
+        }
 
-  /* Tab bar */
-  .svc-tabs-inner {
-    padding: 0 8px;
-  }
-  .tab-link {
-    padding: 12px 8px;
-    font-size: 9px;
-    letter-spacing: 1px;
-    gap: 4px;
-  }
-  .tab-link i {
-    font-size: 11px;
-  }
+        /* Lightbox nav on mobile */
+        .lb-nav.prev {
+          left: 4px;
+        }
+        .lb-nav.next {
+          right: 4px;
+        }
 
-  /* Page hero */
-  .page-hero {
-    padding: 110px 16px 56px;
-  }
+        /* Mosaic: 3 cols */
+        .gallery-mosaic {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .mosaic-cell:nth-child(n + 4) {
+          display: none;
+        }
 
-  /* Lightbox nav on mobile */
-  .lb-nav.prev { left: 4px; }
-  .lb-nav.next { right: 4px; }
+        /* Filmstrip thumbs */
+        .film-thumb {
+          width: 56px;
+          height: 38px;
+        }
 
-  /* Mosaic: 3 cols */
-  .gallery-mosaic {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .mosaic-cell:nth-child(n + 4) {
-    display: none;
-  }
+        /* CTA strip */
+        .cta-inner {
+          flex-direction: column;
+          text-align: center;
+          padding: 0 16px;
+        }
+        .cta-inner > div:last-child {
+          justify-content: center;
+        }
+      }
 
-  /* Filmstrip thumbs */
-  .film-thumb {
-    width: 56px;
-    height: 38px;
-  }
-
-  /* CTA strip */
-  .cta-inner {
-    flex-direction: column;
-    text-align: center;
-    padding: 0 16px;
-  }
-  .cta-inner > div:last-child {
-    justify-content: center;
-  }
-}
-
-/* Extra small screens */
-@media (max-width: 380px) {
-  .tab-link {
-    padding: 10px 6px;
-    font-size: 8px;
-  }
-  .svc-title {
-    font-size: 28px;
-  }
-  .gallery-stage {
-    aspect-ratio: 1/1;
-  }
-}
+      /* Extra small screens */
+      @media (max-width: 380px) {
+        .tab-link {
+          padding: 10px 6px;
+          font-size: 8px;
+        }
+        .svc-title {
+          font-size: 28px;
+        }
+        .gallery-stage {
+          aspect-ratio: 1/1;
+        }
+      }
     </style>
   </head>
   <body>
@@ -2941,7 +2945,7 @@
         }, 300);
       }
     </script>
-     <script src="js/ai.js"></script>
-     <script src="js/content-loader.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/content-loader.js"></script>
   </body>
 </html>

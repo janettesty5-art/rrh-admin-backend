@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us | Road Rock Holdings</title>
     <!-- Google Fonts + Font Awesome 6 (Free) -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/RRH-LOGO.png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="/img/RRH-LOGO.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -62,8 +65,7 @@
         color: inherit;
       }
 
-
-           /* NAV */
+      /* NAV */
 
       #navbar {
         position: fixed;
@@ -99,11 +101,11 @@
       }
 
       /* For very small screens, slightly reduce logo size */
-     @media (max-width: 480px) {
+      @media (max-width: 480px) {
         .logo img {
-    height: 48px;
-    max-width: 120px;
-  }
+          height: 48px;
+          max-width: 120px;
+        }
       }
 
       .logo-words .brand {
@@ -236,7 +238,6 @@
         }
       }
 
-
       /* HERO BANNER */
       .page-hero {
         padding: 140px 32px 80px;
@@ -255,11 +256,11 @@
         position: absolute;
         inset: 0;
         background: linear-gradient(
-    110deg,
-    rgba(10, 10, 10, 0.75) 38%,
-    rgba(10, 10, 10, 0.45) 70%,
-    rgba(10, 10, 10, 0.25) 100%
-  );
+          110deg,
+          rgba(10, 10, 10, 0.75) 38%,
+          rgba(10, 10, 10, 0.45) 70%,
+          rgba(10, 10, 10, 0.25) 100%
+        );
       }
       .page-hero-grid {
         position: absolute;
@@ -1045,20 +1046,37 @@
         }
 
         /* Section cards hover */
-        .srv-block, .sector-card, .why-card, .market-card, .comp-card,
-        .model-card, .invest-card, .val-block, .team-card {
-          transition: transform 0.4s ease, box-shadow 0.4s ease;
+        .srv-block,
+        .sector-card,
+        .why-card,
+        .market-card,
+        .comp-card,
+        .model-card,
+        .invest-card,
+        .val-block,
+        .team-card {
+          transition:
+            transform 0.4s ease,
+            box-shadow 0.4s ease;
         }
-        .srv-block:hover, .sector-card:hover, .why-card:hover, 
-        .market-card:hover, .comp-card:hover, .model-card:hover, 
-        .invest-card:hover, .val-block:hover, .team-card:hover {
+        .srv-block:hover,
+        .sector-card:hover,
+        .why-card:hover,
+        .market-card:hover,
+        .comp-card:hover,
+        .model-card:hover,
+        .invest-card:hover,
+        .val-block:hover,
+        .team-card:hover {
           transform: translateY(-8px);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         /* Timeline items hover */
         .tl-item {
-          transition: transform 0.3s ease, padding-left 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            padding-left 0.3s ease;
         }
         .tl-item:hover {
           transform: translateX(8px);
@@ -1066,7 +1084,9 @@
 
         /* Contact cards hover */
         .c-card {
-          transition: transform 0.3s ease, padding-left 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            padding-left 0.3s ease;
         }
         .c-card:hover {
           transform: translateX(8px);
@@ -1075,7 +1095,9 @@
 
         /* Quick bar items hover */
         .qb-item {
-          transition: transform 0.3s ease, background 0.3s ease;
+          transition:
+            transform 0.3s ease,
+            background 0.3s ease;
         }
         .qb-item:hover {
           transform: translateY(-5px);
@@ -1094,47 +1116,111 @@
       /* MOBILE ONLY - Scroll-triggered animations (NO hover) */
       @media (max-width: 768px) {
         /* Elements start hidden */
-        .svc-card, .srv-block, .sector-card, .why-card, .why-item,
-        .market-card, .comp-card, .val-block, .team-card, 
-        .c-card, .qb-item, .tl-item, .stat-box, .ch-card,
-        .model-card, .invest-card, .kp, .bs, .vm-card,
-        .phil-item, .leader-card, .cap-list li, .tl-item {
+        .svc-card,
+        .srv-block,
+        .sector-card,
+        .why-card,
+        .why-item,
+        .market-card,
+        .comp-card,
+        .val-block,
+        .team-card,
+        .c-card,
+        .qb-item,
+        .tl-item,
+        .stat-box,
+        .ch-card,
+        .model-card,
+        .invest-card,
+        .kp,
+        .bs,
+        .vm-card,
+        .phil-item,
+        .leader-card,
+        .cap-list li,
+        .tl-item {
           opacity: 0;
           transform: translateY(30px);
-          transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1), 
-                      transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+          transition:
+            opacity 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+            transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
 
         /* When element becomes visible via scroll */
-        .svc-card.visible, .srv-block.visible, .sector-card.visible, 
-        .why-card.visible, .why-item.visible, .market-card.visible, 
-        .comp-card.visible, .val-block.visible, .team-card.visible, 
-        .c-card.visible, .qb-item.visible, .tl-item.visible, 
-        .stat-box.visible, .ch-card.visible, .model-card.visible, 
-        .invest-card.visible, .kp.visible, .bs.visible, .vm-card.visible, 
-        .phil-item.visible, .leader-card.visible, .cap-list li.visible {
+        .svc-card.visible,
+        .srv-block.visible,
+        .sector-card.visible,
+        .why-card.visible,
+        .why-item.visible,
+        .market-card.visible,
+        .comp-card.visible,
+        .val-block.visible,
+        .team-card.visible,
+        .c-card.visible,
+        .qb-item.visible,
+        .tl-item.visible,
+        .stat-box.visible,
+        .ch-card.visible,
+        .model-card.visible,
+        .invest-card.visible,
+        .kp.visible,
+        .bs.visible,
+        .vm-card.visible,
+        .phil-item.visible,
+        .leader-card.visible,
+        .cap-list li.visible {
           opacity: 1;
           transform: translateY(0);
         }
 
         /* Stagger delays for smooth cascading effect */
-        .svc-card:nth-child(1) { transition-delay: 0s; }
-        .svc-card:nth-child(2) { transition-delay: 0.05s; }
-        .svc-card:nth-child(3) { transition-delay: 0.1s; }
-        .svc-card:nth-child(4) { transition-delay: 0.15s; }
-        .svc-card:nth-child(5) { transition-delay: 0.2s; }
-        
-        .stat-box:nth-child(1) { transition-delay: 0s; }
-        .stat-box:nth-child(2) { transition-delay: 0.05s; }
-        .stat-box:nth-child(3) { transition-delay: 0.1s; }
-        .stat-box:nth-child(4) { transition-delay: 0.15s; }
-        .stat-box:nth-child(5) { transition-delay: 0.2s; }
+        .svc-card:nth-child(1) {
+          transition-delay: 0s;
+        }
+        .svc-card:nth-child(2) {
+          transition-delay: 0.05s;
+        }
+        .svc-card:nth-child(3) {
+          transition-delay: 0.1s;
+        }
+        .svc-card:nth-child(4) {
+          transition-delay: 0.15s;
+        }
+        .svc-card:nth-child(5) {
+          transition-delay: 0.2s;
+        }
 
-        .srv-block:nth-child(1) { transition-delay: 0s; }
-        .srv-block:nth-child(2) { transition-delay: 0.05s; }
-        .srv-block:nth-child(3) { transition-delay: 0.1s; }
-        .srv-block:nth-child(4) { transition-delay: 0.15s; }
-        .srv-block:nth-child(5) { transition-delay: 0.2s; }
+        .stat-box:nth-child(1) {
+          transition-delay: 0s;
+        }
+        .stat-box:nth-child(2) {
+          transition-delay: 0.05s;
+        }
+        .stat-box:nth-child(3) {
+          transition-delay: 0.1s;
+        }
+        .stat-box:nth-child(4) {
+          transition-delay: 0.15s;
+        }
+        .stat-box:nth-child(5) {
+          transition-delay: 0.2s;
+        }
+
+        .srv-block:nth-child(1) {
+          transition-delay: 0s;
+        }
+        .srv-block:nth-child(2) {
+          transition-delay: 0.05s;
+        }
+        .srv-block:nth-child(3) {
+          transition-delay: 0.1s;
+        }
+        .srv-block:nth-child(4) {
+          transition-delay: 0.15s;
+        }
+        .srv-block:nth-child(5) {
+          transition-delay: 0.2s;
+        }
 
         /* Hero background zoom on scroll (not hover) */
         .hero-bg-img {
@@ -1148,23 +1234,31 @@
         .hero:hover .hero-bg-img {
           transform: none;
         }
-        .svc-card:hover, .srv-block:hover, .sector-card:hover, 
-        .why-card:hover, .market-card:hover, .comp-card:hover,
-        .val-block:hover, .team-card:hover, .c-card:hover,
-        .qb-item:hover, .stat-box:hover {
+        .svc-card:hover,
+        .srv-block:hover,
+        .sector-card:hover,
+        .why-card:hover,
+        .market-card:hover,
+        .comp-card:hover,
+        .val-block:hover,
+        .team-card:hover,
+        .c-card:hover,
+        .qb-item:hover,
+        .stat-box:hover {
           transform: none;
           box-shadow: none;
         }
       }
 
       /* Universal Animations (Work on both desktop & mobile) */
-      
+
       /* Floating animation for scroll indicator */
       .hero-scroll {
         animation: float 2s ease-in-out infinite;
       }
       @keyframes float {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateX(-50%) translateY(0);
         }
         50% {
@@ -1177,7 +1271,8 @@
         animation: subtleGlow 1.5s ease-in-out 0.6s both;
       }
       @keyframes subtleGlow {
-        0%, 100% {
+        0%,
+        100% {
           box-shadow: 0 0 0 rgba(201, 168, 76, 0);
         }
         50% {
@@ -1229,101 +1324,100 @@
         animation-delay: 0.5s;
       }
 
-
       /* ── MOBILE FOOTER LAYOUT FIX ── 
    Paste this inside your <style> tag on all pages
    Quick Links + Our Services = side by side
    Brand (top) → Quick Links | Services → Contact (bottom)
 */
 
-@media (max-width: 768px) {
-  .footer-grid {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 24px !important;
-  }
+      @media (max-width: 768px) {
+        .footer-grid {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          gap: 24px !important;
+        }
 
-  /* Brand: full width, top */
-  .footer-grid .footer-brand {
-    width: 100% !important;
-    order: 1 !important;
-  }
+        /* Brand: full width, top */
+        .footer-grid .footer-brand {
+          width: 100% !important;
+          order: 1 !important;
+        }
 
-  /* Quick Links: left half */
-  .footer-grid .footer-col:nth-child(2) {
-    width: calc(50% - 12px) !important;
-    order: 2 !important;
-  }
+        /* Quick Links: left half */
+        .footer-grid .footer-col:nth-child(2) {
+          width: calc(50% - 12px) !important;
+          order: 2 !important;
+        }
 
-  /* Our Services: right half — side by side with Quick Links */
-  .footer-grid .footer-col:nth-child(3) {
-    width: calc(50% - 12px) !important;
-    order: 3 !important;
-  }
+        /* Our Services: right half — side by side with Quick Links */
+        .footer-grid .footer-col:nth-child(3) {
+          width: calc(50% - 12px) !important;
+          order: 3 !important;
+        }
 
-  /* Contact Us: full width, bottom */
-  .footer-grid .footer-col:nth-child(4) {
-    width: 100% !important;
-    order: 4 !important;
-    border-top: 1px solid rgba(201, 168, 76, 0.1);
-    padding-top: 20px;
-  }
-}
+        /* Contact Us: full width, bottom */
+        .footer-grid .footer-col:nth-child(4) {
+          width: 100% !important;
+          order: 4 !important;
+          border-top: 1px solid rgba(201, 168, 76, 0.1);
+          padding-top: 20px;
+        }
+      }
 
-/* Extra small screens — all stack */
-@media (max-width: 380px) {
-  .footer-grid .footer-col:nth-child(2),
-  .footer-grid .footer-col:nth-child(3) {
-    width: 100% !important;
-  }
-}
+      /* Extra small screens — all stack */
+      @media (max-width: 380px) {
+        .footer-grid .footer-col:nth-child(2),
+        .footer-grid .footer-col:nth-child(3) {
+          width: 100% !important;
+        }
+      }
 
-.page-hero-video {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.page-hero-video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.75;
-}
-@media (min-width: 769px) {
-  .page-hero-video video {
-    transition: transform 8s ease-in-out;
-  }
-  .page-hero:hover .page-hero-video video {
-    transform: scale(1.05);
-  }
-}
+      .page-hero-video {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .page-hero-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.75;
+      }
+      @media (min-width: 769px) {
+        .page-hero-video video {
+          transition: transform 8s ease-in-out;
+        }
+        .page-hero:hover .page-hero-video video {
+          transform: scale(1.05);
+        }
+      }
 
-/* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
-@media (max-width: 768px) {
-  .logo img {
-    height: 80px !important;
-  }
-}
-@media (max-width: 480px) {
-  .logo {
-    max-width: 180px;
-  }
-  .logo img {
-    height: 72px !important;
-  }
-}
-@media (max-width: 380px) {
-  .logo {
-    max-width: 160px;
-  }
-  .logo img {
-    height: 65px !important;
-  }
-}
+      /* FIX LOGO OVERFLOW ON MOBILE - ADD THIS TO BOTTOM OF STYLE TAG */
+      @media (max-width: 768px) {
+        .logo img {
+          height: 80px !important;
+        }
+      }
+      @media (max-width: 480px) {
+        .logo {
+          max-width: 180px;
+        }
+        .logo img {
+          height: 72px !important;
+        }
+      }
+      @media (max-width: 380px) {
+        .logo {
+          max-width: 160px;
+        }
+        .logo img {
+          height: 65px !important;
+        }
+      }
     </style>
   </head>
   <body>
-       <nav id="navbar">
+    <nav id="navbar">
       <div class="nav-wrap">
         <a href="index.html" class="logo">
           <img src="/img/RRH-LOGO.png" alt="Road Rock Holdings Logo" />
@@ -1343,24 +1437,28 @@
     </nav>
     <div class="mob-menu" id="mobMenu">
       <a href="index.html">Home</a><a href="about.html">About Us</a
-      ><a href="services.html">Services</a
-      ><a href="contact.html">Contact</a>
+      ><a href="services.html">Services</a><a href="contact.html">Contact</a>
       <a href="/project.html">Profile</a>
       <a href="contact.html" class="mob-cta">Get A Quote →</a>
     </div>
 
     <!-- PAGE HERO -->
-<div class="page-hero">
-  <div class="page-hero-video">
-    <video autoplay muted loop playsinline
-      poster="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80">
-      <source src="/video/RRH-video.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-ov"></div>
-  <div class="page-hero-grid"></div>
-  <div class="page-hero-inner">
+    <div class="page-hero">
+      <div class="page-hero-video">
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1800&q=80"
+        >
+          <source src="/video/RRH-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div class="page-hero-bg"></div>
+      <div class="page-hero-ov"></div>
+      <div class="page-hero-grid"></div>
+      <div class="page-hero-inner">
         <div class="breadcrumb">
           <a href="index.html">Home</a><span>/</span><span>About Us</span>
         </div>
@@ -1371,7 +1469,7 @@
           beyond.
         </p>
       </div>
-</div>
+    </div>
 
     <!-- INTRO -->
     <section class="intro-sec">
@@ -1724,8 +1822,8 @@
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="index.html" class="logo">
-             <img src="/img/RRH-LOGO.png" alt=""></a
-            >
+              <img src="/img/RRH-LOGO.png" alt=""
+            /></a>
             <p>
               A multi-industry conglomerate delivering excellence in
               Construction, Renewable Energy, Technology, Real Estate and Smart
@@ -1749,12 +1847,16 @@
           </div>
           <div class="footer-col">
             <h4>Services</h4>
-           <ul>
-              <li><a href="services.html#construction">Road Construction</a></li>
+            <ul>
+              <li>
+                <a href="services.html#construction">Road Construction</a>
+              </li>
               <li><a href="services.html#real-estate">Real Estate</a></li>
               <li><a href="services.html#solar">Solar Energy</a></li>
               <li><a href="services.html#technology">IT Solutions</a></li>
-              <li><a href="services.html#interiors">Interiors & Exteriors</a></li>
+              <li>
+                <a href="services.html#interiors">Interiors & Exteriors</a>
+              </li>
             </ul>
           </div>
           <div class="footer-col">
@@ -1867,133 +1969,138 @@
         });
     </script>
     <script>
-            // Mobile scroll animations - triggers animations when elements come into view
-    document.addEventListener('DOMContentLoaded', function() {
-      // Ensure hero animations trigger even on slow connections
-      const heroContent = document.querySelector('.hero-content');
-      if (heroContent) {
-        const elements = heroContent.querySelectorAll('.hero-eyebrow, .hero-h1, .hero-sub, .hero-btns, .hero-stats');
-        elements.forEach(el => {
-          el.style.animation = 'none';
-          el.offsetHeight; // Force reflow
-          el.style.animation = null;
-        });
-      }
-      
-      // For page hero sections
-      const pageHero = document.querySelector('.page-hero-inner');
-      if (pageHero) {
-        const elements = pageHero.querySelectorAll('.breadcrumb, .page-title, .page-subtitle, .print-btn');
-        elements.forEach(el => {
-          el.style.animation = 'none';
-          el.offsetHeight;
-          el.style.animation = null;
-        });
-      }
-
-      // Check if mobile device
-      const isMobile = window.innerWidth <= 768;
-      
-      if (isMobile) {
-        // Select all elements that should animate on scroll
-        const animateElements = document.querySelectorAll(
-          '.svc-card, .srv-block, .sector-card, .why-card, .why-item, ' +
-          '.market-card, .comp-card, .val-block, .team-card, ' +
-          '.c-card, .qb-item, .tl-item, .stat-box, .ch-card, ' +
-          '.model-card, .invest-card, .kp, .bs, .vm-card, ' +
-          '.phil-item, .leader-card, .cap-list li'
-        );
-        
-        // Function to check if element is in viewport
-        function isInViewport(element) {
-          const rect = element.getBoundingClientRect();
-          const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-          // Element becomes visible when it's 100px from bottom of viewport
-          return rect.top <= windowHeight - 80 && rect.bottom >= 80;
-        }
-        
-        // Function to add visible class to elements in viewport
-        function checkVisibility() {
-          animateElements.forEach(el => {
-            if (isInViewport(el) && !el.classList.contains('visible')) {
-              // Small delay for smoother appearance
-              setTimeout(() => {
-                el.classList.add('visible');
-              }, 50);
-            }
+      // Mobile scroll animations - triggers animations when elements come into view
+      document.addEventListener("DOMContentLoaded", function () {
+        // Ensure hero animations trigger even on slow connections
+        const heroContent = document.querySelector(".hero-content");
+        if (heroContent) {
+          const elements = heroContent.querySelectorAll(
+            ".hero-eyebrow, .hero-h1, .hero-sub, .hero-btns, .hero-stats",
+          );
+          elements.forEach((el) => {
+            el.style.animation = "none";
+            el.offsetHeight; // Force reflow
+            el.style.animation = null;
           });
         }
-        
-        // Check on scroll with throttling for performance
-        let ticking = false;
-        window.addEventListener('scroll', function() {
-          if (!ticking) {
-            requestAnimationFrame(function() {
-              checkVisibility();
-              ticking = false;
-            });
-            ticking = true;
+
+        // For page hero sections
+        const pageHero = document.querySelector(".page-hero-inner");
+        if (pageHero) {
+          const elements = pageHero.querySelectorAll(
+            ".breadcrumb, .page-title, .page-subtitle, .print-btn",
+          );
+          elements.forEach((el) => {
+            el.style.animation = "none";
+            el.offsetHeight;
+            el.style.animation = null;
+          });
+        }
+
+        // Check if mobile device
+        const isMobile = window.innerWidth <= 768;
+
+        if (isMobile) {
+          // Select all elements that should animate on scroll
+          const animateElements = document.querySelectorAll(
+            ".svc-card, .srv-block, .sector-card, .why-card, .why-item, " +
+              ".market-card, .comp-card, .val-block, .team-card, " +
+              ".c-card, .qb-item, .tl-item, .stat-box, .ch-card, " +
+              ".model-card, .invest-card, .kp, .bs, .vm-card, " +
+              ".phil-item, .leader-card, .cap-list li",
+          );
+
+          // Function to check if element is in viewport
+          function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            const windowHeight =
+              window.innerHeight || document.documentElement.clientHeight;
+            // Element becomes visible when it's 100px from bottom of viewport
+            return rect.top <= windowHeight - 80 && rect.bottom >= 80;
           }
-        });
-        
-        window.addEventListener('resize', function() {
-          checkVisibility();
-        });
-        
-        // Initial check after a short delay
-        setTimeout(checkVisibility, 200);
-        
-        // Background zoom on scroll for mobile hero
-        const heroBg = document.querySelector('.hero-bg-img');
-        if (heroBg) {
-          let zoomTriggered = false;
-          function checkHeroZoom() {
-            const heroSection = document.querySelector('.hero');
-            if (heroSection && !zoomTriggered) {
-              const rect = heroSection.getBoundingClientRect();
-              if (rect.top <= 150 && rect.bottom >= 150) {
-                heroBg.classList.add('zoom');
-                zoomTriggered = true;
+
+          // Function to add visible class to elements in viewport
+          function checkVisibility() {
+            animateElements.forEach((el) => {
+              if (isInViewport(el) && !el.classList.contains("visible")) {
+                // Small delay for smoother appearance
+                setTimeout(() => {
+                  el.classList.add("visible");
+                }, 50);
+              }
+            });
+          }
+
+          // Check on scroll with throttling for performance
+          let ticking = false;
+          window.addEventListener("scroll", function () {
+            if (!ticking) {
+              requestAnimationFrame(function () {
+                checkVisibility();
+                ticking = false;
+              });
+              ticking = true;
+            }
+          });
+
+          window.addEventListener("resize", function () {
+            checkVisibility();
+          });
+
+          // Initial check after a short delay
+          setTimeout(checkVisibility, 200);
+
+          // Background zoom on scroll for mobile hero
+          const heroBg = document.querySelector(".hero-bg-img");
+          if (heroBg) {
+            let zoomTriggered = false;
+            function checkHeroZoom() {
+              const heroSection = document.querySelector(".hero");
+              if (heroSection && !zoomTriggered) {
+                const rect = heroSection.getBoundingClientRect();
+                if (rect.top <= 150 && rect.bottom >= 150) {
+                  heroBg.classList.add("zoom");
+                  zoomTriggered = true;
+                }
               }
             }
+            window.addEventListener("scroll", checkHeroZoom);
+            checkHeroZoom();
           }
-          window.addEventListener('scroll', checkHeroZoom);
-          checkHeroZoom();
         }
-      }
-      
-      // Stats counter animation (works on both desktop and mobile)
-      function animateCount(el) {
-        const target = parseInt(el.getAttribute('data-target'));
-        const suffix = el.textContent.includes('+') ? '+' : '';
-        let current = 0;
-        const step = target / 50; // Smooth counting
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          el.textContent = Math.floor(current) + suffix;
-        }, 30);
-      }
-      
-      const countObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              animateCount(entry.target);
-              countObserver.unobserve(entry.target);
+
+        // Stats counter animation (works on both desktop and mobile)
+        function animateCount(el) {
+          const target = parseInt(el.getAttribute("data-target"));
+          const suffix = el.textContent.includes("+") ? "+" : "";
+          let current = 0;
+          const step = target / 50; // Smooth counting
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
             }
-          });
-        },
-        { threshold: 0.5 }
-      );
-      
-      document.querySelectorAll('[data-target]').forEach((el) => {
-        countObserver.observe(el);
+            el.textContent = Math.floor(current) + suffix;
+          }, 30);
+        }
+
+        const countObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                animateCount(entry.target);
+                countObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+
+        document.querySelectorAll("[data-target]").forEach((el) => {
+          countObserver.observe(el);
+        });
       });
-    });
     </script>
     <script src="js/ai.js"></script>
     <script src="js/content-loader.js"></script>
