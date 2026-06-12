@@ -141,10 +141,15 @@
   background-image: url('/img/RRH-LOGO.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 480px;
-  opacity: 0.04;
+  background-size: 900px;
+  opacity: 0.05;
   pointer-events: none;
   z-index: 0;
+  animation: logoBeep 3.5s ease-in-out infinite;
+}
+@keyframes logoBeep {
+  0%, 100% { opacity: 0.03; }
+  50% { opacity: 0.10; }
 }
 .auth-box {
   position: relative;
@@ -152,11 +157,11 @@
 }
 .auth-corner-logo {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 48px;
-  height: 48px;
-  opacity: 0.35;
+  top: 47px;
+  left: 282px;
+  width: 60px;
+  height: 60px;
+  opacity: 1;
   object-fit: contain;
   pointer-events: none;
 }
@@ -167,9 +172,9 @@
   gap: 10px;
 }
 .sidebar-logo img {
-  width: 28px;
-  height: 28px;
-  opacity: 0.5;
+  width: 44px;
+  height: 44px;
+  opacity: 1;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -180,6 +185,7 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 6px;
+        padding-right: 52px;
       }
       .auth-logo span {
         color: var(--gold);
@@ -194,10 +200,11 @@
       .auth-tabs {
         display: flex;
         margin-bottom: 24px;
+        margin-left: -14px;
         border-bottom: 1px solid rgba(201, 168, 76, 0.15);
       }
       .auth-tab {
-        padding: 10px 20px;
+        padding: 10px 14px;
         font-family: "Barlow Condensed", sans-serif;
         font-size: 12px;
         font-weight: 700;
@@ -364,7 +371,6 @@
         border-bottom: 1px solid rgba(201, 168, 76, 0.1);
         display: flex;
         align-items: center;
-        gap: 10px;
       }
       .s-user-avatar {
         width: 36px;
@@ -1387,11 +1393,8 @@
   </div>
 </div>
         <div class="sidebar-user">
-          <div class="s-user-avatar" id="s-avatar">A</div>
-          <div>
-            <div class="s-user-name" id="s-name">Admin</div>
-            <div class="s-user-role" id="s-role">Loading...</div>
-          </div>
+          <div class="s-user-name" id="s-name" style="text-transform: uppercase; font-weight: 800; letter-spacing: 1px;">Admin</div>
+          <div class="s-user-role" id="s-role" style="display: none;">Loading...</div>
         </div>
         <nav class="sidebar-nav">
           <div class="nav-section-label">Overview</div>
@@ -1478,7 +1481,7 @@
             </div>
             <div class="sec-title">
               <div class="sec-title-bar"></div>
-              Roles &amp; <span>Permissions</span>
+              Roles &amp; Permissions
             </div>
             <div class="card">
               <p
@@ -1655,7 +1658,7 @@
           <div class="panel" id="panel-roles">
             <div class="sec-title">
               <div class="sec-title-bar"></div>
-              Roles & <span>Permissions</span>
+              <span>Roles &amp; <span style="color: var(--gold)">Permissions</span></span>
             </div>
             <p
               style="color: var(--w60); font-size: 13.5px; margin-bottom: 20px"
@@ -2103,7 +2106,8 @@
         const r = ROLES[currentUser.role] || ROLES.reader;
         document.getElementById("s-name").textContent = currentUser.name;
         document.getElementById("s-role").textContent = r.label.toUpperCase();
-        document.getElementById("s-avatar").textContent = currentUser.name
+        const avatarEl = document.getElementById("s-avatar");
+        if (avatarEl) avatarEl.textContent = currentUser.name
           .charAt(0)
           .toUpperCase();
         document.getElementById("dash-welcome").textContent = currentUser.name;
